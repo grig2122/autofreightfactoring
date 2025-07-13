@@ -36,21 +36,40 @@ export default function Home() {
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Get Paid <span className="text-blue-600">Today</span> for Your Freight Invoices
               </h1>
-              <p className="text-xl text-gray-600 mt-6">
+              
+              <p className="text-xl text-gray-600 mt-6 leading-relaxed">
                 Same-day invoice factoring designed exclusively for truckers. Upload your invoice, get instant approval, and receive funds within hours.
               </p>
+
+              {/* Single Key Benefit */}
+              <div className="inline-flex items-center bg-green-50 text-green-700 px-6 py-3 rounded-full mt-6">
+                <Clock className="h-5 w-5 mr-2" />
+                <span className="font-semibold">Funds in your account within 5 minutes</span>
+              </div>
+
+              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <a href="/apply" className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 text-lg font-semibold">
-                  Get Pre-Approved <ChevronRight className="h-5 w-5" />
+                <a href="/apply" className="group bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center justify-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  Get Pre-Approved 
+                  <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 transition text-lg font-semibold">
+                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 text-lg font-semibold">
                   Watch Demo
                 </button>
               </div>
+
+              {/* Clean Social Proof */}
               <div className="flex items-center gap-8 mt-12">
                 <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="h-10 w-10 rounded-full bg-gray-300 border-2 border-white" />
+                  {[
+                    { bg: 'bg-blue-500', initials: 'MJ' },
+                    { bg: 'bg-green-500', initials: 'RT' },
+                    { bg: 'bg-purple-500', initials: 'LS' },
+                    { bg: 'bg-orange-500', initials: 'DK' }
+                  ].map((trucker, i) => (
+                    <div key={i} className={`h-10 w-10 rounded-full ${trucker.bg} border-2 border-white flex items-center justify-center text-white text-xs font-bold`}>
+                      {trucker.initials}
+                    </div>
                   ))}
                 </div>
                 <div>
