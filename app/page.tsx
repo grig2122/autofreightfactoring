@@ -64,25 +64,89 @@ export default function Home() {
               </div>
             </div>
             <div className="relative lg:pl-16">
-              <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <Check className="h-6 w-6 text-green-600" />
+              <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Live Processing Demo</h3>
+                  <p className="text-sm text-gray-600">See how fast your invoice gets processed</p>
+                </div>
+                
+                <div className="space-y-8">
+                  {/* Step 1: Invoice Submitted */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-center">
+                      <div className="h-12 w-12 bg-gray-100 rounded-full flex items-center justify-center border-2 border-gray-300">
+                        <Check className="h-6 w-6 text-gray-400" />
+                      </div>
+                      <div className="w-px h-8 bg-gray-200 mt-2" />
                     </div>
-                    <div>
-                      <p className="font-semibold">Invoice Approved</p>
-                      <p className="text-sm text-gray-600">BOL #12345 - $3,500</p>
+                    <div className="flex-1 pt-2">
+                      <p className="font-semibold text-gray-900">Invoice Submitted</p>
+                      <p className="text-sm text-gray-600 mb-2">BOL #12345 uploaded successfully</p>
+                      <p className="text-xs text-gray-500">2:47 PM • Completed</p>
                     </div>
                   </div>
-                  <div className="h-px bg-gray-200" />
-                  <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <DollarSign className="h-6 w-6 text-blue-600" />
+
+                  {/* Step 2: Invoice Approved */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-center">
+                      <div className="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center border-2 border-green-200 shadow-sm">
+                        <Check className="h-6 w-6 text-green-600" />
+                      </div>
+                      <div className="w-px h-8 bg-gray-200 mt-2" />
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <p className="font-semibold text-gray-900">Invoice Approved</p>
+                      <div className="flex items-center justify-between mb-2">
+                        <p className="text-sm text-gray-600">Invoice Value: $3,500.00</p>
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                          Approved
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500">2:49 PM • Processed in 2 minutes</p>
+                    </div>
+                  </div>
+
+                  {/* Step 3: Funds Transferred */}
+                  <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-center">
+                      <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center border-2 border-blue-200 shadow-sm">
+                        <DollarSign className="h-6 w-6 text-blue-600" />
+                      </div>
+                    </div>
+                    <div className="flex-1 pt-2">
+                      <p className="font-semibold text-gray-900">Funds Transferred</p>
+                      <div className="bg-gray-50 rounded-lg p-3 mb-2">
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-600">Invoice Amount:</span>
+                          <span className="font-medium">$3,500.00</span>
+                        </div>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-600">Factoring Fee (5%):</span>
+                          <span className="font-medium text-red-600">-$175.00</span>
+                        </div>
+                        <div className="border-t border-gray-200 pt-1 mt-2">
+                          <div className="flex justify-between text-sm font-semibold">
+                            <span className="text-gray-900">Net Amount:</span>
+                            <span className="text-green-600">$3,325.00</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-sm text-blue-600 font-medium mb-1">Transferred to your account</p>
+                      <p className="text-xs text-gray-500">2:52 PM • Same-day transfer</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Summary Stats */}
+                <div className="mt-8 pt-6 border-t border-gray-100">
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                      <p className="text-2xl font-bold text-blue-600">5 min</p>
+                      <p className="text-xs text-gray-600">Total Processing Time</p>
                     </div>
                     <div>
-                      <p className="font-semibold">Funds Transferred</p>
-                      <p className="text-sm text-gray-600">$3,325 to your account</p>
+                      <p className="text-2xl font-bold text-green-600">95%</p>
+                      <p className="text-xs text-gray-600">Amount Received</p>
                     </div>
                   </div>
                 </div>
