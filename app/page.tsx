@@ -1,397 +1,1086 @@
-import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check } from 'lucide-react'
+'use client'
+
+import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, Menu, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+import LiveDemo from '../components/LiveDemo'
 
 export default function Home() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const href = e.currentTarget.getAttribute('href')
+    if (href?.startsWith('#')) {
+      const element = document.querySelector(href)
+      element?.scrollIntoView({ behavior: 'smooth' })
+      setIsMobileMenuOpen(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
-      <nav className="sticky top-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+      <nav className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white shadow-md' 
+          : 'bg-white/90 backdrop-blur-sm border-b border-gray-100'
+      }`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <Image src="/assets/logo.png" alt="AutoFreightFactoring Logo" width={32} height={32} className="h-8 w-8" />
+            <div className="flex items-center space-x-3">
+              <Image src="/assets/logo.png" alt="AutoFreightFactoring Logo" width={40} height={40} className="h-10 w-10" />
               <span className="text-xl font-bold text-gray-900">AutoFreightFactoring</span>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition">Features</a>
-              <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition">How It Works</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition">Pricing</a>
-              <a href="#contact" className="text-gray-600 hover:text-gray-900 transition">Contact</a>
-              <a href="/apply" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition inline-block">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-1">
+              <a 
+                href="#features" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                Features
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="#how-it-works" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                How It Works
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="#pricing" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                Pricing
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="#contact" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                Contact
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="/apply" 
+                className="ml-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-sm hover:shadow-md"
+              >
                 Get Pre-Approved
               </a>
             </div>
-            <button className="md:hidden p-2">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 text-gray-600" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-600" />
+              )}
             </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-96 border-t border-gray-100' : 'max-h-0'
+        }`}>
+          <div className="container mx-auto px-4 py-4 bg-white">
+            <a 
+              href="#features" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Features
+            </a>
+            <a 
+              href="#how-it-works" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              How It Works
+            </a>
+            <a 
+              href="#pricing" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Pricing
+            </a>
+            <a 
+              href="#contact" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Contact
+            </a>
+            <a 
+              href="/apply" 
+              className="block mt-4 bg-blue-600 text-white text-center px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Get Pre-Approved
+            </a>
           </div>
         </div>
       </nav>
 
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Get Paid <span className="text-blue-600">Today</span> for Your Freight Invoices
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-20" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-200 rounded-full blur-3xl opacity-20" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              {/* Trust Badge */}
+              <div className="inline-flex items-center gap-2 mb-8">
+                <div className="flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
+                  <Shield className="h-4 w-4 mr-2" />
+                  <span className="text-sm font-medium">Bank-Level Security</span>
+                </div>
+                <div className="flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full">
+                  <Check className="h-4 w-4 mr-2" />
+                  <span className="text-sm font-medium">No Hidden Fees</span>
+                </div>
+              </div>
+
+              <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+                Get Paid <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Today</span> for Your Freight Invoices
               </h1>
               
-              <p className="text-xl text-gray-600 mt-6 leading-relaxed">
+              <p className="text-xl text-gray-600 mt-6 leading-relaxed max-w-xl">
                 Same-day invoice factoring designed exclusively for truckers. Upload your invoice, get instant approval, and receive funds within hours.
               </p>
 
-              {/* Single Key Benefit */}
-              <div className="inline-flex items-center bg-green-50 text-green-700 px-6 py-3 rounded-full mt-6">
-                <Clock className="h-5 w-5 mr-2" />
-                <span className="font-semibold">Funds in your account within 5 minutes</span>
+              {/* Key Benefits Row */}
+              <div className="flex flex-wrap gap-4 mt-8">
+                <div className="inline-flex items-center bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 px-5 py-2.5 rounded-full">
+                  <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="text-sm font-semibold">5-Min Approval</span>
+                </div>
+                <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-5 py-2.5 rounded-full">
+                  <DollarSign className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="text-sm font-semibold">95% Advance Rate</span>
+                </div>
+                <div className="inline-flex items-center bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-5 py-2.5 rounded-full">
+                  <Shield className="h-4 w-4 mr-2 flex-shrink-0" />
+                  <span className="text-sm font-semibold">No Personal Credit Check</span>
+                </div>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                <a href="/apply" className="group bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center justify-center gap-2 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                  Get Pre-Approved 
+              <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                <a href="/apply" className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                  <span>Start Application</span>
                   <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-200 text-lg font-semibold">
-                  Watch Demo
+                <button className="group bg-white border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl hover:border-gray-300 hover:shadow-lg transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2">
+                  <span>Watch 2-Min Demo</span>
+                  <svg className="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </button>
               </div>
 
-              {/* Clean Social Proof */}
-              <div className="flex items-center gap-8 mt-12">
-                <div className="flex -space-x-2">
-                  {[
-                    { bg: 'bg-blue-500', initials: 'MJ' },
-                    { bg: 'bg-green-500', initials: 'RT' },
-                    { bg: 'bg-purple-500', initials: 'LS' },
-                    { bg: 'bg-orange-500', initials: 'DK' }
-                  ].map((trucker, i) => (
-                    <div key={i} className={`h-10 w-10 rounded-full ${trucker.bg} border-2 border-white flex items-center justify-center text-white text-xs font-bold`}>
-                      {trucker.initials}
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex text-yellow-500">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-5 w-5 fill-current" />
+              {/* Enhanced Social Proof */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12 pt-12 border-t border-gray-200">
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    {[
+                      { bg: 'bg-gradient-to-br from-blue-400 to-blue-600', initials: 'MJ' },
+                      { bg: 'bg-gradient-to-br from-green-400 to-green-600', initials: 'RT' },
+                      { bg: 'bg-gradient-to-br from-purple-400 to-purple-600', initials: 'LS' },
+                      { bg: 'bg-gradient-to-br from-orange-400 to-orange-600', initials: 'DK' }
+                    ].map((trucker, i) => (
+                      <div key={i} className={`h-12 w-12 rounded-full ${trucker.bg} border-2 border-white shadow-md flex items-center justify-center text-white text-sm font-bold`}>
+                        {trucker.initials}
+                      </div>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">Trusted by 1,000+ truckers</p>
+                  <div>
+                    <div className="flex text-yellow-400 mb-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="h-5 w-5 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-sm font-medium text-gray-900">
+                      4.9/5 from 1,000+ truckers
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Check className="h-4 w-4 text-green-600" />
+                  <span>$50M+ Funded This Month</span>
                 </div>
               </div>
             </div>
-            <div className="relative lg:pl-16">
-              <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Live Processing Demo</h3>
-                  <p className="text-sm text-gray-600">See how fast your invoice gets processed</p>
+            <div className="relative lg:pl-8 pt-4">
+              <LiveDemo />
+              
+              {/* Background decoration */}
+              <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full blur-2xl opacity-60" />
+              <div className="absolute -top-6 -left-6 h-32 w-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full blur-2xl opacity-60" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.01]" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-10" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Star className="h-4 w-4 mr-2" />
+              Trusted by 1,000+ Owner-Operators
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Why Truckers Choose <span className="text-blue-600">AutoFreightFactoring</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              We understand the challenges you face on the road. That's why we built a factoring service that actually works for truckers.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Same-Day Funding Card */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+              
+              <div className="relative">
+                <div className="h-14 w-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Clock className="h-7 w-7 text-blue-600" />
                 </div>
                 
-                <div className="space-y-8">
-                  {/* Step 1: Invoice Submitted */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex flex-col items-center">
-                      <div className="h-12 w-12 bg-gray-100 rounded-full flex items-center justify-center border-2 border-gray-300">
-                        <Check className="h-6 w-6 text-gray-400" />
-                      </div>
-                      <div className="w-px h-8 bg-gray-200 mt-2" />
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Lightning-Fast Funding</h3>
+                
+                <p className="text-gray-600 mb-6">
+                  Get paid in hours, not weeks. Our automated system approves invoices in minutes and transfers funds the same day.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <div className="flex-1 pt-2">
-                      <p className="font-semibold text-gray-900">Invoice Submitted</p>
-                      <p className="text-sm text-gray-600 mb-2">BOL #12345 uploaded successfully</p>
-                      <p className="text-xs text-gray-500">2:47 PM • Completed</p>
-                    </div>
+                    <span className="text-sm font-medium text-gray-700">Average approval: 5 minutes</span>
                   </div>
-
-                  {/* Step 2: Invoice Approved */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex flex-col items-center">
-                      <div className="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center border-2 border-green-200 shadow-sm">
-                        <Check className="h-6 w-6 text-green-600" />
-                      </div>
-                      <div className="w-px h-8 bg-gray-200 mt-2" />
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <div className="flex-1 pt-2">
-                      <p className="font-semibold text-gray-900">Invoice Approved</p>
-                      <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm text-gray-600">Invoice Value: $3,500.00</p>
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                          Approved
-                        </span>
-                      </div>
-                      <p className="text-xs text-gray-500">2:49 PM • Processed in 2 minutes</p>
-                    </div>
+                    <span className="text-sm font-medium text-gray-700">Same-day ACH available</span>
                   </div>
-
-                  {/* Step 3: Funds Transferred */}
-                  <div className="flex items-start gap-4">
-                    <div className="flex flex-col items-center">
-                      <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center border-2 border-blue-200 shadow-sm">
-                        <DollarSign className="h-6 w-6 text-blue-600" />
-                      </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <div className="flex-1 pt-2">
-                      <p className="font-semibold text-gray-900">Funds Transferred</p>
-                      <div className="bg-gray-50 rounded-lg p-3 mb-2">
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-gray-600">Invoice Amount:</span>
-                          <span className="font-medium">$3,500.00</span>
-                        </div>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-gray-600">Factoring Fee (5%):</span>
-                          <span className="font-medium text-red-600">-$175.00</span>
-                        </div>
-                        <div className="border-t border-gray-200 pt-1 mt-2">
-                          <div className="flex justify-between text-sm font-semibold">
-                            <span className="text-gray-900">Net Amount:</span>
-                            <span className="text-green-600">$3,325.00</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-blue-600 font-medium mb-1">Transferred to your account</p>
-                      <p className="text-xs text-gray-500">2:52 PM • Same-day transfer</p>
-                    </div>
+                    <span className="text-sm font-medium text-gray-700">24/7 submission portal</span>
                   </div>
                 </div>
-
-                {/* Summary Stats */}
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <p className="text-2xl font-bold text-blue-600">5 min</p>
-                      <p className="text-xs text-gray-600">Total Processing Time</p>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      <div className="h-8 w-8 rounded-full bg-blue-500 border-2 border-white"></div>
+                      <div className="h-8 w-8 rounded-full bg-green-500 border-2 border-white"></div>
+                      <div className="h-8 w-8 rounded-full bg-purple-500 border-2 border-white"></div>
                     </div>
-                    <div>
-                      <p className="text-2xl font-bold text-green-600">95%</p>
-                      <p className="text-xs text-gray-600">Amount Received</p>
-                    </div>
+                    <span className="text-sm text-gray-600">347 invoices funded today</span>
                   </div>
                 </div>
               </div>
-              <div className="absolute top-8 -right-8 h-72 w-72 bg-blue-100 rounded-full blur-3xl opacity-30" />
+            </div>
+            
+            {/* No Personal Credit Check Card */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-100 rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+              
+              <div className="relative">
+                <div className="h-14 w-14 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="h-7 w-7 text-green-600" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">No Personal Credit Check</h3>
+                
+                <p className="text-gray-600 mb-6">
+                  Your credit history doesn't matter. We evaluate your customer's creditworthiness, not yours. Perfect for owner-operators.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">No personal guarantees</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Bad credit accepted</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Customer verification only</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="inline-flex items-center bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">
+                    <TrendingUp className="h-4 w-4 mr-1" />
+                    98% approval rate
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Transparent Pricing Card */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full blur-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+              
+              <div className="relative">
+                <div className="h-14 w-14 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <DollarSign className="h-7 w-7 text-purple-600" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Transparent Pricing</h3>
+                
+                <p className="text-gray-600 mb-6">
+                  No surprises, no hidden fees. Our simple rate structure means you always know exactly what you'll pay.
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-purple-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-purple-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Rates from 1.5% - 3%</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-purple-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-purple-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">No setup or monthly fees</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="h-5 w-5 rounded-full bg-purple-100 flex items-center justify-center">
+                      <Check className="h-3 w-3 text-purple-600" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">Volume discounts available</span>
+                  </div>
+                </div>
+                
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <div className="inline-flex items-center bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
+                    <Star className="h-4 w-4 mr-1" />
+                    Save $2,400/month vs. competitors
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="features" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">Why Choose AutoFreightFactoring</h2>
-            <p className="text-xl text-gray-600 mt-4">Built by truckers, for truckers</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Same-Day Funding</h3>
-              <p className="text-gray-600">Get your funds deposited in your bank account within hours, not weeks.</p>
-            </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">No Credit Checks</h3>
-              <p className="text-gray-600">We factor based on your customer's credit, not yours. Bad credit? No problem.</p>
-            </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <DollarSign className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Competitive Rates</h3>
-              <p className="text-gray-600">Starting at 1.5% with transparent pricing. No hidden fees, ever.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="how-it-works" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">How It Works</h2>
-            <p className="text-xl text-gray-600 mt-4">Get funded in 3 simple steps</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="h-16 w-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 className="text-xl font-bold mb-4">Upload Invoice</h3>
-              <p className="text-gray-600">Upload your freight invoice or bill of lading through our secure platform.</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 className="text-xl font-bold mb-4">Get Approved</h3>
-              <p className="text-gray-600">We verify your load and approve your invoice in minutes, not days.</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-bold mb-4">Get Paid</h3>
-              <p className="text-gray-600">Receive your funds via ACH transfer, usually within the same business day.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600 mt-4">No hidden fees. No long-term contracts.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">Starter</h3>
-              <div className="text-4xl font-bold text-blue-600 mb-6">3%<span className="text-lg text-gray-600">/invoice</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Same-day funding
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  No minimum volume
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  24/7 support
-                </li>
-              </ul>
-              <button className="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
-                Get Started
-              </button>
-            </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg border-2 border-blue-600 relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Professional</h3>
-              <div className="text-4xl font-bold text-blue-600 mb-6">2%<span className="text-lg text-gray-600">/invoice</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Same-day funding
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Dedicated account manager
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Priority support
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Advanced reporting
-                </li>
-              </ul>
-              <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                Get Started
-              </button>
-            </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
-              <div className="text-4xl font-bold text-blue-600 mb-6">1.5%<span className="text-lg text-gray-600">/invoice</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Same-day funding
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Custom integrations
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  White-label options
-                </li>
-                <li className="flex items-center">
-                  <Check className="h-5 w-5 text-green-600 mr-2" />
-                  Volume discounts
-                </li>
-              </ul>
-              <button className="w-full bg-gray-200 text-gray-800 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
-                Contact Sales
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-blue-600">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Paid Faster?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of truckers who have improved their cash flow with AutoFreightFactoring.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/apply" className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition text-lg font-semibold">
-              Start Factoring Now
+          
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <p className="text-gray-600 mb-6">Join thousands of truckers who've improved their cash flow</p>
+            <a href="/apply" className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              See How Much You'll Save
+              <ChevronRight className="h-5 w-5 ml-2" />
             </a>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 transition text-lg font-semibold">
-              Call 1-800-FACTOR-1
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.01]" />
+        <div className="absolute top-20 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-10" />
+        <div className="absolute bottom-20 right-0 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-10" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Clock className="h-4 w-4 mr-2" />
+              Average Time: 4 Hours from Invoice to Payment
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              How <span className="text-blue-600">AutoFreightFactoring</span> Works
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Our streamlined process gets you from invoice to cash in record time. No paperwork, no waiting.
+            </p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            {/* Process Timeline */}
+            <div className="relative">
+              {/* Connection Line */}
+              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-200 via-blue-400 to-green-400 transform -translate-y-1/2" />
+              
+              <div className="grid md:grid-cols-3 gap-8 relative">
+                {/* Step 1 */}
+                <div className="relative group">
+                  {/* Card */}
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative">
+                    {/* Step Number */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        1
+                      </div>
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="h-16 w-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-6 mt-4 group-hover:scale-110 transition-transform duration-300">
+                      <Upload className="h-8 w-8 text-blue-600" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Upload Invoice</h3>
+                    <p className="text-gray-600 text-center mb-6">
+                      Simply upload your freight invoice or BOL. Our OCR technology extracts details automatically.
+                    </p>
+                    
+                    {/* Feature List */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Drag & drop upload</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Auto-fill from BOL</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Mobile-friendly</span>
+                      </div>
+                    </div>
+                    
+                    {/* Time Badge */}
+                    <div className="mt-6 inline-flex items-center bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
+                      <Clock className="h-3 w-3 mr-1" />
+                      30 seconds
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="relative group">
+                  {/* Card */}
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative">
+                    {/* Step Number */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="h-12 w-12 bg-gradient-to-br from-blue-600 to-green-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        2
+                      </div>
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="h-16 w-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-6 mt-4 group-hover:scale-110 transition-transform duration-300">
+                      <Shield className="h-8 w-8 text-green-600" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Instant Approval</h3>
+                    <p className="text-gray-600 text-center mb-6">
+                      Our AI verifies your customer and approves funding instantly. No credit check on you.
+                    </p>
+                    
+                    {/* Feature List */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Customer verification</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Load confirmation</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Instant decision</span>
+                      </div>
+                    </div>
+                    
+                    {/* Time Badge */}
+                    <div className="mt-6 inline-flex items-center bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">
+                      <Clock className="h-3 w-3 mr-1" />
+                      5 minutes
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="relative group">
+                  {/* Card */}
+                  <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 relative">
+                    {/* Step Number */}
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                      <div className="h-12 w-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                        3
+                      </div>
+                    </div>
+                    
+                    {/* Icon */}
+                    <div className="h-16 w-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6 mt-4 group-hover:scale-110 transition-transform duration-300">
+                      <DollarSign className="h-8 w-8 text-purple-600" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Get Paid Fast</h3>
+                    <p className="text-gray-600 text-center mb-6">
+                      Funds hit your bank account via ACH. Same-day available for approved carriers.
+                    </p>
+                    
+                    {/* Feature List */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Direct ACH deposit</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Real-time tracking</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-700">
+                        <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                        <span>Instant notification</span>
+                      </div>
+                    </div>
+                    
+                    {/* Time Badge */}
+                    <div className="mt-6 inline-flex items-center bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
+                      <Clock className="h-3 w-3 mr-1" />
+                      2-4 hours
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Bottom Stats */}
+            <div className="mt-16 grid grid-cols-3 gap-8 p-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">4 hrs</div>
+                <p className="text-sm text-gray-600 mt-1">Average Time to Fund</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">98%</div>
+                <p className="text-sm text-gray-600 mt-1">Approval Rate</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gray-900">24/7</div>
+                <p className="text-sm text-gray-600 mt-1">Submit Anytime</p>
+              </div>
+            </div>
+            
+            {/* CTA */}
+            <div className="text-center mt-12">
+              <p className="text-gray-600 mb-6">Ready to experience the fastest factoring in trucking?</p>
+              <a href="/apply" className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                Start Your Application
+                <ChevronRight className="h-5 w-5 ml-2" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.01]" />
+        <div className="absolute top-40 right-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-10" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <DollarSign className="h-4 w-4 mr-2" />
+              Save $2,400+ Monthly vs. Competitors
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Simple, <span className="text-blue-600">Transparent</span> Pricing
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              No hidden fees. No setup costs. No long-term contracts. Just honest pricing that scales with your business.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {/* Starter Plan */}
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Starter</h3>
+                  <TruckIcon className="h-8 w-8 text-gray-400" />
+                </div>
+                
+                <p className="text-gray-600 mb-6">Perfect for owner-operators just getting started</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold text-gray-900">3%</span>
+                  <span className="text-gray-600 ml-2">per invoice</span>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Same-day funding available</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">No minimum volume required</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Basic reporting dashboard</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Email & chat support</span>
+                  </li>
+                </ul>
+                
+                <a href="/apply" className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-center">
+                  Get Started
+                </a>
+                
+                <p className="text-center text-sm text-gray-500 mt-4">No credit card required</p>
+              </div>
+            </div>
+            
+            {/* Professional Plan - Most Popular */}
+            <div className="group relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 lg:-mt-4">
+              {/* Popular Badge */}
+              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg flex items-center gap-1">
+                  <Zap className="h-3 w-3" />
+                  Most Popular
+                </div>
+              </div>
+              
+              <div className="p-8 text-white">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold">Professional</h3>
+                  <Users className="h-8 w-8 text-blue-300" />
+                </div>
+                
+                <p className="text-blue-100 mb-6">For growing fleets with regular invoicing needs</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold">2%</span>
+                  <span className="text-blue-100 ml-2">per invoice</span>
+                  <div className="mt-2">
+                    <span className="inline-flex items-center bg-blue-500 bg-opacity-50 px-3 py-1 rounded-full text-sm">
+                      Save $1,000+/month
+                    </span>
+                  </div>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Everything in Starter</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Dedicated account manager</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Priority 24/7 phone support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Advanced analytics & reporting</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Fuel card discounts</span>
+                  </li>
+                </ul>
+                
+                <a href="/apply" className="block w-full bg-white text-blue-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center shadow-lg">
+                  Start Free Trial
+                </a>
+                
+                <p className="text-center text-sm text-blue-100 mt-4">30-day money-back guarantee</p>
+              </div>
+            </div>
+            
+            {/* Enterprise Plan */}
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Enterprise</h3>
+                  <Building2 className="h-8 w-8 text-gray-400" />
+                </div>
+                
+                <p className="text-gray-600 mb-6">For large fleets with custom requirements</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold text-gray-900">1.5%</span>
+                  <span className="text-gray-600 ml-2">per invoice</span>
+                  <div className="mt-2">
+                    <span className="inline-flex items-center bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
+                      Volume pricing available
+                    </span>
+                  </div>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Everything in Professional</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Custom API integrations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">White-label options</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Dedicated success team</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Custom payment terms</span>
+                  </li>
+                </ul>
+                
+                <button className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                  Contact Sales
+                </button>
+                
+                <p className="text-center text-sm text-gray-500 mt-4">Custom quote required</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Comparison Table */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-8">Compare Features</h3>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="grid grid-cols-4 bg-gray-50 py-4 px-6 font-semibold text-sm">
+                <div>Features</div>
+                <div className="text-center">Starter</div>
+                <div className="text-center">Professional</div>
+                <div className="text-center">Enterprise</div>
+              </div>
+              {[
+                { feature: 'Invoice Processing Time', starter: '5-10 min', pro: '5 min', enterprise: 'Priority' },
+                { feature: 'Advance Rate', starter: '92%', pro: '95%', enterprise: '97%+' },
+                { feature: 'Monthly Volume Limit', starter: '$100K', pro: '$500K', enterprise: 'Unlimited' },
+                { feature: 'Support Response Time', starter: '24 hours', pro: '1 hour', enterprise: '15 min' },
+                { feature: 'Fuel Card Discounts', starter: false, pro: true, enterprise: true },
+                { feature: 'Custom Reporting', starter: false, pro: true, enterprise: true },
+                { feature: 'API Access', starter: false, pro: false, enterprise: true },
+              ].map((row, index) => (
+                <div key={index} className="grid grid-cols-4 py-4 px-6 border-t border-gray-100 text-sm">
+                  <div className="font-medium text-gray-700">{row.feature}</div>
+                  <div className="text-center">
+                    {typeof row.starter === 'boolean' ? (
+                      row.starter ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.starter}</span>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    {typeof row.pro === 'boolean' ? (
+                      row.pro ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.pro}</span>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    {typeof row.enterprise === 'boolean' ? (
+                      row.enterprise ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.enterprise}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Trust Badges */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex flex-wrap justify-center gap-8 p-6 bg-gray-50 rounded-2xl">
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-blue-600" />
+                <span className="text-gray-700 font-medium">Bank-Level Security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-green-600" />
+                <span className="text-gray-700 font-medium">No Setup Time</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <HeadphonesIcon className="h-5 w-5 text-purple-600" />
+                <span className="text-gray-700 font-medium">24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-20" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative">
+          {/* Trust indicator */}
+          <div className="inline-flex items-center bg-white bg-opacity-20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-8">
+            <TrendingUp className="h-4 w-4 mr-2" />
+            347 Truckers Got Funded Today
+          </div>
+          
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to Get Paid <span className="text-yellow-400">Faster?</span>
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Join thousands of truckers who've transformed their cash flow. Get approved in minutes, paid in hours. No credit check, no hassle.
+          </p>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12">
+            <div>
+              <div className="text-3xl font-bold text-white">$50M+</div>
+              <p className="text-blue-200 text-sm mt-1">Funded This Month</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-white">4 hrs</div>
+              <p className="text-blue-200 text-sm mt-1">Average to Payment</p>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-white">98%</div>
+              <p className="text-blue-200 text-sm mt-1">Approval Rate</p>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/apply" className="group bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+              <span>Start Factoring Now</span>
+              <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <button className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
+              <Phone className="h-5 w-5" />
+              <span>Call 1-800-FACTOR-1</span>
             </button>
           </div>
+          
+          <p className="text-blue-200 text-sm mt-8">
+            No setup fees • No credit card required • Cancel anytime
+          </p>
         </div>
       </section>
 
-      <footer id="contact" className="bg-gray-900 text-white py-16">
+      <footer id="contact" className="bg-gradient-to-b from-gray-900 to-black text-white py-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Image src="/assets/logo.png" alt="AutoFreightFactoring Logo" width={32} height={32} className="h-8 w-8" />
-                <span className="text-xl font-bold">AutoFreightFactoring</span>
+          <div className="grid lg:grid-cols-4 gap-12 mb-16">
+            {/* Brand Column */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <Image src="/assets/logo.png" alt="AutoFreightFactoring Logo" width={40} height={40} className="h-10 w-10" />
+                <span className="text-2xl font-bold">AutoFreightFactoring</span>
               </div>
-              <p className="text-gray-400 mb-4">
-                Fast, reliable invoice factoring services designed specifically for the trucking industry.
+              <p className="text-gray-400 mb-6 leading-relaxed">
+                The fastest, most reliable invoice factoring service built by truckers, for truckers. Get paid today, keep rolling tomorrow.
               </p>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center bg-green-900 bg-opacity-50 text-green-400 px-3 py-1 rounded-full text-sm">
+                  <div className="h-2 w-2 bg-green-400 rounded-full mr-2 animate-pulse" />
+                  Live Support 24/7
+                </div>
+              </div>
             </div>
+            
+            {/* Services Column */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Invoice Factoring</li>
-                <li>Fuel Advances</li>
-                <li>Load Board Access</li>
-                <li>Credit Monitoring</li>
+              <h4 className="text-lg font-semibold mb-6 text-white">Services</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Invoice Factoring
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Fuel Advances
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Load Board Access
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Credit Monitoring
+                  </a>
+                </li>
               </ul>
             </div>
+            
+            {/* Company Column */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>About Us</li>
-                <li>Contact</li>
-                <li>Careers</li>
-                <li>Blog</li>
+              <h4 className="text-lg font-semibold mb-6 text-white">Company</h4>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    How It Works
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Blog
+                  </a>
+                </li>
               </ul>
             </div>
+            
+            {/* Contact Column */}
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 mr-2" />
-                  1-800-FACTOR-1
-                </div>
-                <div className="flex items-center">
-                  <Mail className="h-5 w-5 mr-2" />
-                  support@autofreightfactoring.com
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2" />
-                  Dallas, TX
+              <h4 className="text-lg font-semibold mb-6 text-white">Get In Touch</h4>
+              <div className="space-y-4">
+                <a href="tel:1-800-FACTOR-1" className="flex items-center text-gray-400 hover:text-white transition-colors group">
+                  <div className="h-10 w-10 bg-blue-900 bg-opacity-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-opacity-100 transition-all">
+                    <Phone className="h-5 w-5 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">1-800-FACTOR-1</p>
+                    <p className="text-sm">24/7 Support Line</p>
+                  </div>
+                </a>
+                
+                <a href="mailto:support@autofreightfactoring.com" className="flex items-center text-gray-400 hover:text-white transition-colors group">
+                  <div className="h-10 w-10 bg-green-900 bg-opacity-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-opacity-100 transition-all">
+                    <Mail className="h-5 w-5 text-green-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Email Support</p>
+                    <p className="text-sm">support@autofreightfactoring.com</p>
+                  </div>
+                </a>
+                
+                <div className="flex items-center text-gray-400">
+                  <div className="h-10 w-10 bg-purple-900 bg-opacity-50 rounded-lg flex items-center justify-center mr-3">
+                    <MapPin className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Headquarters</p>
+                    <p className="text-sm">Dallas, TX 75201</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 AutoFreightFactoring. All rights reserved.</p>
+          
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="flex items-center gap-6 text-sm text-gray-400">
+                <p>&copy; 2024 AutoFreightFactoring. All rights reserved.</p>
+                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <Shield className="h-4 w-4" />
+                  <span>Bank-Level Security</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <Check className="h-4 w-4 text-green-500" />
+                  <span>SOC 2 Certified</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
