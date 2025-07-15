@@ -3,7 +3,7 @@
 import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, Menu, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon } from 'lucide-react'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import LiveDemo from '../components/LiveDemo'
+import FundingCalculator from '../components/FundingCalculator'
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -142,104 +142,78 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-20" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-200 rounded-full blur-3xl opacity-20" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-20" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 rounded-full blur-3xl opacity-20" />
         
         <div className="container mx-auto px-4 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+            <div className="relative text-white">
               {/* Trust Badge */}
               <div className="inline-flex items-center gap-2 mb-8">
-                <div className="flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full">
+                <div className="flex items-center bg-white bg-opacity-20 backdrop-blur-sm text-white px-4 py-2 rounded-full">
                   <Shield className="h-4 w-4 mr-2" />
-                  <span className="text-sm font-medium">Bank-Level Security</span>
-                </div>
-                <div className="flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full">
-                  <Check className="h-4 w-4 mr-2" />
-                  <span className="text-sm font-medium">No Hidden Fees</span>
+                  <span className="text-sm font-medium">Trusted by Auto Freight Factoring</span>
                 </div>
               </div>
 
-              <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
-                Get Paid <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-700">Today</span> for Your Freight Invoices
+              <h1 className="text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+                Get Paid Today for<br />
+                Freight Delivered
               </h1>
               
-              <p className="text-xl text-gray-600 mt-6 leading-relaxed max-w-xl">
-                Same-day invoice factoring designed exclusively for truckers. Upload your invoice, get instant approval, and receive funds within hours.
+              <p className="text-xl text-blue-100 mt-6 leading-relaxed max-w-xl">
+                Skip the 30-90 day wait. Convert your invoices to cash in 24 hours with competitive rates and no hidden fees.
               </p>
 
-              {/* Key Benefits Row */}
-              <div className="flex flex-wrap gap-4 mt-8">
-                <div className="inline-flex items-center bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 px-5 py-2.5 rounded-full">
-                  <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <span className="text-sm font-semibold">5-Min Approval</span>
+              {/* Key Benefits List */}
+              <div className="mt-8 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Same-day funding available</span>
                 </div>
-                <div className="inline-flex items-center bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 px-5 py-2.5 rounded-full">
-                  <DollarSign className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <span className="text-sm font-semibold">95% Advance Rate</span>
+                <div className="flex items-center gap-3">
+                  <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">100% advance rate - you get the full amount</span>
                 </div>
-                <div className="inline-flex items-center bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-5 py-2.5 rounded-full">
-                  <Shield className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <span className="text-sm font-semibold">No Personal Credit Check</span>
+                <div className="flex items-center gap-3">
+                  <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">No long-term contracts</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-white" />
+                  </div>
+                  <span className="text-white">Free credit checks on brokers</span>
                 </div>
               </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <a href="/apply" className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 flex items-center justify-center gap-2 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                  <span>Start Application</span>
+                <a href="/apply" className="group bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                  <span>Get Your Quote</span>
                   <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button className="group bg-white border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-xl hover:border-gray-300 hover:shadow-lg transition-all duration-300 text-lg font-semibold flex items-center justify-center gap-2">
-                  <span>Watch 2-Min Demo</span>
-                  <svg className="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                <button className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  <span>1-800-FACTOR</span>
                 </button>
-              </div>
-
-              {/* Enhanced Social Proof */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-12 pt-12 border-t border-gray-200">
-                <div className="flex items-center gap-4">
-                  <div className="flex -space-x-2">
-                    {[
-                      { bg: 'bg-gradient-to-br from-blue-400 to-blue-600', initials: 'MJ' },
-                      { bg: 'bg-gradient-to-br from-green-400 to-green-600', initials: 'RT' },
-                      { bg: 'bg-gradient-to-br from-purple-400 to-purple-600', initials: 'LS' },
-                      { bg: 'bg-gradient-to-br from-orange-400 to-orange-600', initials: 'DK' }
-                    ].map((trucker, i) => (
-                      <div key={i} className={`h-12 w-12 rounded-full ${trucker.bg} border-2 border-white shadow-md flex items-center justify-center text-white text-sm font-bold`}>
-                        {trucker.initials}
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    <div className="flex text-yellow-400 mb-1">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-sm font-medium text-gray-900">
-                      4.9/5 from 1,000+ truckers
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Check className="h-4 w-4 text-green-600" />
-                  <span>$50M+ Funded This Month</span>
-                </div>
               </div>
             </div>
             <div className="relative lg:pl-8 pt-4">
-              <LiveDemo />
+              <FundingCalculator />
               
               {/* Background decoration */}
-              <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full blur-2xl opacity-60" />
-              <div className="absolute -top-6 -left-6 h-32 w-32 bg-gradient-to-br from-green-100 to-green-200 rounded-full blur-2xl opacity-60" />
+              <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full blur-2xl opacity-30" />
+              <div className="absolute -top-6 -left-6 h-32 w-32 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-2xl opacity-30" />
             </div>
           </div>
         </div>
