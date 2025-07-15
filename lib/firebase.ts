@@ -21,11 +21,11 @@ const isFirebaseConfigured = firebaseConfig.apiKey &&
   firebaseConfig.projectId !== 'your-project-id';
 
 // Initialize Firebase only if properly configured
-let app = null;
-let auth = null;
-let db = null;
-let storage = null;
-let analytics = null;
+let app: any = null;
+let auth: any = null;
+let db: any = null;
+let storage: any = null;
+let analytics: any = null;
 
 if (isFirebaseConfigured) {
   app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
