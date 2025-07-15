@@ -83,8 +83,8 @@ export async function POST(request: NextRequest) {
 
     // Save to Firestore (skip if not configured)
     try {
-      // Only try to save if Firebase is properly configured
-      if (process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID && process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID !== 'your-project-id') {
+      // Only try to save if Firebase is properly configured and db is available
+      if (db && process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID && process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID !== 'your-project-id') {
         const docRef = await addDoc(collection(db, 'leads'), {
           ...leadData,
           createdAt: serverTimestamp()

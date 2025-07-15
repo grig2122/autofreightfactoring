@@ -17,8 +17,6 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     children,
     ...props 
   }, ref) => {
-    const Component = `h${level}` as keyof JSX.IntrinsicElements
-
     // Default sizes based on heading level
     const defaultSizes = {
       1: 'text-4xl md:text-5xl',
@@ -45,20 +43,33 @@ const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
       bold: 'font-bold'
     }
 
-    return (
-      <Component
-        ref={ref}
-        className={cn(
-          'text-gray-900 leading-tight',
-          size ? sizeStyles[size] : defaultSizes[level],
-          weightStyles[weight],
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </Component>
-    )
+    const componentProps = {
+      ref,
+      className: cn(
+        'text-gray-900 leading-tight',
+        size ? sizeStyles[size] : defaultSizes[level],
+        weightStyles[weight],
+        className
+      ),
+      ...props
+    }
+
+    switch (level) {
+      case 1:
+        return <h1 {...componentProps}>{children}</h1>
+      case 2:
+        return <h2 {...componentProps}>{children}</h2>
+      case 3:
+        return <h3 {...componentProps}>{children}</h3>
+      case 4:
+        return <h4 {...componentProps}>{children}</h4>
+      case 5:
+        return <h5 {...componentProps}>{children}</h5>
+      case 6:
+        return <h6 {...componentProps}>{children}</h6>
+      default:
+        return <h1 {...componentProps}>{children}</h1>
+    }
   }
 )
 
@@ -72,7 +83,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   as?: 'p' | 'span' | 'div'
 }
 
-const Text = forwardRef<HTMLElement, TextProps>(
+const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ 
     className, 
     size = 'base',
@@ -82,8 +93,6 @@ const Text = forwardRef<HTMLElement, TextProps>(
     children,
     ...props 
   }, ref) => {
-    const Component = as
-
     const sizeStyles = {
       xs: 'text-xs',
       sm: 'text-sm',
@@ -107,21 +116,26 @@ const Text = forwardRef<HTMLElement, TextProps>(
       warning: 'text-amber-600'
     }
 
-    return (
-      <Component
-        ref={ref}
-        className={cn(
-          'leading-relaxed',
-          sizeStyles[size],
-          weightStyles[weight],
-          colorStyles[color],
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </Component>
-    )
+    const componentProps = {
+      ref,
+      className: cn(
+        'leading-relaxed',
+        sizeStyles[size],
+        weightStyles[weight],
+        colorStyles[color],
+        className
+      ),
+      ...props
+    }
+
+    switch (as) {
+      case 'span':
+        return <span {...componentProps}>{children}</span>
+      case 'div':
+        return <div {...componentProps}>{children}</div>
+      default:
+        return <p {...componentProps}>{children}</p>
+    }
   }
 )
 
