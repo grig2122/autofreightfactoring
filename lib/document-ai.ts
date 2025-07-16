@@ -6,20 +6,27 @@ let client: DocumentProcessorServiceClient;
 
 function getClient() {
   if (!client) {
-    const privateKey = process.env.FIREBASE_ADMIN_PRIVATE_KEY;
-    if (!privateKey) {
-      throw new Error('FIREBASE_ADMIN_PRIVATE_KEY is not set');
+    let privateKey = process.env.FIREBASE_ADMIN_PRIVATE_KEY;
+    const privateKeyBase64 = process.env.FIREBASE_ADMIN_PRIVATE_KEY_BASE64;
+    
+    if (!privateKey && !privateKeyBase64) {
+      throw new Error('Neither FIREBASE_ADMIN_PRIVATE_KEY nor FIREBASE_ADMIN_PRIVATE_KEY_BASE64 is set');
     }
     
-    // Handle both escaped and unescaped newlines
-    const formattedKey = privateKey.includes('\\n') 
-      ? privateKey.replace(/\\n/g, '\n')
-      : privateKey;
+    // Use base64 version if available (preferred for Vercel)
+    if (privateKeyBase64) {
+      privateKey = Buffer.from(privateKeyBase64, 'base64').toString('utf-8');
+    } else if (privateKey) {
+      // Handle both escaped and unescaped newlines
+      privateKey = privateKey.includes('\\n') 
+        ? privateKey.replace(/\\n/g, '\n')
+        : privateKey;
+    }
     
     client = new DocumentProcessorServiceClient({
       credentials: {
         client_email: process.env.FIREBASE_ADMIN_CLIENT_EMAIL!,
-        private_key: formattedKey,
+        private_key: privateKey!,
       },
       projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
     });
