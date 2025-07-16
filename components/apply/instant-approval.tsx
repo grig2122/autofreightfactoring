@@ -103,7 +103,7 @@ export function InstantApproval({ companyName, estimatedRate }: InstantApprovalP
               size="lg"
               variant="outline"
               className="flex-1"
-              onClick={() => window.location.href = 'tel:1-800-FACTOR-1'}
+              onClick={() => window.location.href = 'tel:+16198776746'}
             >
               Speak to a Specialist
             </Button>

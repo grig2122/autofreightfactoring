@@ -124,9 +124,9 @@ export function PreApprovalResult({ result }: PreApprovalResultProps) {
             <div className="border-t pt-6">
               <h3 className="font-semibold text-lg mb-4">Need to speak with someone now?</h3>
               <div className="space-y-3">
-                <a href="tel:1-800-FACTOR-1" className="flex items-center gap-3 text-blue-600 hover:text-blue-700">
+                <a href="tel:+16198776746" className="flex items-center gap-3 text-blue-600 hover:text-blue-700">
                   <Phone className="h-5 w-5" />
-                  <span className="font-medium">1-800-FACTOR-1</span>
+                  <span className="font-medium">(619) 877-6746</span>
                 </a>
                 <a href="mailto:support@autofreightfactoring.com" className="flex items-center gap-3 text-blue-600 hover:text-blue-700">
                   <Mail className="h-5 w-5" />

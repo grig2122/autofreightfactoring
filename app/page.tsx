@@ -202,10 +202,10 @@ export default function Home() {
                   <span>Get Your Quote</span>
                   <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
+                <a href="tel:+16198776746" className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
                   <Phone className="h-5 w-5" />
-                  <span>1-800-FACTOR</span>
-                </button>
+                  <span>(619) 877-6746</span>
+                </a>
               </div>
             </div>
             <div className="relative lg:pl-8 pt-4">
@@ -905,10 +905,10 @@ export default function Home() {
               <span>Start Factoring Now</span>
               <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <button className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
+            <a href="tel:+16198776746" className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
               <Phone className="h-5 w-5" />
-              <span>Call 1-800-FACTOR-1</span>
-            </button>
+              <span>Call (619) 877-6746</span>
+            </a>
           </div>
           
           <p className="text-blue-200 text-sm mt-8">
@@ -1003,12 +1003,12 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-semibold mb-6 text-white">Get In Touch</h4>
               <div className="space-y-4">
-                <a href="tel:1-800-FACTOR-1" className="flex items-center text-gray-400 hover:text-white transition-colors group">
+                <a href="tel:+16198776746" className="flex items-center text-gray-400 hover:text-white transition-colors group">
                   <div className="h-10 w-10 bg-blue-900 bg-opacity-50 rounded-lg flex items-center justify-center mr-3 group-hover:bg-opacity-100 transition-all">
                     <Phone className="h-5 w-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="font-semibold">1-800-FACTOR-1</p>
+                    <p className="font-semibold">(619) 877-6746</p>
                     <p className="text-sm">24/7 Support Line</p>
                   </div>
                 </a>
