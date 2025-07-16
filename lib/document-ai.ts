@@ -107,7 +107,9 @@ export async function parseInvoiceWithDocumentAI(
           
         case 'total_amount':
         case 'amount_due':
-          invoiceData.totalAmount = normalizedValue?.moneyValue?.units?.toNumber() || parseFloat(textValue.replace(/[^0-9.-]/g, ''));
+          invoiceData.totalAmount = typeof normalizedValue?.moneyValue?.units === 'number' 
+            ? normalizedValue.moneyValue.units 
+            : (normalizedValue?.moneyValue?.units ? Number(normalizedValue.moneyValue.units) : parseFloat(textValue.replace(/[^0-9.-]/g, '')));
           invoiceData.currency = normalizedValue?.moneyValue?.currencyCode || 'USD';
           break;
           
