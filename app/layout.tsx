@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'AutoFreightFactoring - Same-Day Invoice Factoring for Truckers',
   description: 'Get paid today with no-contract invoice factoring for owner-operators and small fleets. Fast, fair, and built for truckers.',
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 }
 
 export default function RootLayout({
