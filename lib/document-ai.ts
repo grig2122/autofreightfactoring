@@ -2,16 +2,30 @@ import { DocumentProcessorServiceClient } from '@google-cloud/documentai';
 import { google } from '@google-cloud/documentai/build/protos/protos';
 
 // Initialize the Document AI client
-const client = new DocumentProcessorServiceClient({
-  credentials: {
-    client_email: process.env.FIREBASE_ADMIN_CLIENT_EMAIL!,
-    private_key: process.env.FIREBASE_ADMIN_PRIVATE_KEY?.replace(/\\n/g, '\n')!,
-  },
-  projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
-});
+let client: DocumentProcessorServiceClient;
 
-// Document AI processor details
-const PROCESSOR_NAME = `projects/${process.env.FIREBASE_ADMIN_PROJECT_ID}/locations/us/processors/${process.env.DOCUMENT_AI_PROCESSOR_ID}`;
+function getClient() {
+  if (!client) {
+    const privateKey = process.env.FIREBASE_ADMIN_PRIVATE_KEY;
+    if (!privateKey) {
+      throw new Error('FIREBASE_ADMIN_PRIVATE_KEY is not set');
+    }
+    
+    // Handle both escaped and unescaped newlines
+    const formattedKey = privateKey.includes('\\n') 
+      ? privateKey.replace(/\\n/g, '\n')
+      : privateKey;
+    
+    client = new DocumentProcessorServiceClient({
+      credentials: {
+        client_email: process.env.FIREBASE_ADMIN_CLIENT_EMAIL!,
+        private_key: formattedKey,
+      },
+      projectId: process.env.FIREBASE_ADMIN_PROJECT_ID,
+    });
+  }
+  return client;
+}
 
 export interface ParsedInvoiceData {
   // Invoice metadata
@@ -58,9 +72,22 @@ export async function parseInvoiceWithDocumentAI(
   mimeType: string
 ): Promise<ParsedInvoiceData> {
   try {
+    // Validate environment variables
+    if (!process.env.FIREBASE_ADMIN_PROJECT_ID) {
+      throw new Error('FIREBASE_ADMIN_PROJECT_ID is not set');
+    }
+    if (!process.env.FIREBASE_ADMIN_CLIENT_EMAIL) {
+      throw new Error('FIREBASE_ADMIN_CLIENT_EMAIL is not set');
+    }
+    if (!process.env.DOCUMENT_AI_PROCESSOR_ID) {
+      throw new Error('DOCUMENT_AI_PROCESSOR_ID is not set');
+    }
+
+    const processorName = `projects/${process.env.FIREBASE_ADMIN_PROJECT_ID}/locations/us/processors/${process.env.DOCUMENT_AI_PROCESSOR_ID}`;
+    
     // Configure the request
     const request: google.cloud.documentai.v1.IProcessRequest = {
-      name: PROCESSOR_NAME,
+      name: processorName,
       rawDocument: {
         content: fileBuffer.toString('base64'),
         mimeType: mimeType,
@@ -68,7 +95,7 @@ export async function parseInvoiceWithDocumentAI(
     };
 
     // Process the document
-    const [result] = await client.processDocument(request);
+    const [result] = await getClient().processDocument(request);
     const { document } = result;
 
     if (!document || !document.entities) {
