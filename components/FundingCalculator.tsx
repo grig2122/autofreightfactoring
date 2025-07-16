@@ -14,10 +14,10 @@ export default function FundingCalculator() {
     setIsCalculating(true)
     const timer = setTimeout(() => {
       const amount = parseFloat(invoiceAmount) || 0
-      const factorRate = 0.02 // 2% factor fee
+      const factorRate = 0.03 // 3% factor fee
       
-      const funding = amount // 100% advance rate
       const fee = amount * factorRate
+      const funding = amount - fee // 100% advance minus fee
       
       setFundingAmount(funding)
       setFactorFee(fee)
@@ -82,7 +82,7 @@ export default function FundingCalculator() {
                 <div className="h-8 w-8 bg-blue-100 rounded-lg flex items-center justify-center">
                   <TrendingUp className="h-4 w-4 text-blue-600" />
                 </div>
-                <span className="text-gray-700 font-medium">You receive (100%):</span>
+                <span className="text-gray-700 font-medium">You receive:</span>
               </div>
               <span className="text-2xl font-bold text-blue-600">
                 {formatCurrency(fundingAmount)}
@@ -97,7 +97,7 @@ export default function FundingCalculator() {
                 <div className="h-8 w-8 bg-gray-100 rounded-lg flex items-center justify-center">
                   <DollarSign className="h-4 w-4 text-gray-600" />
                 </div>
-                <span className="text-gray-700 font-medium">Factor fee (2%):</span>
+                <span className="text-gray-700 font-medium">Factor fee (3%):</span>
               </div>
               <span className="text-xl font-bold text-gray-900">
                 {formatCurrency(factorFee)}

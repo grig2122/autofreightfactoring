@@ -4,6 +4,7 @@ import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Che
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import FundingCalculator from '../components/FundingCalculator'
+import { InvoiceUpload } from '../components/InvoiceUpload'
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -216,6 +217,25 @@ export default function Home() {
               <div className="absolute -top-6 -left-6 h-32 w-32 bg-gradient-to-br from-indigo-400 to-indigo-500 rounded-full blur-2xl opacity-30" />
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="invoice-upload" className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Zap className="h-4 w-4 mr-2" />
+              Instant Quote - No Login Required
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Upload Your Invoice, <span className="text-blue-600">Get Cash Today</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              See how much you can get in seconds. No commitment, no credit check.
+            </p>
+          </div>
+          
+          <InvoiceUpload />
         </div>
       </section>
 

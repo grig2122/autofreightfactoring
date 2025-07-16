@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { ChevronRight, ChevronLeft, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -13,10 +13,19 @@ import type { QuickApplyForm } from '@/lib/types'
 
 export default function ApplyPage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [step, setStep] = useState(1)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [result, setResult] = useState<any>(null)
   const [formData, setFormData] = useState<Partial<QuickApplyForm>>({})
+  const [sessionId, setSessionId] = useState<string | null>(null)
+
+  useEffect(() => {
+    const session = searchParams.get('session')
+    if (session) {
+      setSessionId(session)
+    }
+  }, [searchParams])
 
   const totalSteps = 2
   const progress = (step / totalSteps) * 100
@@ -45,7 +54,7 @@ export default function ApplyPage() {
       const response = await fetch('/api/apply', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, sessionId })
       })
       
       const data = await response.json()
@@ -96,6 +105,11 @@ export default function ApplyPage() {
             <CardDescription>
               {step === 1 && 'We need some basic information to get started'}
               {step === 2 && 'This helps us determine your pre-approval amount'}
+              {sessionId && (
+                <span className="block mt-2 text-green-600">
+                  ✓ Invoice uploaded - complete your application to get funded
+                </span>
+              )}
             </CardDescription>
           </CardHeader>
           <CardContent>
