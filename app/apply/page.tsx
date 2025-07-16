@@ -9,6 +9,7 @@ import { Progress } from '@/components/ui/progress'
 import { BasicInfoStep } from '@/components/apply/basic-info-step'
 import { CompanyInfoStep } from '@/components/apply/company-info-step'
 import { PreApprovalResult } from '@/components/apply/pre-approval-result'
+import { SupportButton } from '@/components/SupportButton'
 import type { QuickApplyForm } from '@/lib/types'
 
 function ApplyForm() {
@@ -98,19 +99,24 @@ function ApplyForm() {
         {/* Form Card */}
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle>
-              {step === 1 && 'Tell us about yourself'}
-              {step === 2 && 'Tell us about your business'}
-            </CardTitle>
-            <CardDescription>
-              {step === 1 && 'We need some basic information to get started'}
-              {step === 2 && 'This helps us determine your pre-approval amount'}
-              {sessionId && (
-                <span className="block mt-2 text-green-600">
-                  ✓ Invoice uploaded - complete your application to get funded
-                </span>
-              )}
-            </CardDescription>
+            <div className="flex justify-between items-start">
+              <div>
+                <CardTitle>
+                  {step === 1 && 'Tell us about yourself'}
+                  {step === 2 && 'Tell us about your business'}
+                </CardTitle>
+                <CardDescription>
+                  {step === 1 && 'We need some basic information to get started'}
+                  {step === 2 && 'This helps us determine your pre-approval amount'}
+                  {sessionId && (
+                    <span className="block mt-2 text-green-600">
+                      ✓ Invoice uploaded - complete your application to get funded
+                    </span>
+                  )}
+                </CardDescription>
+              </div>
+              <SupportButton variant="contextual" className="ml-4 flex-shrink-0" />
+            </div>
           </CardHeader>
           <CardContent>
             {/* Form Steps */}

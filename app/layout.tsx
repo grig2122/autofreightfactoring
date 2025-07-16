@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { IntercomProvider } from '@/components/IntercomProvider'
+import { IntercomWidget } from '@/components/IntercomWidget'
+import { FloatingSupportButton } from '@/components/SupportButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,7 +46,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <IntercomProvider>
+          {children}
+          <IntercomWidget />
+          <FloatingSupportButton />
+        </IntercomProvider>
+      </body>
     </html>
   )
 }
