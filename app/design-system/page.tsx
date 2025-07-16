@@ -236,12 +236,12 @@ export default function DesignSystemPage() {
           <Lead className="text-gray-300 mb-8">Join 1000+ truckers who get paid faster with AutoFreightFactoring</Lead>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" size="lg">Get Pre-Approved</Button>
-            <Button variant="secondary" size="lg" className="bg-white" asChild>
-              <a href="tel:+16198776746">
+            <a href="tel:+16198776746">
+              <Button variant="secondary" size="lg" className="bg-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Call (619) 877-6746
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
         </div>
       </Section>
