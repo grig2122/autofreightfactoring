@@ -1049,7 +1049,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold">Headquarters</p>
-                    <p className="text-sm">Dallas, TX 75201</p>
+                    <p className="text-sm">Los Angeles, CA 91602</p>
                   </div>
                 </div>
               </div>

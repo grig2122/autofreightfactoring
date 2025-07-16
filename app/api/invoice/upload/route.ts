@@ -181,7 +181,7 @@ async function parseInvoice(buffer: Buffer, fileType: string): Promise<InvoiceDa
       amount: mockInvoiceAmount,
       dueDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
       customerName: 'Sample Customer LLC',
-      loadDetails: 'Chicago, IL to Dallas, TX'
+      loadDetails: 'Chicago, IL to Los Angeles, CA'
     };
   }
 }
