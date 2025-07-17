@@ -78,6 +78,20 @@ export default function Home() {
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
               </a>
               <a 
+                href="/blog" 
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                Blog
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="/faq" 
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                FAQ
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
                 href="/apply" 
                 className="ml-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-sm hover:shadow-md"
               >
@@ -132,6 +146,18 @@ export default function Home() {
               className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
             >
               Contact
+            </a>
+            <a 
+              href="/blog" 
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Blog
+            </a>
+            <a 
+              href="/faq" 
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              FAQ
             </a>
             <a 
               href="/apply" 
