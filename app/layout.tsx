@@ -11,10 +11,25 @@ export const metadata: Metadata = {
   title: 'AutoFreightFactoring - Same-Day Invoice Factoring for Truckers',
   description: 'Get paid today with no-contract invoice factoring for owner-operators and small fleets. Fast, fair, and built for truckers.',
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-192x192.png',
+      },
+      {
+        rel: 'android-chrome',
+        url: '/android-chrome-512x512.png',
+      }
+    ]
   },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'AutoFreightFactoring - Same-Day Invoice Factoring for Truckers',
     description: 'Get paid today with no-contract invoice factoring. 100% advance minus 3% fee. No contracts, no hidden fees.',
