@@ -2,6 +2,7 @@
 
 import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, Menu, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import FundingCalculator from '../components/FundingCalculator'
 import { InvoiceUpload } from '../components/InvoiceUpload'
@@ -187,12 +188,11 @@ export default function Home() {
               </div>
 
               <h1 className="text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
-                Get Paid Today for<br />
-                Freight Delivered
+                Freight Factoring: Fast Cash Flow for Trucking Companies
               </h1>
               
               <p className="text-xl text-blue-100 mt-6 leading-relaxed max-w-xl">
-                Skip the 30-90 day wait. Convert your invoices to cash in 24 hours with competitive rates and no hidden fees.
+                Get 100% advances with invoice factoring for truckers. No hidden fees, same-day funding available. Turn your freight bills into immediate cash to keep your trucks rolling.
               </p>
 
               {/* Key Benefits List */}
@@ -282,6 +282,14 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We understand the challenges you face on the road. That's why we built a factoring service that actually works for truckers.
             </p>
+            <div className="mt-6 flex justify-center gap-4">
+              <Link href="/same-day-factoring" className="text-blue-600 hover:text-blue-700 font-medium">
+                Same-Day Funding →
+              </Link>
+              <Link href="/no-credit-check-factoring" className="text-green-600 hover:text-green-700 font-medium">
+                No Credit Check →
+              </Link>
+            </div>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

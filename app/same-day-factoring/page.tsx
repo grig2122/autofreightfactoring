@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Same Day Freight Factoring - Get Paid in Hours, Not Weeks',
-  description: 'Same-day invoice factoring for truckers. Submit by 2PM, get paid today. No contracts, no minimums, just fast cash for your freight bills.',
+  title: 'Same Day Freight Factoring | Get Paid in Hours Not Weeks',
+  description: 'Same-day freight factoring with instant approval. Submit invoices by 2PM, get paid today. Fast funding for truckers with no contracts or hidden fees.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/same-day-factoring',
   },
@@ -20,11 +20,10 @@ export default function SameDayFactoringPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Same Day Freight Factoring
+              Same Day Freight Factoring: Get Paid in Hours
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Why wait 30-90 days for payment? Get cash for your freight invoices 
-              in hours, not weeks. Submit by 2PM, get paid today.
+              Turn your freight invoices into cash the same day with our instant freight factoring service. Submit by 2PM for same-day funding - no contracts, no minimums, just fast payment for truckers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/apply">

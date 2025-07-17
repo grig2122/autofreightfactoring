@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'No Credit Check Freight Factoring - Bad Credit OK | Instant Approval',
-  description: 'Get freight factoring with no credit check required. We approve based on your customer\'s credit, not yours. Bad credit, new business, bankruptcies OK.',
+  title: 'No Credit Check Freight Factoring | Bad Credit OK',
+  description: 'No credit check factoring for truckers. Get approved based on your customer\'s credit, not yours. Bad credit, bankruptcies, and new businesses welcome.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/no-credit-check-factoring',
   },
@@ -20,11 +20,10 @@ export default function NoCreditCheckFactoringPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Freight Factoring With <span className="text-green-600">No Credit Check</span>
+              No Credit Check Factoring for Trucking Companies
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Your credit doesn't matter. We approve based on your customer's credit rating, 
-              not yours. Get funded even with bad credit, bankruptcies, or as a new business.
+              Get freight factoring with no personal credit check required. We approve based on your customer's creditworthiness, not yours. Perfect for truckers with bad credit, bankruptcies, or new businesses seeking cash flow solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/apply">

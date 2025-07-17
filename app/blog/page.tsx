@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Trucking Industry Blog - Invoice Factoring Tips & Insights',
-  description: 'Expert advice on freight factoring, cash flow management, and growing your trucking business. Learn from industry professionals.',
+  title: 'Freight Factoring Blog | Trucking Business Tips & Guides',
+  description: 'Expert freight factoring guides, trucking cash flow tips, and industry insights. Learn how to maximize profits and grow your trucking business in 2025.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/blog',
   },

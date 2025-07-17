@@ -9,8 +9,8 @@ import { StructuredData } from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Invoice Factoring for Truckers',
-  description: 'Get paid today with no-contract invoice factoring for owner-operators and small fleets. Fast, fair, and built for truckers.',
+  title: 'Freight Factoring for Truckers | Same-Day Funding Available',
+  description: 'Get 100% advances with freight factoring. No hidden fees, funds in hours. AutoFreightFactoring helps owner-operators maintain cash flow. Apply in minutes.',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
