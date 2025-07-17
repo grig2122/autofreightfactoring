@@ -9,7 +9,7 @@ import { StructuredData } from '@/components/StructuredData'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AutoFreightFactoring - Same-Day Invoice Factoring for Truckers',
+  title: 'Invoice Factoring for Truckers',
   description: 'Get paid today with no-contract invoice factoring for owner-operators and small fleets. Fast, fair, and built for truckers.',
   icons: {
     icon: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'AutoFreightFactoring - Same-Day Invoice Factoring for Truckers',
+    title: 'Invoice Factoring for Truckers',
     description: 'Get paid today with no-contract invoice factoring. 100% advance minus 3% fee. No contracts, no hidden fees.',
     url: 'https://autofreightfactoring.com',
     siteName: 'AutoFreightFactoring',
