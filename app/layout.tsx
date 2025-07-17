@@ -4,6 +4,7 @@ import './globals.css'
 import { IntercomProvider } from '@/components/IntercomProvider'
 import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
+import { StructuredData } from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -52,6 +53,9 @@ export const metadata: Metadata = {
     images: ['https://autofreightfactoring.com/icon.png'],
   },
   metadataBase: new URL('https://autofreightfactoring.com'),
+  alternates: {
+    canonical: 'https://autofreightfactoring.com',
+  },
 }
 
 export default function RootLayout({
@@ -61,6 +65,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData />
+      </head>
       <body className={inter.className}>
         <IntercomProvider>
           {children}
