@@ -71,8 +71,14 @@ export default function Home() {
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
               </a>
               <a 
-                href="#contact" 
-                onClick={handleSmoothScroll}
+                href="/about" 
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                About
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="/contact" 
                 className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
               >
                 Contact
@@ -142,8 +148,13 @@ export default function Home() {
               Pricing
             </a>
             <a 
-              href="#contact" 
-              onClick={handleSmoothScroll}
+              href="/about" 
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              About
+            </a>
+            <a 
+              href="/contact" 
               className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
             >
               Contact
@@ -1027,7 +1038,7 @@ export default function Home() {
               <h4 className="text-lg font-semibold mb-6 text-white">Company</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                  <a href="/about" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                     <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                     About Us
                   </a>
@@ -1045,9 +1056,15 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                  <a href="/blog" className="text-gray-400 hover:text-white transition-colors flex items-center group">
                     <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                     Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="text-gray-400 hover:text-white transition-colors flex items-center group">
+                    <ChevronRight className="h-4 w-4 mr-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -1095,8 +1112,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-6 text-sm text-gray-400">
                 <p>&copy; 2024 AutoFreightFactoring. All rights reserved.</p>
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
               </div>
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2 text-sm text-gray-400">

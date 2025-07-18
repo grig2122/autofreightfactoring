@@ -59,8 +59,14 @@ function ApplyForm() {
       })
       
       const data = await response.json()
-      setResult(data)
-      setStep(3) // Show result
+      
+      // Redirect to thank you page with parameters
+      const params = new URLSearchParams({
+        name: formData.firstName || '',
+        approved: data.approved ? 'true' : 'false',
+        amount: data.amount || '0'
+      })
+      router.push(`/apply/thank-you?${params.toString()}`)
     } catch (error) {
       console.error('Error submitting application:', error)
       // Handle error

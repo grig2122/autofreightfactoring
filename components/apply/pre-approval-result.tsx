@@ -31,41 +31,54 @@ export function PreApprovalResult({ result }: PreApprovalResultProps) {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="bg-blue-50 p-6 rounded-lg text-center">
-                <p className="text-sm text-blue-600 font-medium">Estimated Factoring Rate</p>
-                <p className="text-4xl font-bold text-blue-700 mt-2">{result.estimatedRate}</p>
-                <p className="text-sm text-gray-600 mt-2">No hidden fees • Same-day payment</p>
+                <p className="text-sm text-blue-600 font-medium">Your Benefits</p>
+                <p className="text-2xl font-bold text-blue-700 mt-2">Same-Day Payment</p>
+                <p className="text-sm text-gray-600 mt-2">No hidden fees • Competitive rates • 24/7 support</p>
               </div>
 
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg">What happens next?</h3>
-                <ol className="space-y-3">
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">1</span>
-                    <span className="text-gray-700">Create your account with a secure password</span>
+              <div className="bg-green-50 p-6 rounded-lg">
+                <h3 className="font-semibold text-green-900 mb-2">What happens next?</h3>
+                <p className="text-green-800">
+                  A truck factoring specialist will contact you within 30 minutes during business hours to:
+                </p>
+                <ul className="space-y-2 ml-6 mt-3">
+                  <li className="flex gap-2">
+                    <span className="text-green-600">✓</span>
+                    <span className="text-gray-700">Verify your business information</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">2</span>
-                    <span className="text-gray-700">Verify your business information (MC#, DOT#)</span>
+                  <li className="flex gap-2">
+                    <span className="text-green-600">✓</span>
+                    <span className="text-gray-700">Set up your account and explain the process</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-semibold">3</span>
-                    <span className="text-gray-700">Upload your first invoice and get paid today!</span>
+                  <li className="flex gap-2">
+                    <span className="text-green-600">✓</span>
+                    <span className="text-gray-700">Help you submit your first invoice for same-day payment</span>
                   </li>
-                </ol>
+                </ul>
+              </div>
+
+              <div className="border-t pt-6">
+                <h3 className="font-semibold text-lg mb-4">Need immediate assistance?</h3>
+                <div className="space-y-3">
+                  <a href="tel:+16198776746" className="flex items-center gap-3 text-blue-600 hover:text-blue-700">
+                    <Phone className="h-5 w-5" />
+                    <span className="font-medium">(619) 877-6746</span>
+                  </a>
+                  <a href="mailto:support@autofreightfactoring.com" className="flex items-center gap-3 text-blue-600 hover:text-blue-700">
+                    <Mail className="h-5 w-5" />
+                    <span className="font-medium">support@autofreightfactoring.com</span>
+                  </a>
+                </div>
               </div>
 
               <Button 
-                onClick={() => router.push('/account-setup')}
+                onClick={() => router.push('/resources')}
+                variant="outline"
                 className="w-full"
                 size="lg"
               >
-                Continue to Account Setup
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Learn More About Truck Factoring
               </Button>
-
-              <p className="text-center text-sm text-gray-600">
-                Setup takes less than 5 minutes • No credit check required
-              </p>
             </CardContent>
           </Card>
         </div>

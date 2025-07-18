@@ -106,8 +106,7 @@ export async function POST(request: NextRequest) {
       result = {
         approved: true,
         message: `Based on your information, you're pre-approved for invoice factoring!`,
-        nextStep: 'account-setup',
-        estimatedRate: calculateEstimatedRate(score)
+        nextStep: 'account-setup'
       }
     } else {
       result = {

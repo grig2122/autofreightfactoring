@@ -14,6 +14,24 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: 'freight-factoring-rates-2025',
+    title: 'Freight Factoring Rates 2025: Complete Cost Guide & Comparison',
+    excerpt: 'Current freight factoring rates for 2025. Compare costs, fees, and rates from top factoring companies. Learn what affects your rate.',
+    author: 'AutoFreight Team',
+    date: '2024-01-22',
+    readTime: '8 min read',
+    category: 'Rates & Pricing',
+  },
+  {
+    slug: 'what-is-freight-factoring',
+    title: 'What is Freight Factoring? The Ultimate Guide for Truckers',
+    excerpt: 'Complete guide to freight factoring for truckers. Learn how invoice factoring works, costs, benefits, and how to get started.',
+    author: 'AutoFreight Team',
+    date: '2024-01-20',
+    readTime: '12 min read',
+    category: 'Factoring Basics',
+  },
+  {
     slug: 'how-invoice-factoring-works-for-truckers',
     title: 'How Invoice Factoring Works for Truckers: Complete Guide',
     excerpt: 'Learn everything about freight factoring - from application to getting paid. Perfect for owner-operators new to factoring.',

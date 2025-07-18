@@ -5,6 +5,7 @@ import { IntercomProvider } from '@/components/IntercomProvider'
 import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -67,6 +68,19 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17368459818"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17368459818');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <IntercomProvider>
