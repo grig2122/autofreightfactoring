@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/firebase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import type { Lead, PreApprovalResult } from '@/lib/types'
+import { sendApplicationNotification } from '@/lib/email'
 
 // Pre-approval scoring logic
 function calculatePreApprovalScore(data: any): number {
@@ -70,6 +71,7 @@ export async function POST(request: NextRequest) {
     const score = calculatePreApprovalScore(data)
     console.log('Pre-approval calculation:', { data, score })
     const isApproved = score >= 50
+    const estimatedRate = calculateEstimatedRate(score)
 
     // Prepare lead data for Firestore
     const leadData: Omit<Lead, 'id'> = {
@@ -97,6 +99,29 @@ export async function POST(request: NextRequest) {
     } catch (error) {
       console.error('Error saving lead:', error)
       // Continue even if save fails - don't block user experience
+    }
+
+    // Send email notification
+    try {
+      await sendApplicationNotification({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        companyName: data.companyName,
+        companyType: data.companyType,
+        dotNumber: data.dotNumber,
+        monthlyInvoiceVolume: data.monthlyInvoiceVolume,
+        yearsInBusiness: data.yearsInBusiness,
+        currentFactoring: data.currentFactoring,
+        isApproved,
+        score,
+        estimatedRate
+      })
+      console.log('Email notification sent successfully')
+    } catch (error) {
+      console.error('Error sending email notification:', error)
+      // Continue even if email fails - don't block user experience
     }
 
     // Prepare response
