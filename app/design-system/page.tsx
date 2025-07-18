@@ -6,8 +6,13 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Section, Container } from '@/components/ui/custom/Section'
 import { Badge } from '@/components/ui/custom/Badge'
 import { Heading, Text, Lead, Muted } from '@/components/ui/custom/Typography'
+import { notFound } from 'next/navigation'
 
 export default function DesignSystemPage() {
+  // Only allow access in development mode
+  if (process.env.NODE_ENV === 'production') {
+    notFound()
+  }
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
