@@ -17,11 +17,13 @@ export function StructuredData() {
     "priceRange": "3% factoring fee",
     "openingHours": "Mo-Fr 08:00-18:00",
     "sameAs": [],
-    "serviceType": [
+    "knowsAbout": [
       "Invoice Factoring",
       "Freight Factoring",
       "Transportation Factoring",
-      "Same-Day Funding"
+      "Same-Day Funding",
+      "Trucking Industry",
+      "Cash Flow Management"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
