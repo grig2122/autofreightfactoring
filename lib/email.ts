@@ -22,8 +22,8 @@ interface ApplicationEmailData {
 export async function sendApplicationNotification(data: ApplicationEmailData) {
   try {
     const subject = data.isApproved 
-      ? `🎉 New Pre-Approved Application: ${data.companyName}`
-      : `New Application: ${data.companyName}`
+      ? `🎉 New Pre-Approved Application: ${data.companyName || 'Unknown Company'}`
+      : `New Application: ${data.companyName || 'Unknown Company'}`
 
     const htmlContent = `
       <h2>New Freight Factoring Application</h2>
@@ -43,16 +43,16 @@ export async function sendApplicationNotification(data: ApplicationEmailData) {
       
       <h3>Company Details</h3>
       <ul>
-        <li><strong>Company:</strong> ${data.companyName}</li>
-        <li><strong>Type:</strong> ${data.companyType}</li>
+        <li><strong>Company:</strong> ${data.companyName || 'Not provided'}</li>
+        <li><strong>Type:</strong> ${data.companyType || 'Not provided'}</li>
         ${data.dotNumber ? `<li><strong>DOT Number:</strong> ${data.dotNumber}</li>` : ''}
-        <li><strong>Years in Business:</strong> ${data.yearsInBusiness}</li>
+        <li><strong>Years in Business:</strong> ${data.yearsInBusiness || 'Not provided'}</li>
       </ul>
       
       <h3>Financial Information</h3>
       <ul>
-        <li><strong>Monthly Invoice Volume:</strong> ${data.monthlyInvoiceVolume}</li>
-        <li><strong>Currently Factoring:</strong> ${data.currentFactoring}</li>
+        <li><strong>Monthly Invoice Volume:</strong> ${data.monthlyInvoiceVolume || 'Not provided'}</li>
+        <li><strong>Currently Factoring:</strong> ${data.currentFactoring || 'Not provided'}</li>
       </ul>
       
       <hr />
@@ -61,7 +61,7 @@ export async function sendApplicationNotification(data: ApplicationEmailData) {
     `
 
     const result = await resend.emails.send({
-      from: 'AutoFreightFactoring <notifications@autofreightfactoring.com>',
+      from: 'AutoFreightFactoring <onboarding@resend.dev>',
       to: 'grigori@autofreightfactoring.com',
       subject,
       html: htmlContent,
