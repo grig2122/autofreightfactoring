@@ -62,14 +62,15 @@ export default function RootLayout({
         <StructuredData />
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17368459818"
+          src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"
           strategy="afterInteractive"
         />
-        <Script id="google-ads" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-V11G85PLVJ');
             gtag('config', 'AW-17368459818');
           `}
         </Script>

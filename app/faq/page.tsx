@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 const faqs = [
   {
     question: "What is freight factoring?",
-    answer: "Freight factoring is a financial service where trucking companies sell their unpaid invoices to a factoring company for immediate cash. Instead of waiting 30-90 days for payment, you get paid within 24 hours, minus a small factoring fee."
+    answer: "Freight factoring, also known as freight bill factoring, is a financial service where trucking companies sell their unpaid invoices to a factoring company for immediate cash. Instead of waiting 30-90 days for payment, you get paid within 24 hours, minus a small factoring fee."
   },
   {
     question: "How much does freight factoring cost?",

@@ -203,7 +203,7 @@ export default function Home() {
               </h1>
               
               <p className="text-xl text-blue-100 mt-6 leading-relaxed max-w-xl">
-                Get 100% advances with invoice factoring for truckers. No hidden fees, same-day funding available. Turn your freight bills into immediate cash to keep your trucks rolling.
+                Get 100% advances with freight bill factoring for truckers. No hidden fees, same-day funding available. Turn your freight bills into immediate cash to keep your trucks rolling.
               </p>
 
               {/* Key Benefits List */}
@@ -500,7 +500,7 @@ export default function Home() {
                     
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Upload Invoice</h3>
                     <p className="text-gray-600 text-center mb-6">
-                      Simply upload your freight invoice or BOL. Our OCR technology extracts details automatically.
+                      Simply upload your freight invoice or BOL. Our freight bill factoring OCR technology extracts details automatically.
                     </p>
                     
                     {/* Feature List */}
