@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   description: 'Get 100% advances with freight factoring. No hidden fees, funds in hours. AutoFreightFactoring helps owner-operators maintain cash flow. Apply in minutes.',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' }
     ],
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
