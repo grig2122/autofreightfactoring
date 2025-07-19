@@ -203,7 +203,16 @@ export default function Home() {
               </h1>
               
               <p className="text-xl text-blue-100 mt-6 leading-relaxed max-w-xl">
-                Get 100% advances with freight bill factoring for truckers. No hidden fees, same-day funding available. Turn your freight bills into immediate cash to keep your trucks rolling.
+                Get 100% advances with freight bill factoring designed specifically for truckers and owner-operators. 
+                While traditional shippers take 30-90 days to pay, we fund your invoices within 24 hours so you can 
+                cover fuel, maintenance, payroll, and other operating expenses without waiting. No hidden fees, 
+                transparent pricing, and same-day funding available for qualified carriers.
+              </p>
+              
+              <p className="text-lg text-blue-50 mt-4 max-w-xl">
+                Whether you're an owner-operator just starting out or managing a growing fleet, our freight factoring 
+                service provides the steady cash flow you need to take on more loads and grow your business. 
+                Join over 5,000 truckers who trust AutoFreightFactoring for reliable, affordable invoice factoring.
               </p>
 
               {/* Key Benefits List */}
@@ -290,8 +299,16 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Why Truckers Choose <span className="text-blue-600">AutoFreightFactoring</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We understand the challenges you face on the road. That's why we built a factoring service that actually works for truckers.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              We understand the unique challenges truckers face: fluctuating fuel prices, unexpected maintenance costs, 
+              and the constant pressure to keep rolling. That's why we built a freight factoring service specifically 
+              designed to solve these problems.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Unlike traditional factoring companies that treat trucking as just another industry, we specialize exclusively 
+              in transportation. Our team includes former owner-operators and fleet managers who know exactly what you need: 
+              fast funding, transparent pricing, and no bureaucratic hassles. We've eliminated the common pain points of 
+              factoring - no hidden fees, no long-term contracts, and no minimum volume requirements.
             </p>
             <div className="mt-6 flex justify-center gap-4">
               <Link href="/same-day-factoring" className="text-blue-600 hover:text-blue-700 font-medium">
@@ -316,7 +333,9 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Lightning-Fast Funding</h3>
                 
                 <p className="text-gray-600 mb-6">
-                  Get paid in hours, not weeks. Our automated system approves invoices in minutes and transfers funds the same day.
+                  Stop waiting 30-90 days for broker payments. Our automated freight factoring system approves invoices 
+                  in minutes and transfers funds the same day. Submit your invoice before 2 PM EST and have cash in 
+                  your account by 5 PM - guaranteed. Perfect for covering immediate expenses like fuel, repairs, or payroll.
                 </p>
                 
                 <div className="space-y-3">
@@ -365,7 +384,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">No Personal Credit Check</h3>
                 
                 <p className="text-gray-600 mb-6">
-                  Your credit history doesn't matter. We evaluate your customer's creditworthiness, not yours. Perfect for owner-operators.
+                  Your personal credit history doesn't affect approval. We evaluate your customer's creditworthiness, 
+                  not yours, making freight factoring perfect for new owner-operators, truckers rebuilding credit, or 
+                  anyone who's been turned down by banks. As long as you're hauling for reputable shippers and brokers, 
+                  you're approved. We even run free credit checks on your customers to ensure you're working with reliable payers.
                 </p>
                 
                 <div className="space-y-3">
@@ -410,7 +432,10 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Transparent Pricing</h3>
                 
                 <p className="text-gray-600 mb-6">
-                  No surprises, no hidden fees. Our simple rate structure means you always know exactly what you'll pay.
+                  No surprises, hidden fees, or fine print gotchas. Our simple flat-rate structure means you always know 
+                  exactly what you'll pay - just 1.5% to 3% depending on volume. Unlike competitors who nickel-and-dime 
+                  with application fees, monthly minimums, ACH fees, and termination penalties, we believe in transparent, 
+                  honest pricing. What you see is what you get.
                 </p>
                 
                 <div className="space-y-3">
@@ -470,8 +495,15 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               How <span className="text-blue-600">AutoFreightFactoring</span> Works
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our streamlined process gets you from invoice to cash in record time. No paperwork, no waiting.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Our streamlined freight factoring process gets you from invoice to cash in record time. 
+              No complicated paperwork, no waiting weeks for approval, no chasing down payments.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              We've automated the entire factoring process using cutting-edge technology, while maintaining 
+              the personal touch truckers appreciate. Upload your invoice from anywhere - your truck cab, 
+              a loading dock, or home office - and our system handles the rest. Most truckers complete 
+              their first factoring transaction in under 10 minutes.
             </p>
           </div>
           
@@ -500,7 +532,9 @@ export default function Home() {
                     
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Upload Invoice</h3>
                     <p className="text-gray-600 text-center mb-6">
-                      Simply upload your freight invoice or BOL. Our freight bill factoring OCR technology extracts details automatically.
+                      Simply upload your freight invoice or BOL using our mobile app or web portal. 
+                      Our advanced OCR technology automatically extracts shipment details, shipper information, 
+                      and payment amounts - no manual data entry required. Works with any broker or shipper paperwork.
                     </p>
                     
                     {/* Feature List */}

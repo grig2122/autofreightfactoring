@@ -56,6 +56,17 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
 
   return (
     <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
+      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+        <h4 className="font-semibold text-green-900 mb-2">Why We Ask These Questions</h4>
+        <p className="text-sm text-green-800 mb-2">
+          Your company information helps us determine your factoring rate and funding capacity. 
+          Established businesses with higher invoice volumes typically qualify for better rates.
+        </p>
+        <p className="text-sm text-green-800">
+          <strong>Good news:</strong> We approve 98% of applications, including new businesses and those with credit challenges. 
+          We focus on your customers' creditworthiness, not yours.
+        </p>
+      </div>
       <div className="space-y-2">
         <Label htmlFor="companyName">Company Name</Label>
         <Input
@@ -137,7 +148,10 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
             placeholder="1234567"
             {...register('dotNumber')}
           />
-          <p className="text-xs text-gray-500">Helps speed up approval</p>
+          <p className="text-xs text-gray-500">
+            Providing your DOT number helps us verify your business faster and may qualify you for better rates. 
+            You can find this on your cab or FMCSA registration.
+          </p>
         </div>
       </div>
 
@@ -150,16 +164,42 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="yes" id="factoring-yes" />
             <Label htmlFor="factoring-yes" className="font-normal cursor-pointer">
-              Yes
+              Yes - I want to switch to better terms
             </Label>
           </div>
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="no" id="factoring-no" />
             <Label htmlFor="factoring-no" className="font-normal cursor-pointer">
-              No
+              No - This is my first time factoring
             </Label>
           </div>
         </RadioGroup>
+        <p className="text-xs text-gray-500 mt-2">
+          If you're currently factoring, we'll help you switch seamlessly with no interruption to your cash flow. 
+          Many clients save thousands per year by switching to our lower rates.
+        </p>
+      </div>
+
+      <div className="border-t pt-6">
+        <h4 className="font-semibold text-gray-900 mb-3">What Happens After Approval?</h4>
+        <ul className="text-sm text-gray-600 space-y-2 mb-4">
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">✓</span>
+            <span>You'll receive your approval amount and rate immediately</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">✓</span>
+            <span>Our team will call you within 1 business hour to set up your account</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">✓</span>
+            <span>You can start submitting invoices for same-day payment right away</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-600 mr-2">✓</span>
+            <span>No contracts or long-term commitments - cancel anytime</span>
+          </li>
+        </ul>
       </div>
 
       <div className="flex gap-4">
