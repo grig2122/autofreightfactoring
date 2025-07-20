@@ -2,92 +2,230 @@
 > autofreightfactoring@1.0.0 dev
 > next dev
 
+ ⚠ Port 3000 is in use, using available port 3001 instead.
    ▲ Next.js 15.3.5
-   - Local:        http://localhost:3000
-   - Network:      http://10.0.0.32:3000
+   - Local:        http://localhost:3001
+   - Network:      http://10.0.0.32:3001
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1031ms
+ ✓ Ready in 1177ms
  ○ Compiling /apply ...
- ✓ Compiled /apply in 1658ms (1119 modules)
- GET /apply 200 in 2159ms
- ✓ Compiled in 275ms (505 modules)
+ ✓ Compiled /apply in 1864ms (1120 modules)
+ GET /apply 200 in 2511ms
+ ✓ Compiled in 449ms (505 modules)
  ○ Compiling /api/apply ...
- ✓ Compiled /api/apply in 562ms (1314 modules)
+ ✓ Compiled /api/apply in 653ms (1315 modules)
 Pre-approval calculation: {
   data: {
     firstName: 'John',
-    lastName: 'Smith',
-    email: 'john@smithtrucking.com',
-    phone: '6195551234',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    phone: '(555) 123-4567',
+    companyName: 'ABC Trucking LLC',
+    companyType: 'fleet',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '5',
+    currentFactoring: 'yes',
+    dotNumber: '12345',
     sessionId: null
   },
-  score: 0
+  score: 85
 }
-[2025-07-18T19:43:42.020Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x3f0eb9f5 error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+[2025-07-20T22:39:21.599Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x55427d30 error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
 Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
   code: 'permission-denied',
   customData: undefined,
   toString: [Function (anonymous)]
 }
-Email sent successfully: {
-  data: null,
-  error: {
-    statusCode: 403,
-    error: 'The autofreightfactoring.com domain is not verified. Please, add and verify your domain on https://resend.com/domains'
-  }
-}
+Email sent successfully: { data: { id: '9ea34d0e-3d10-469a-ae9a-1bb2bc6161cd' }, error: null }
 Email notification sent successfully
- POST /api/apply 200 in 1518ms
- ✓ Compiled /apply/thank-you in 248ms (1327 modules)
- GET /apply/thank-you?name=John&approved=false&amount=0 200 in 306ms
- ✓ Compiled in 209ms (622 modules)
- GET /apply 200 in 190ms
- ✓ Compiled /api/apply in 188ms (831 modules)
+ POST /api/apply 200 in 1893ms
+ ○ Compiling / ...
+ ✓ Compiled / in 620ms (1247 modules)
+ GET / 200 in 849ms
+ GET /apply 200 in 83ms
+ GET / 200 in 121ms
+ GET / 200 in 94ms
+ GET /apply 200 in 49ms
+ ✓ Compiled in 456ms (1259 modules)
+ GET / 200 in 82ms
+ GET /apply 200 in 97ms
+ GET /apply 200 in 97ms
+ ✓ Compiled in 309ms (1259 modules)
+ GET / 200 in 80ms
+ GET /apply 200 in 97ms
+ GET /apply 200 in 97ms
+ ✓ Compiled in 374ms (1259 modules)
+ GET / 200 in 57ms
+ GET /apply 200 in 70ms
+ GET /apply 200 in 71ms
+ ✓ Compiled in 422ms (1259 modules)
+ GET / 200 in 40ms
+ GET /apply 200 in 62ms
+ GET /apply 200 in 63ms
+ ✓ Compiled in 616ms (1259 modules)
+ GET / 200 in 108ms
+ GET /apply 200 in 108ms
+ GET /apply 200 in 111ms
+ ✓ Compiled in 259ms (1259 modules)
+ GET / 200 in 95ms
+ GET /apply 200 in 101ms
+ GET /apply 200 in 97ms
+ GET /apply 200 in 136ms
+ GET /apply 200 in 48ms
+ GET /apply 200 in 46ms
+ GET /apply 200 in 45ms
+ GET /apply 200 in 48ms
+ GET / 200 in 153ms
+ GET /apply 200 in 42ms
+ ✓ Compiled in 462ms (1259 modules)
+ GET / 200 in 83ms
+ GET /apply 200 in 92ms
+ GET /apply 200 in 32ms
+ GET /apply 200 in 32ms
+ GET /apply 200 in 113ms
+ ✓ Compiled in 515ms (1257 modules)
+ GET /apply 200 in 51ms
+ GET / 200 in 18ms
+ GET /apply 200 in 24ms
+ GET /apply 200 in 24ms
+ ✓ Compiled in 195ms (1257 modules)
+ GET / 200 in 54ms
+ GET /apply 200 in 75ms
+ GET /apply 200 in 28ms
+ GET /apply 200 in 27ms
+ GET /apply 200 in 90ms
+ GET /apply 200 in 34ms
+ GET /apply 200 in 38ms
+ ✓ Compiled in 415ms (1257 modules)
+ GET / 200 in 80ms
+ GET /apply 200 in 86ms
+ GET /apply 200 in 84ms
+ GET /apply 200 in 33ms
+ GET /apply 200 in 97ms
+ GET /apply 200 in 38ms
+ GET /apply 200 in 43ms
+ ✓ Compiled in 505ms (1257 modules)
+ GET /apply 200 in 77ms
+ GET /apply 200 in 77ms
+ GET /apply 200 in 90ms
+ GET /apply 200 in 41ms
+ ✓ Compiled in 247ms (1257 modules)
+ GET /apply 200 in 48ms
+ GET /apply 200 in 49ms
+ GET /apply 200 in 26ms
+ GET /apply 200 in 21ms
+ ✓ Compiled in 234ms (1257 modules)
+ GET /apply 200 in 108ms
+ GET /apply 200 in 110ms
+ GET /apply 200 in 105ms
+ GET /apply 200 in 109ms
+ ✓ Compiled in 375ms (1257 modules)
+ GET /apply 200 in 88ms
+ GET /apply 200 in 85ms
+ GET /apply 200 in 88ms
+ GET /apply 200 in 81ms
+ ✓ Compiled in 218ms (1257 modules)
+ GET /apply 200 in 52ms
+ GET /apply 200 in 54ms
+ GET /apply 200 in 22ms
+ GET /apply 200 in 36ms
+ GET /apply 200 in 112ms
+ ✓ Compiled in 536ms (1257 modules)
+ GET /apply 200 in 77ms
+ GET /apply 200 in 78ms
+ GET /apply 200 in 79ms
+ GET /apply 200 in 31ms
+ ✓ Compiled in 192ms (1257 modules)
+ GET /apply 200 in 58ms
+ GET /apply 200 in 58ms
+ GET /apply 200 in 35ms
+ GET /apply 200 in 36ms
+ GET /apply 200 in 113ms
+ ✓ Compiled in 424ms (1257 modules)
+ GET /apply 200 in 75ms
+ GET /apply 200 in 77ms
+ GET /apply 200 in 85ms
+ GET /apply 200 in 86ms
+ ✓ Compiled in 278ms (1257 modules)
+ GET /apply 200 in 102ms
+ GET /apply 200 in 110ms
+ GET /apply 200 in 111ms
+ GET /apply 200 in 88ms
+ GET /apply 200 in 106ms
+ ✓ Compiled in 396ms (1257 modules)
+ GET /apply 200 in 89ms
+ GET /apply 200 in 90ms
+ GET /apply 200 in 92ms
+ GET /apply 200 in 22ms
+ ✓ Compiled in 211ms (1257 modules)
+ GET /apply 200 in 45ms
+ GET /apply 200 in 47ms
+ GET /apply 200 in 46ms
+ GET /apply 200 in 18ms
+ ✓ Compiled in 238ms (1257 modules)
+ GET /apply 200 in 121ms
+ GET /apply 200 in 122ms
+ GET /apply 200 in 53ms
+ GET /apply 200 in 56ms
+ GET /apply 200 in 103ms
+ ✓ Compiled in 471ms (1257 modules)
+ GET /apply 200 in 50ms
+ GET /apply 200 in 50ms
+ GET /apply 200 in 27ms
+ GET /apply 200 in 28ms
+ GET /apply 200 in 93ms
+ ○ Compiling /api/apply ...
+ ✓ Compiled /api/apply in 568ms (916 modules)
 Pre-approval calculation: {
   data: {
-    firstName: 'Maria',
-    lastName: 'Garcia',
-    email: 'maria@garciafreight.com',
-    phone: '3105559876',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    phone: '5551234567',
+    companyName: 'ABC Trucking LLC',
+    companyType: 'fleet',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '5',
+    currentFactoring: 'yes',
+    dotNumber: '12345',
     sessionId: null
   },
-  score: 0
+  score: 85
 }
- GET /apply 200 in 233ms
-[2025-07-18T19:49:11.572Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x72837c6c error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+[2025-07-20T23:13:03.611Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x5d7ac29f error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
 Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
   code: 'permission-denied',
   customData: undefined,
   toString: [Function (anonymous)]
 }
-Email sent successfully: { data: { id: '4c93f591-dc34-42b4-80ba-78172529af34' }, error: null }
+Email sent successfully: { data: { id: '03139cb3-d2b8-43c3-bb51-2cf757da66cd' }, error: null }
 Email notification sent successfully
- POST /api/apply 200 in 1149ms
- GET /apply/thank-you?name=Maria&approved=false&amount=0 200 in 10ms
- ✓ Compiled in 183ms (622 modules)
- GET /apply 200 in 205ms
- ✓ Compiled /api/apply in 210ms (831 modules)
+ POST /api/apply 200 in 2082ms
+ GET /apply 200 in 121ms
 Pre-approval calculation: {
   data: {
-    firstName: 'test',
-    lastName: 'test',
-    email: 'asdf@gmail.com',
-    phone: '8184422556',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com',
+    phone: '5551234567',
+    companyName: 'ABC Trucking LLC',
+    companyType: 'fleet',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '5',
+    currentFactoring: 'yes',
+    dotNumber: '12345',
     sessionId: null
   },
-  score: 0
+  score: 85
 }
- GET /apply 200 in 233ms
-[2025-07-18T20:35:46.400Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x5e5d4e1a error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+[2025-07-20T23:13:29.215Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x5d7ac2a0 error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
 Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
   code: 'permission-denied',
   customData: undefined,
   toString: [Function (anonymous)]
 }
-Email sent successfully: { data: { id: '6c2c5336-7f36-4962-bfda-1b0f6885ec4f' }, error: null }
+Email sent successfully: { data: { id: '5cba499e-d134-4a06-9b55-d00d96e1b12c' }, error: null }
 Email notification sent successfully
- POST /api/apply 200 in 1384ms
- GET /apply/thank-you?name=test&approved=false&amount=0 200 in 13ms
- ✓ Compiled /sitemap.xml in 351ms (1136 modules)
+ POST /api/apply 200 in 773ms

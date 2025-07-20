@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ChevronRight, ChevronLeft, Truck } from 'lucide-react'
+import { ChevronRight, ChevronLeft, Truck, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
@@ -84,7 +84,7 @@ function ApplyForm() {
       firstName: 'John',
       lastName: 'Doe',
       email: 'john.doe@example.com',
-      phone: '(555) 123-4567',
+      phone: '5551234567',
       
       // Company Info
       companyName: 'ABC Trucking LLC',
@@ -102,7 +102,7 @@ function ApplyForm() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">
       {process.env.NODE_ENV === 'development' && (
         <div className="fixed top-4 right-4 z-50">
           <Button 
@@ -133,10 +133,10 @@ function ApplyForm() {
           {/* Progress Bar */}
           <div className="mb-8">
             <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>Step {step} of {totalSteps}</span>
-              <span>{Math.round(progress)}% complete</span>
+              <span className="font-medium">Step {step} of {totalSteps}</span>
+              <span className="font-medium">{Math.round(progress)}% complete</span>
             </div>
-            <Progress value={progress} className="h-2" />
+            <Progress value={progress} className="h-2 bg-gray-200" />
           </div>
 
           {/* Form Card */}
@@ -176,22 +176,46 @@ function ApplyForm() {
                   variant="outline"
                   onClick={handleBack}
                   disabled={step === 1}
+                  size="lg"
                 >
                   <ChevronLeft className="mr-2 h-4 w-4" />
                   Back
                 </Button>
                 
                 {step < totalSteps ? (
-                  <Button onClick={handleNext}>
+                  <Button 
+                    onClick={() => {
+                      const form = document.querySelector('form');
+                      if (form) {
+                        form.requestSubmit();
+                      }
+                    }}
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
+                    size="lg"
+                  >
                     Next
                     <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
                   <Button 
-                    onClick={handleSubmit}
+                    onClick={() => {
+                      const form = document.querySelector('form');
+                      if (form) {
+                        form.requestSubmit();
+                      }
+                    }}
                     disabled={isSubmitting}
+                    className="bg-blue-600 hover:bg-blue-700 text-white"
+                    size="lg"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Get Pre-Approved'}
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Checking Eligibility...
+                      </>
+                    ) : (
+                      'Get Pre-Approved'
+                    )}
                   </Button>
                 )}
               </div>

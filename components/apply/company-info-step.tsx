@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -31,12 +32,17 @@ interface CompanyInfoStepProps {
 }
 
 export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting }: CompanyInfoStepProps) {
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleSubmit(onFormSubmit)(e);
+  };
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-    watch
+    watch,
+    reset
   } = useForm<CompanyInfo>({
     resolver: zodResolver(companyInfoSchema),
     defaultValues: {
@@ -49,21 +55,43 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
     }
   })
 
+  useEffect(() => {
+    reset({
+      companyName: data.companyName || '',
+      companyType: data.companyType || 'owner-operator',
+      monthlyInvoiceVolume: data.monthlyInvoiceVolume || '$0-10k',
+      yearsInBusiness: data.yearsInBusiness || '',
+      currentFactoring: data.currentFactoring || 'no',
+      dotNumber: data.dotNumber || ''
+    })
+  }, [data.companyName, data.companyType, data.monthlyInvoiceVolume, data.yearsInBusiness, data.currentFactoring, data.dotNumber, reset])
+
   const onFormSubmit = (formData: CompanyInfo) => {
-    onUpdate(formData)
+    // Only update the company info fields, preserving any other data
+    onUpdate({
+      companyName: formData.companyName,
+      companyType: formData.companyType,
+      monthlyInvoiceVolume: formData.monthlyInvoiceVolume,
+      yearsInBusiness: formData.yearsInBusiness,
+      currentFactoring: formData.currentFactoring,
+      dotNumber: formData.dotNumber
+    })
     onSubmit()
   }
 
   return (
-    <form onSubmit={handleSubmit(onFormSubmit)} className="space-y-6">
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-        <h4 className="font-semibold text-green-900 mb-2">Why We Ask These Questions</h4>
+    <form onSubmit={handleFormSubmit} className="space-y-6">
+      <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl p-6 mb-6">
+        <h4 className="font-semibold text-green-900 mb-2 flex items-center">
+          <span className="text-green-600 mr-2">ℹ️</span>
+          Why We Ask These Questions
+        </h4>
         <p className="text-sm text-green-800 mb-2">
           Your company information helps us determine your factoring rate and funding capacity. 
           Established businesses with higher invoice volumes typically qualify for better rates.
         </p>
         <p className="text-sm text-green-800">
-          <strong>Good news:</strong> We approve 98% of applications, including new businesses and those with credit challenges. 
+          <strong className="text-green-900">Good news:</strong> We approve 98% of applications, including new businesses and those with credit challenges. 
           We focus on your customers' creditworthiness, not yours.
         </p>
       </div>
@@ -73,7 +101,7 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           id="companyName"
           placeholder="ABC Trucking LLC"
           {...register('companyName')}
-          className={errors.companyName ? 'border-red-500' : ''}
+          className={`h-12 ${errors.companyName ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
         />
         {errors.companyName && (
           <p className="text-sm text-red-500">{errors.companyName.message}</p>
@@ -113,10 +141,10 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           defaultValue={watch('monthlyInvoiceVolume')}
           onValueChange={(value) => setValue('monthlyInvoiceVolume', value as any)}
         >
-          <SelectTrigger id="monthlyInvoiceVolume">
+          <SelectTrigger id="monthlyInvoiceVolume" className="h-12 border-gray-300 focus:border-blue-500">
             <SelectValue placeholder="Select volume" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent className="bg-white border border-gray-200">
             <SelectItem value="$0-10k">$0 - $10,000</SelectItem>
             <SelectItem value="$10-50k">$10,000 - $50,000</SelectItem>
             <SelectItem value="$50-100k">$50,000 - $100,000</SelectItem>
@@ -134,7 +162,7 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
             min="0"
             placeholder="5"
             {...register('yearsInBusiness')}
-            className={errors.yearsInBusiness ? 'border-red-500' : ''}
+            className={`h-12 ${errors.yearsInBusiness ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
           />
           {errors.yearsInBusiness && (
             <p className="text-sm text-red-500">{errors.yearsInBusiness.message}</p>
@@ -147,8 +175,9 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
             id="dotNumber"
             placeholder="1234567"
             {...register('dotNumber')}
+            className="h-12 border-gray-300 focus:border-blue-500"
           />
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-600 mt-1">
             Providing your DOT number helps us verify your business faster and may qualify you for better rates. 
             You can find this on your cab or FMCSA registration.
           </p>
@@ -174,61 +203,38 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
             </Label>
           </div>
         </RadioGroup>
-        <p className="text-xs text-gray-500 mt-2">
+        <p className="text-sm text-gray-700 mt-3 bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-lg border border-gray-200">
           If you're currently factoring, we'll help you switch seamlessly with no interruption to your cash flow. 
           Many clients save thousands per year by switching to our lower rates.
         </p>
       </div>
 
-      <div className="border-t pt-6">
-        <h4 className="font-semibold text-gray-900 mb-3">What Happens After Approval?</h4>
-        <ul className="text-sm text-gray-600 space-y-2 mb-4">
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
+        <h4 className="font-semibold text-blue-900 mb-3 flex items-center">
+          <span className="text-blue-600 mr-2">🚀</span>
+          What Happens After Approval?
+        </h4>
+        <ul className="text-sm text-gray-700 space-y-3">
           <li className="flex items-start">
-            <span className="text-green-600 mr-2">✓</span>
+            <span className="text-green-600 mr-2 mt-0.5">✓</span>
             <span>You'll receive your approval amount and rate immediately</span>
           </li>
           <li className="flex items-start">
-            <span className="text-green-600 mr-2">✓</span>
+            <span className="text-green-600 mr-2 mt-0.5">✓</span>
             <span>Our team will call you within 1 business hour to set up your account</span>
           </li>
           <li className="flex items-start">
-            <span className="text-green-600 mr-2">✓</span>
+            <span className="text-green-600 mr-2 mt-0.5">✓</span>
             <span>You can start submitting invoices for same-day payment right away</span>
           </li>
           <li className="flex items-start">
-            <span className="text-green-600 mr-2">✓</span>
+            <span className="text-green-600 mr-2 mt-0.5">✓</span>
             <span>No contracts or long-term commitments - cancel anytime</span>
           </li>
         </ul>
       </div>
 
-      <div className="flex gap-4">
-        <Button
-          type="button"
-          variant="outline"
-          onClick={onBack}
-          className="w-full"
-          size="lg"
-        >
-          <ChevronLeft className="mr-2 h-4 w-4" />
-          Back
-        </Button>
-        <Button 
-          type="submit" 
-          className="w-full" 
-          size="lg"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Checking Eligibility...
-            </>
-          ) : (
-            'Get Pre-Approved'
-          )}
-        </Button>
-      </div>
+      {/* Navigation buttons removed - handled by parent component */}
     </form>
   )
 }
