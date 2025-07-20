@@ -50,7 +50,7 @@ function ApplyForm() {
   const handleSubmit = async () => {
     setIsSubmitting(true)
     try {
-      const response = await fetch('/api/quick-apply', {
+      const response = await fetch('/api/apply', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
