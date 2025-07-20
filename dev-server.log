@@ -320,3 +320,8 @@ Email notification sent successfully
  GET /_next/static/chunks/app-pages-internals.js 404 in 56ms
  GET /_next/static/chunks/main-app.js?v=1753053877471 404 in 57ms
  GET /_next/static/chunks/app/apply/page.js 404 in 55ms
+ ✓ Compiled in 287ms (563 modules)
+ ✓ Compiled in 329ms (1251 modules)
+ ✓ Compiled in 361ms (1246 modules)
+ ✓ Compiled in 192ms (552 modules)
+ ✓ Compiled in 94ms (1246 modules)

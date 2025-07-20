@@ -5,7 +5,7 @@ import { IntercomProvider } from '@/components/IntercomProvider'
 import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
-import { GoogleAnalyticsWrapper } from '@/components/GoogleAnalyticsWrapper'
+import { AnalyticsScript } from './analytics-script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -61,7 +61,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={inter.className}>
-        <GoogleAnalyticsWrapper />
+        <AnalyticsScript />
         <IntercomProvider>
           {children}
           <IntercomWidget />
