@@ -1,0 +1,93 @@
+
+> autofreightfactoring@1.0.0 dev
+> next dev
+
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.0.32:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1031ms
+ ○ Compiling /apply ...
+ ✓ Compiled /apply in 1658ms (1119 modules)
+ GET /apply 200 in 2159ms
+ ✓ Compiled in 275ms (505 modules)
+ ○ Compiling /api/apply ...
+ ✓ Compiled /api/apply in 562ms (1314 modules)
+Pre-approval calculation: {
+  data: {
+    firstName: 'John',
+    lastName: 'Smith',
+    email: 'john@smithtrucking.com',
+    phone: '6195551234',
+    sessionId: null
+  },
+  score: 0
+}
+[2025-07-18T19:43:42.020Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x3f0eb9f5 error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
+  code: 'permission-denied',
+  customData: undefined,
+  toString: [Function (anonymous)]
+}
+Email sent successfully: {
+  data: null,
+  error: {
+    statusCode: 403,
+    error: 'The autofreightfactoring.com domain is not verified. Please, add and verify your domain on https://resend.com/domains'
+  }
+}
+Email notification sent successfully
+ POST /api/apply 200 in 1518ms
+ ✓ Compiled /apply/thank-you in 248ms (1327 modules)
+ GET /apply/thank-you?name=John&approved=false&amount=0 200 in 306ms
+ ✓ Compiled in 209ms (622 modules)
+ GET /apply 200 in 190ms
+ ✓ Compiled /api/apply in 188ms (831 modules)
+Pre-approval calculation: {
+  data: {
+    firstName: 'Maria',
+    lastName: 'Garcia',
+    email: 'maria@garciafreight.com',
+    phone: '3105559876',
+    sessionId: null
+  },
+  score: 0
+}
+ GET /apply 200 in 233ms
+[2025-07-18T19:49:11.572Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x72837c6c error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
+  code: 'permission-denied',
+  customData: undefined,
+  toString: [Function (anonymous)]
+}
+Email sent successfully: { data: { id: '4c93f591-dc34-42b4-80ba-78172529af34' }, error: null }
+Email notification sent successfully
+ POST /api/apply 200 in 1149ms
+ GET /apply/thank-you?name=Maria&approved=false&amount=0 200 in 10ms
+ ✓ Compiled in 183ms (622 modules)
+ GET /apply 200 in 205ms
+ ✓ Compiled /api/apply in 210ms (831 modules)
+Pre-approval calculation: {
+  data: {
+    firstName: 'test',
+    lastName: 'test',
+    email: 'asdf@gmail.com',
+    phone: '8184422556',
+    sessionId: null
+  },
+  score: 0
+}
+ GET /apply 200 in 233ms
+[2025-07-18T20:35:46.400Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x5e5d4e1a error. Code: 7 Message: 7 PERMISSION_DENIED: Missing or insufficient permissions.
+Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insufficient permissions.] {
+  code: 'permission-denied',
+  customData: undefined,
+  toString: [Function (anonymous)]
+}
+Email sent successfully: { data: { id: '6c2c5336-7f36-4962-bfda-1b0f6885ec4f' }, error: null }
+Email notification sent successfully
+ POST /api/apply 200 in 1384ms
+ GET /apply/thank-you?name=test&approved=false&amount=0 200 in 13ms
+ ✓ Compiled /sitemap.xml in 351ms (1136 modules)

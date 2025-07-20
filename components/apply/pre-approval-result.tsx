@@ -22,8 +22,8 @@ export function PreApprovalResult({ result }: PreApprovalResultProps) {
               <div className="mx-auto mb-4">
                 <CheckCircle className="h-16 w-16 text-green-500" />
               </div>
-              <CardTitle className="text-3xl text-green-600">
-                Congratulations! You're Pre-Approved
+              <CardTitle className="text-3xl">
+                Thank You for Your Application!
               </CardTitle>
               <CardDescription className="text-lg mt-2">
                 {result.message}
@@ -39,22 +39,8 @@ export function PreApprovalResult({ result }: PreApprovalResultProps) {
               <div className="bg-green-50 p-6 rounded-lg">
                 <h3 className="font-semibold text-green-900 mb-2">What happens next?</h3>
                 <p className="text-green-800">
-                  A truck factoring specialist will contact you within 30 minutes during business hours to:
+                  Our factoring specialist will contact you within 24 hours to discuss your needs and help you get started with freight factoring.
                 </p>
-                <ul className="space-y-2 ml-6 mt-3">
-                  <li className="flex gap-2">
-                    <span className="text-green-600">✓</span>
-                    <span className="text-gray-700">Verify your business information</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-green-600">✓</span>
-                    <span className="text-gray-700">Set up your account and explain the process</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-green-600">✓</span>
-                    <span className="text-gray-700">Help you submit your first invoice for same-day payment</span>
-                  </li>
-                </ul>
               </div>
 
               <div className="border-t pt-6">

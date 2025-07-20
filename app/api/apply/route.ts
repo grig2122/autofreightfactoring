@@ -124,22 +124,12 @@ export async function POST(request: NextRequest) {
       // Continue even if email fails - don't block user experience
     }
 
-    // Prepare response
-    let result: PreApprovalResult
-
-    if (isApproved) {
-      result = {
-        approved: true,
-        message: `Based on your information, you're pre-approved for invoice factoring!`,
-        nextStep: 'account-setup'
-      }
-    } else {
-      result = {
-        approved: false,
-        message: 'Thank you for your application! We need to review your information to provide you with the best possible terms.',
-        nextStep: 'sales-contact',
-        followUpTime: 'within 24 hours'
-      }
+    // Always return the same thank you message
+    const result: PreApprovalResult = {
+      approved: true, // Set to true so it shows success UI
+      message: 'Thank you for your application! We\'ll contact you within 24 hours.',
+      nextStep: 'sales-contact',
+      followUpTime: 'within 24 hours'
     }
 
     return NextResponse.json(result)
