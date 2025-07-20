@@ -9,8 +9,8 @@ This guide shows how to use the AutoFreightFactoring design system components in
 import { Button, Card, Section, Badge, Heading, Text } from '@/components/ui/custom'
 ```
 
-### Live Demo
-Visit `/design-system` to see all components in action.
+### Documentation
+Refer to `/docs/design-system.md` for complete design system documentation.
 
 ---
 
@@ -311,12 +311,12 @@ test('button renders with correct variant', () => {
 })
 ```
 
-### Visual Testing
-Use the `/design-system` page to:
-- Test all component variants
-- Verify responsive behavior
-- Check accessibility compliance
-- Validate color contrast
+### Component Reference
+See `/docs/design-system.md` for:
+- Complete component examples
+- Design patterns and best practices
+- Color palette and typography guidelines
+- Accessibility requirements
 
 ---
 
@@ -365,7 +365,7 @@ Use the `/design-system` page to:
 
 ## Support
 
-- Design System: `/design-system`
+- Design System: `/docs/design-system.md`
 - Guidelines: `/docs/DESIGN_GUIDELINES.md`
 - Component Source: `/components/ui/custom/`
 - Examples: This file

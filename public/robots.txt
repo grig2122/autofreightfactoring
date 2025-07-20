@@ -6,7 +6,6 @@ Allow: /
 
 # Disallow pages that shouldn't be indexed
 Disallow: /apply/thank-you
-Disallow: /design-system
 
 # Sitemap location
 Sitemap: https://autofreightfactoring.com/sitemap.xml
