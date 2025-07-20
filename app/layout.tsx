@@ -5,7 +5,7 @@ import { IntercomProvider } from '@/components/IntercomProvider'
 import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
-import Script from 'next/script'
+import { GoogleAnalyticsWrapper } from '@/components/GoogleAnalyticsWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -59,22 +59,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-V11G85PLVJ');
-            gtag('config', 'AW-17368459818');
-          `}
-        </Script>
       </head>
       <body className={inter.className}>
+        <GoogleAnalyticsWrapper />
         <IntercomProvider>
           {children}
           <IntercomWidget />

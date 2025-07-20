@@ -229,3 +229,94 @@ Error saving lead: [Error [FirebaseError]: 7 PERMISSION_DENIED: Missing or insuf
 Email sent successfully: { data: { id: '5cba499e-d134-4a06-9b55-d00d96e1b12c' }, error: null }
 Email notification sent successfully
  POST /api/apply 200 in 773ms
+ ✓ Compiled in 273ms (550 modules)
+ GET /apply 200 in 62ms
+ GET /apply 200 in 47ms
+ ✓ Compiled in 282ms (1243 modules)
+ GET /apply 200 in 289ms
+ GET /apply 200 in 267ms
+ GET /apply 200 in 298ms
+ GET /apply 200 in 9ms
+ GET /apply 200 in 15ms
+ GET /apply 200 in 16ms
+ GET /apply 200 in 6ms
+ ✓ Compiled /ga-test in 223ms (1250 modules)
+ GET /ga-test 200 in 325ms
+ ✓ Compiled /_not-found in 293ms (1254 modules)
+ GET /_next/static/chunks/main-app.js?v=1753053699010 404 in 395ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 392ms
+ ✓ Compiled in 205ms (552 modules)
+ GET /apply 200 in 74ms
+ GET /apply 200 in 79ms
+ GET /apply 200 in 73ms
+ ✓ Compiled in 487ms (1251 modules)
+ ⨯ ReferenceError: Script is not defined
+    at RootLayout (app/layout.tsx:62:9)
+  60 |       <head>
+  61 |         <StructuredData />
+> 62 |         <Script
+     |         ^
+  63 |           async
+  64 |           src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"
+  65 |           strategy="afterInteractive" {
+  digest: '176455971'
+}
+ GET /apply 200 in 81ms
+ ⨯ ReferenceError: Script is not defined
+    at RootLayout (app/layout.tsx:62:9)
+  60 |       <head>
+  61 |         <StructuredData />
+> 62 |         <Script
+     |         ^
+  63 |           async
+  64 |           src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"
+  65 |           strategy="afterInteractive" {
+  digest: '176455971'
+}
+ GET /apply 200 in 86ms
+ ⨯ ReferenceError: Script is not defined
+    at RootLayout (app/layout.tsx:62:9)
+  60 |       <head>
+  61 |         <StructuredData />
+> 62 |         <Script
+     |         ^
+  63 |           async
+  64 |           src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"
+  65 |           strategy="afterInteractive" {
+  digest: '176455971'
+}
+ GET /apply 200 in 20ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 312ms (1248 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /apply 200 in 365ms
+ GET /apply 200 in 384ms
+ GET /apply 200 in 374ms
+ ✓ Compiled /_not-found in 157ms (1252 modules)
+ GET /_next/static/chunks/app-pages-internals.js 404 in 254ms
+ GET /_next/static/chunks/app/apply/page.js 404 in 216ms
+ GET /_next/static/chunks/main-app.js?v=1753053783292 404 in 256ms
+ GET /_next/static/chunks/app/apply/page.js 404 in 290ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 297ms
+ GET /_next/static/chunks/main-app.js?v=1753053783292 404 in 297ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 313ms
+ GET /_next/static/chunks/main-app.js?v=1753053783293 404 in 331ms
+ GET /_next/static/chunks/app/apply/page.js 404 in 169ms
+ ✓ Compiled in 192ms (557 modules)
+ ✓ Compiled in 139ms (557 modules)
+ GET /apply 200 in 142ms
+ GET /_next/static/chunks/main-app.js?v=1753053816467 404 in 53ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 51ms
+ GET /_next/static/chunks/app/apply/page.js 404 in 17ms
+ ✓ Compiled in 309ms (1266 modules)
+ ✓ Compiled in 167ms (557 modules)
+ ✓ Compiled in 388ms (1255 modules)
+ ✓ Compiled in 352ms (1268 modules)
+ GET /apply 200 in 178ms
+ GET /_next/static/chunks/app-pages-internals.js 404 in 56ms
+ GET /_next/static/chunks/main-app.js?v=1753053877471 404 in 57ms
+ GET /_next/static/chunks/app/apply/page.js 404 in 55ms
