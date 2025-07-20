@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service | Auto Freight Factoring',
   description: 'Terms of Service for Auto Freight Factoring. Read our terms and conditions for using our freight factoring services.',
+  alternates: {
+    canonical: 'https://autofreightfactoring.com/terms',
+  },
 }
 
 export default function TermsOfServicePage() {

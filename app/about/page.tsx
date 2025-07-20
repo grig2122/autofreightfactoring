@@ -4,6 +4,9 @@ import { Users, TrendingUp, Shield, Clock, Star, Award } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'About Us | Auto Freight Factoring',
   description: 'Learn about Auto Freight Factoring - your trusted partner in freight invoice factoring. Helping truckers get paid faster since 2024.',
+  alternates: {
+    canonical: 'https://autofreightfactoring.com/about',
+  },
 }
 
 export default function AboutPage() {

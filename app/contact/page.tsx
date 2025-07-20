@@ -4,6 +4,9 @@ import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Contact Us | Auto Freight Factoring',
   description: 'Get in touch with Auto Freight Factoring. Call us at (619) 877-6746 or email support@autofreightfactoring.com. We\'re here to help 24/7.',
+  alternates: {
+    canonical: 'https://autofreightfactoring.com/contact',
+  },
 }
 
 export default function ContactPage() {

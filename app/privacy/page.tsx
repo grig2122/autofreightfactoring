@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy | Auto Freight Factoring',
   description: 'Privacy Policy for Auto Freight Factoring. Learn how we collect, use, and protect your personal and business information.',
+  alternates: {
+    canonical: 'https://autofreightfactoring.com/privacy',
+  },
 }
 
 export default function PrivacyPolicyPage() {
