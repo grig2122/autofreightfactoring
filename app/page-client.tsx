@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import FundingCalculator from '../components/FundingCalculator'
 import { InvoiceUpload } from '../components/InvoiceUpload'
+import { trackButtonClick, trackEvent } from '@/lib/analytics'
 
 export default function HomeClient() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -245,11 +246,19 @@ export default function HomeClient() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <a href="/apply" className="group bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                <a 
+                  href="/apply" 
+                  onClick={() => trackButtonClick('get_your_quote', 'hero_section', { page: 'homepage' })}
+                  className="group bg-white text-blue-600 px-8 py-4 rounded-xl hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-2 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+                >
                   <span>Get Your Quote</span>
                   <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="tel:+16198776746" className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
+                <a 
+                  href="tel:+16198776746" 
+                  onClick={() => trackEvent('phone_click', { location: 'hero_section', phone_number: '(619) 877-6746' })}
+                  className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2"
+                >
                   <Phone className="h-5 w-5" />
                   <span>(619) 877-6746</span>
                 </a>

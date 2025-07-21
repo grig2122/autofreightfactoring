@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Upload, FileText, AlertCircle, CheckCircle2, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { trackEvent, trackFileUpload, trackButtonClick } from '@/lib/analytics'
 
 interface QuoteData {
   invoiceAmount: number
@@ -47,16 +48,30 @@ export function InvoiceUpload() {
   const handleFile = (selectedFile: File) => {
     setError(null)
     
+    // Track file upload start
+    trackEvent('invoice_upload_start', {
+      file_type: selectedFile.type,
+      file_size_kb: Math.round(selectedFile.size / 1024)
+    })
+    
     // Validate file type
     const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg']
     if (!allowedTypes.includes(selectedFile.type)) {
       setError('Please upload a PDF or image file (JPG, PNG)')
+      trackEvent('invoice_upload_error', {
+        error_type: 'invalid_file_type',
+        file_type: selectedFile.type
+      })
       return
     }
 
     // Validate file size (10MB)
     if (selectedFile.size > 10 * 1024 * 1024) {
       setError('File size must be less than 10MB')
+      trackEvent('invoice_upload_error', {
+        error_type: 'file_too_large',
+        file_size_kb: Math.round(selectedFile.size / 1024)
+      })
       return
     }
 
@@ -74,6 +89,7 @@ export function InvoiceUpload() {
 
     setUploading(true)
     setError(null)
+    const startTime = Date.now()
 
     try {
       const formData = new FormData()
@@ -85,6 +101,7 @@ export function InvoiceUpload() {
       })
 
       const data = await response.json()
+      const uploadTime = Date.now() - startTime
 
       if (!response.ok) {
         throw new Error(data.error || 'Upload failed')
@@ -92,7 +109,24 @@ export function InvoiceUpload() {
 
       setQuote(data.quote)
       setSessionId(data.sessionId)
+      
+      // Track successful upload
+      trackFileUpload(file.type, file.size, true)
+      trackEvent('quote_generated', {
+        invoice_amount: data.quote.invoiceAmount,
+        advance_amount: data.quote.advanceAmount,
+        fee_percentage: data.quote.feePercentage,
+        upload_time_ms: uploadTime
+      })
     } catch (err) {
+      // Track failed upload
+      trackFileUpload(file.type, file.size, false)
+      trackEvent('invoice_upload_error', {
+        error_type: 'upload_failed',
+        error_message: err instanceof Error ? err.message : 'Unknown error',
+        upload_time_ms: Date.now() - startTime
+      })
+      
       setError(err instanceof Error ? err.message : 'Upload failed')
     } finally {
       setUploading(false)
@@ -101,6 +135,13 @@ export function InvoiceUpload() {
 
   const proceedToApplication = () => {
     if (sessionId) {
+      // Track CTA click
+      trackButtonClick('get_cash_advance', 'invoice_upload_quote', {
+        has_quote: true,
+        invoice_amount: quote?.invoiceAmount,
+        advance_amount: quote?.advanceAmount
+      })
+      
       // Pass session ID to application flow
       router.push(`/apply?session=${sessionId}`)
     }

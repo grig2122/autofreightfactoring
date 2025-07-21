@@ -37,8 +37,6 @@ if (isFirebaseConfigured) {
   if (typeof window !== 'undefined') {
     analytics = getAnalytics(app);
   }
-} else {
-  console.log('Firebase not configured - running without Firebase services');
 }
 
 export { app, auth, db, storage, analytics };

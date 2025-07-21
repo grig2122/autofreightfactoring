@@ -11,6 +11,7 @@ import { CompanyInfoStep } from '@/components/apply/company-info-step'
 import { PreApprovalResult } from '@/components/apply/pre-approval-result'
 import { SupportButton } from '@/components/SupportButton'
 import type { QuickApplyForm } from '@/lib/types'
+import { trackEvent, trackFormSubmission, trackTiming } from '@/lib/analytics'
 
 function ApplyForm() {
   const router = useRouter()
@@ -26,6 +27,12 @@ function ApplyForm() {
     if (session) {
       setSessionId(session)
     }
+    
+    // Track form start
+    trackEvent('form_start', {
+      form_name: 'application',
+      source: searchParams.get('source') || 'direct'
+    })
   }, [searchParams])
 
   const totalSteps = 2
@@ -37,6 +44,11 @@ function ApplyForm() {
 
   const handleNext = () => {
     if (step < totalSteps) {
+      trackEvent('form_step_complete', {
+        form_name: 'application',
+        step_number: step,
+        step_name: step === 1 ? 'basic_info' : 'company_info'
+      })
       setStep(step + 1)
     }
   }
@@ -49,6 +61,8 @@ function ApplyForm() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
+    const startTime = Date.now()
+    
     try {
       const response = await fetch('/api/apply', {
         method: 'POST',
@@ -59,14 +73,32 @@ function ApplyForm() {
       })
 
       const data = await response.json()
+      const responseTime = Date.now() - startTime
       
       if (response.ok) {
         setResult(data)
+        
+        // Track successful form submission
+        trackFormSubmission('application', true, {
+          pre_approved: data.approved,
+          approval_amount: data.amount,
+          response_time_ms: responseTime
+        })
+        
+        // Track API call timing
+        trackTiming('api_response', 'apply_form', responseTime)
       } else {
         throw new Error(data.error || 'Application submission failed')
       }
     } catch (error) {
       console.error('Error submitting application:', error)
+      
+      // Track failed form submission
+      trackFormSubmission('application', false, {
+        error_message: error instanceof Error ? error.message : 'Unknown error',
+        response_time_ms: Date.now() - startTime
+      })
+      
       // Still show a result even on error
       setResult({
         approved: true,

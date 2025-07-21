@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { DollarSign, TrendingUp, Clock, ArrowRight } from 'lucide-react'
+import { trackEvent, trackButtonClick } from '@/lib/analytics'
 
 export default function FundingCalculator() {
   const [invoiceAmount, setInvoiceAmount] = useState('5000')
@@ -30,6 +31,14 @@ export default function FundingCalculator() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^0-9.]/g, '')
     setInvoiceAmount(value)
+    
+    // Track calculator interaction
+    if (value && parseFloat(value) > 0) {
+      trackEvent('calculator_interaction', {
+        invoice_amount: parseFloat(value),
+        location: 'funding_calculator'
+      })
+    }
   }
 
   const formatCurrency = (amount: number) => {
@@ -146,6 +155,13 @@ export default function FundingCalculator() {
         {/* CTA Button */}
         <a 
           href="/apply" 
+          onClick={() => {
+            trackButtonClick('start_application', 'funding_calculator', {
+              invoice_amount: parseFloat(invoiceAmount) || 0,
+              funding_amount: fundingAmount,
+              factor_fee: factorFee
+            })
+          }}
           className="mt-8 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-6 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
         >
           <span>Start Your Application</span>
