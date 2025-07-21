@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle, XCircle, Shield, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { ComplianceFooter } from '@/components/compliance-footer'
 
 export const metadata: Metadata = {
   title: 'No Credit Check Freight Factoring | Bad Credit OK',
@@ -303,6 +304,7 @@ export default function NoCreditCheckFactoringPage() {
           </p>
         </div>
       </section>
+      <ComplianceFooter />
     </div>
   )
 }

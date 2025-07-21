@@ -69,14 +69,14 @@ export default function FundingCalculator() {
             Invoice Amount
           </label>
           <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <DollarSign className="h-5 w-5 text-gray-400" />
+            <div className="absolute left-3 top-1/2 transform -translate-y-1/2 h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center">
+              <DollarSign className="h-5 w-5 text-green-700" />
             </div>
             <input
               type="text"
               value={invoiceAmount}
               onChange={handleInputChange}
-              className="pl-10 w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-xl font-semibold"
+              className="w-full pl-16 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white hover:border-gray-400 text-xl font-semibold"
               placeholder="5,000"
             />
           </div>

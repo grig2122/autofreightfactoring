@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Send } from 'lucide-react'
+import { Send, User, Mail, Phone, Building2, MessageSquare, CheckCircle } from 'lucide-react'
 import { trackFormSubmission, trackEvent } from '@/lib/analytics'
+import { EnhancedInput } from '@/components/ui/enhanced-input'
+import { FormGroup } from '@/components/ui/form-group'
+import { Label } from '@/components/ui/label'
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -67,122 +70,140 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-          Your Name *
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="John Doe"
-        />
-      </div>
+    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-8">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <FormGroup title="Contact Information" variant="default">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                Your Name *
+              </Label>
+              <EnhancedInput
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="John Doe"
+                icon={User}
+                iconBgClassName="bg-gray-100"
+                iconClassName="text-gray-600"
+              />
+            </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-          Email Address *
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="john@example.com"
-        />
-      </div>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                Email Address *
+              </Label>
+              <EnhancedInput
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="john@example.com"
+                icon={Mail}
+                iconBgClassName="bg-blue-100"
+                iconClassName="text-blue-600"
+              />
+            </div>
+          </div>
 
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="(555) 123-4567"
-        />
-      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                Phone Number
+              </Label>
+              <EnhancedInput
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="(555) 123-4567"
+                icon={Phone}
+                iconBgClassName="bg-blue-100"
+                iconClassName="text-blue-600"
+              />
+            </div>
 
-      <div>
-        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-          Company Name
-        </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          value={formData.company}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="ABC Trucking LLC"
-        />
-      </div>
+            <div className="space-y-2">
+              <Label htmlFor="company" className="text-sm font-medium text-gray-700">
+                Company Name
+              </Label>
+              <EnhancedInput
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="ABC Trucking LLC"
+                icon={Building2}
+                iconBgClassName="bg-gray-100"
+                iconClassName="text-gray-600"
+              />
+            </div>
+          </div>
+        </FormGroup>
 
-      <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-          Subject
-        </label>
-        <select
-          id="subject"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        <FormGroup title="Your Message" variant="primary">
+          <div className="space-y-2">
+            <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+              Subject
+            </Label>
+            <select
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white hover:border-gray-400"
+            >
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="application">Application Help</option>
+              <option value="rates">Rates & Pricing</option>
+              <option value="technical">Technical Support</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+              Message *
+            </Label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              rows={5}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white hover:border-gray-400"
+              placeholder="Tell us how we can help..."
+            />
+          </div>
+        </FormGroup>
+
+        {submitStatus === 'success' && (
+          <div className="bg-green-50 border-2 border-green-500 text-green-700 px-6 py-4 rounded-xl flex items-center gap-3">
+            <CheckCircle className="h-5 w-5 text-green-600" />
+            <span className="font-medium">Thank you for your message! We'll get back to you within 24 hours.</span>
+          </div>
+        )}
+
+        {submitStatus === 'error' && (
+          <div className="bg-red-50 border-2 border-red-500 text-red-700 px-6 py-4 rounded-xl">
+            <p className="font-medium">Something went wrong. Please try again or call us directly at (619) 877-6746.</p>
+          </div>
+        )}
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <option value="">Select a subject</option>
-          <option value="general">General Inquiry</option>
-          <option value="application">Application Help</option>
-          <option value="rates">Rates & Pricing</option>
-          <option value="technical">Technical Support</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-          Message *
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="Tell us how we can help..."
-        />
-      </div>
-
-      {submitStatus === 'success' && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-          Thank you for your message! We'll get back to you soon.
-        </div>
-      )}
-
-      {submitStatus === 'error' && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-          Something went wrong. Please try again or call us directly.
-        </div>
-      )}
-
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
         {isSubmitting ? (
           'Sending...'
         ) : (

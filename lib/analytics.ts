@@ -1,5 +1,7 @@
 import { analytics } from './firebase';
 import { logEvent, setUserId, setUserProperties } from 'firebase/analytics';
+import { trackConversion } from '@/components/GoogleAnalytics';
+import { getConversionConfig } from '@/lib/google-ads-config';
 
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
   if (typeof window !== 'undefined' && analytics) {
@@ -21,6 +23,24 @@ export const trackFormSubmission = (formName: string, success: boolean, addition
     success: success,
     ...additionalData,
   });
+  
+  // Track Google Ads conversions for successful form submissions
+  if (success && typeof window !== 'undefined') {
+    switch (formName) {
+      case 'contact':
+        const contactConfig = getConversionConfig('contactFormSubmit');
+        trackConversion(contactConfig.label, contactConfig.defaultValue);
+        break;
+      case 'landing_page':
+        const landingConfig = getConversionConfig('landingPageLead');
+        trackConversion(landingConfig.label, landingConfig.defaultValue);
+        break;
+      case 'fuel_card':
+        const fuelConfig = getConversionConfig('fuelCardApplication');
+        trackConversion(fuelConfig.label, fuelConfig.defaultValue);
+        break;
+    }
+  }
 };
 
 export const trackButtonClick = (buttonName: string, location: string, additionalData?: Record<string, any>) => {
@@ -29,6 +49,12 @@ export const trackButtonClick = (buttonName: string, location: string, additiona
     location: location,
     ...additionalData,
   });
+  
+  // Track phone click conversions
+  if (buttonName === 'phone' && typeof window !== 'undefined') {
+    const phoneConfig = getConversionConfig('phoneClick');
+    trackConversion(phoneConfig.label, phoneConfig.defaultValue);
+  }
 };
 
 export const trackFileUpload = (fileType: string, fileSize: number, success: boolean) => {

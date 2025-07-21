@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, Menu, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon } from 'lucide-react'
+import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, Menu, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon, Fuel, UserCheck } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -69,6 +69,22 @@ export default function HomeClient() {
                 className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
               >
                 Pricing
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="#fuel-advance" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                Fuel Advance
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+              <a 
+                href="#owner-operator" 
+                onClick={handleSmoothScroll}
+                className="relative px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors group"
+              >
+                For Owners
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
               </a>
               <a 
@@ -147,6 +163,20 @@ export default function HomeClient() {
               className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
             >
               Pricing
+            </a>
+            <a 
+              href="#fuel-advance" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Fuel Advance
+            </a>
+            <a 
+              href="#owner-operator" 
+              onClick={handleSmoothScroll}
+              className="block py-3 text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              For Owners
             </a>
             <a 
               href="/about" 
@@ -967,6 +997,297 @@ export default function HomeClient() {
                 <span className="text-gray-700 font-medium">24/7 Support</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fuel-advance" className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.01]" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-10" />
+        <div className="absolute bottom-20 left-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-10" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Fuel className="h-4 w-4 mr-2" />
+              Get Fuel Money Before Delivery
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Fuel Advances for <span className="text-green-600">Truckers</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Don't let fuel costs slow you down. Get immediate cash advances for fuel before you even deliver your load.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our fuel advance program provides instant funding to keep your trucks rolling. Whether you need cash for diesel, 
+              DEF, or other operating expenses, we've got you covered with competitive rates and no hidden fees.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">How Fuel Advances Work</h3>
+              
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-green-600 font-bold">1</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Submit Your Load Info</h4>
+                    <p className="text-gray-600">Upload your rate confirmation or load details through our mobile app or portal.</p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4">
+                  <div className="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-green-600 font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Get Instant Approval</h4>
+                    <p className="text-gray-600">We verify your load and approve your advance in minutes, not hours.</p>
+                  </div>
+                </div>
+                
+                <div className="flex gap-4">
+                  <div className="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-green-600 font-bold">3</span>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Receive Your Advance</h4>
+                    <p className="text-gray-600">Funds hit your fuel card or bank account immediately - before you even pick up the load.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <a href="/fuel-advances" className="inline-flex items-center bg-green-600 text-white px-8 py-4 rounded-xl hover:bg-green-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                  Learn More About Fuel Advances
+                  <ChevronRight className="h-5 w-5 ml-2" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h4 className="text-2xl font-bold text-gray-900 mb-6">Fuel Advance Features</h4>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">Up to 50% of load value</span>
+                    <p className="text-gray-600 text-sm mt-1">Get advances up to half your load amount for fuel and expenses</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">Instant funding to fuel cards</span>
+                    <p className="text-gray-600 text-sm mt-1">Direct deposit to EFS, Comdata, or your preferred fuel card</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">No credit check required</span>
+                    <p className="text-gray-600 text-sm mt-1">Approval based on your load, not your credit score</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="h-6 w-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <span className="font-semibold text-gray-900">24/7 availability</span>
+                    <p className="text-gray-600 text-sm mt-1">Get advances anytime, even weekends and holidays</p>
+                  </div>
+                </li>
+              </ul>
+              
+              <div className="mt-8 p-4 bg-green-50 rounded-lg">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-700">Average advance amount:</span>
+                  <span className="text-2xl font-bold text-green-600">$1,200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="owner-operator" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.01]" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-10" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full blur-3xl opacity-10" />
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <UserCheck className="h-4 w-4 mr-2" />
+              Designed for Independent Truckers
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Built for <span className="text-blue-600">Owner-Operators</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              We understand the unique challenges of running your own truck. That's why we created factoring specifically for owner-operators.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              No minimum volume requirements, no long-term contracts, and approval in minutes. Whether you're just starting out or have been 
+              on the road for years, our factoring service is designed to help independent truckers succeed.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* One-Truck Friendly */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
+              <div className="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                <TruckIcon className="h-7 w-7 text-blue-600" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">One-Truck Friendly</h3>
+              <p className="text-gray-600 mb-6">
+                No fleet requirements or minimum volumes. Perfect for single truck owner-operators who need flexible cash flow solutions.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>No monthly minimums</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Factor only when needed</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Same rates as large fleets</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Easy Approval */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
+              <div className="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                <Shield className="h-7 w-7 text-green-600" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Easy Approval</h3>
+              <p className="text-gray-600 mb-6">
+                Get approved in minutes, not days. No personal credit check, no financial statements, just proof you're hauling loads.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>5-minute application</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Instant decision</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Start factoring today</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Owner-Operator Support */}
+            <div className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300">
+              <div className="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <HeadphonesIcon className="h-7 w-7 text-purple-600" />
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Dedicated Support</h3>
+              <p className="text-gray-600 mb-6">
+                Our support team includes former owner-operators who understand your business and can help you succeed on the road.
+              </p>
+              
+              <ul className="space-y-3">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>24/7 phone support</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Trucking experts on staff</span>
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <Check className="h-5 w-5 text-green-600" />
+                  <span>Business growth guidance</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          {/* Success Stories */}
+          <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12">
+            <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Owner-Operator Success Stories</h3>
+            
+            <div className="grid lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "Started with one truck and AutoFreightFactoring. Their quick funding helped me add two more trucks in just 6 months."
+                </p>
+                <div className="text-sm text-gray-600">
+                  <p className="font-semibold">Mike T.</p>
+                  <p>Owner-Operator, Texas</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "No credit check meant I could start factoring right away after leaving my company driver job. Best decision I made."
+                </p>
+                <div className="text-sm text-gray-600">
+                  <p className="font-semibold">Sarah K.</p>
+                  <p>Owner-Operator, California</p>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-xl p-6 shadow-md">
+                <div className="flex items-center gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4">
+                  "The fuel advances saved my business during my first month. Now I'm running steady and growing."
+                </p>
+                <div className="text-sm text-gray-600">
+                  <p className="font-semibold">James R.</p>
+                  <p>Owner-Operator, Illinois</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-6">Join thousands of successful owner-operators</p>
+            <a href="/apply" className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              Get Started Today
+              <ChevronRight className="h-5 w-5 ml-2" />
+            </a>
           </div>
         </div>
       </section>

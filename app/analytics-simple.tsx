@@ -3,6 +3,7 @@
 import Script from 'next/script'
 
 const GA_MEASUREMENT_ID = 'G-V11G85PLVJ'
+const GOOGLE_ADS_ID = 'AW-17368459818'
 
 export function AnalyticsSimple() {
   return (
@@ -19,6 +20,7 @@ export function AnalyticsSimple() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag('config', '${GOOGLE_ADS_ID}');
         `}
       </Script>
     </>

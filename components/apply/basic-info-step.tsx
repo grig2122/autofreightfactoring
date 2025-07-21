@@ -7,7 +7,9 @@ import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { ChevronRight } from 'lucide-react'
+import { EnhancedInput } from '@/components/ui/enhanced-input'
+import { FormGroup } from '@/components/ui/form-group'
+import { ChevronRight, Mail, Phone, User, Shield, CheckCircle } from 'lucide-react'
 import type { QuickApplyForm } from '@/lib/types'
 
 const basicInfoSchema = z.object({
@@ -79,63 +81,100 @@ export function BasicInfoStep({ data, onUpdate, onNext }: BasicInfoStepProps) {
           Your phone number will only be used if we need to verify information or if you request a callback.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="firstName">First Name</Label>
-          <Input
-            id="firstName"
-            placeholder="John"
-            {...register('firstName')}
-            className={`h-12 ${errors.firstName ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
-          />
-          {errors.firstName && (
-            <p className="text-sm text-red-500">{errors.firstName.message}</p>
-          )}
+      
+      <FormGroup title="Personal Information" variant="default">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+              First Name
+            </Label>
+            <EnhancedInput
+              id="firstName"
+              placeholder="John"
+              {...register('firstName')}
+              error={!!errors.firstName}
+            />
+            {errors.firstName && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <span className="text-xs">⚠️</span>
+                {errors.firstName.message}
+              </p>
+            )}
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
+              Last Name
+            </Label>
+            <EnhancedInput
+              id="lastName"
+              placeholder="Doe"
+              {...register('lastName')}
+              error={!!errors.lastName}
+            />
+            {errors.lastName && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <span className="text-xs">⚠️</span>
+                {errors.lastName.message}
+              </p>
+            )}
+          </div>
         </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="lastName">Last Name</Label>
-          <Input
-            id="lastName"
-            placeholder="Doe"
-            {...register('lastName')}
-            className={`h-12 ${errors.lastName ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
-          />
-          {errors.lastName && (
-            <p className="text-sm text-red-500">{errors.lastName.message}</p>
-          )}
+      </FormGroup>
+
+      <FormGroup title="Contact Information" variant="primary">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+              Email Address
+            </Label>
+            <EnhancedInput
+              id="email"
+              type="email"
+              placeholder="john@trucking.com"
+              icon={Mail}
+              iconBgClassName="bg-blue-100"
+              iconClassName="text-blue-600"
+              {...register('email')}
+              error={!!errors.email}
+            />
+            {errors.email && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <span className="text-xs">⚠️</span>
+                {errors.email.message}
+              </p>
+            )}
+            <p className="text-sm text-gray-500 flex items-center gap-1">
+              <Shield className="h-3 w-3" />
+              We'll never share your email with anyone else.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+              Phone Number
+            </Label>
+            <EnhancedInput
+              id="phone"
+              type="tel"
+              placeholder="(555) 123-4567"
+              icon={Phone}
+              iconBgClassName="bg-blue-100"
+              iconClassName="text-blue-600"
+              {...register('phone')}
+              onChange={formatPhoneNumber}
+              error={!!errors.phone}
+            />
+            {errors.phone && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <span className="text-xs">⚠️</span>
+                {errors.phone.message}
+              </p>
+            )}
+            <p className="text-xs text-gray-500">Enter 10 digits without spaces or dashes</p>
+          </div>
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="email">Email Address</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="john@trucking.com"
-          {...register('email')}
-          className={`h-12 ${errors.email ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
-        />
-        {errors.email && (
-          <p className="text-sm text-red-500">{errors.email.message}</p>
-        )}
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="phone">Phone Number</Label>
-        <Input
-          id="phone"
-          type="tel"
-          placeholder="5551234567"
-          {...register('phone')}
-          onChange={formatPhoneNumber}
-          className={`h-12 ${errors.phone ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
-        />
-        {errors.phone && (
-          <p className="text-sm text-red-500">{errors.phone.message}</p>
-        )}
-        <p className="text-xs text-gray-500">Enter 10 digits without spaces or dashes</p>
-      </div>
+      </FormGroup>
 
       <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mt-8 border border-green-200">
         <h4 className="font-semibold text-green-900 mb-3 flex items-center">

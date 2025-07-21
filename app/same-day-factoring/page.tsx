@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowRight, Clock, CheckCircle, Zap, DollarSign } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { ComplianceFooter } from '@/components/compliance-footer'
 
 export const metadata: Metadata = {
   title: 'Same Day Freight Factoring | Get Paid in Hours Not Weeks',
@@ -263,6 +264,9 @@ export default function SameDayFactoringPage() {
           </div>
         </div>
       </section>
+      
+      {/* Compliance Footer */}
+      <ComplianceFooter />
     </div>
   )
 }

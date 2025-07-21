@@ -6,6 +6,7 @@ import { CheckCircle, ArrowRight, Phone, FileText, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { trackConversion } from '@/components/GoogleAnalytics'
+import { getConversionConfig } from '@/lib/google-ads-config'
 
 function ThankYouContent() {
   const searchParams = useSearchParams()
@@ -15,10 +16,17 @@ function ThankYouContent() {
   const amount = searchParams.get('amount')
 
   useEffect(() => {
-    // Track Google Ads conversion
-    // TODO: Replace 'CONVERSION_LABEL' with your actual Google Ads conversion label
-    trackConversion('CONVERSION_LABEL', amount ? parseInt(amount) : 50000);
-  }, [amount])
+    // Track Google Ads conversion for application submission
+    const conversionConfig = getConversionConfig('applicationSubmit')
+    const conversionValue = amount ? parseInt(amount) : conversionConfig.defaultValue
+    
+    trackConversion(conversionConfig.label, conversionValue);
+    
+    // Also track approved vs pending applications separately
+    if (approved) {
+      // Additional tracking for pre-approved applications can be added here
+    }
+  }, [amount, approved])
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">

@@ -7,9 +7,11 @@ import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { EnhancedInput } from '@/components/ui/enhanced-input'
+import { FormGroup } from '@/components/ui/form-group'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { ChevronLeft, Loader2 } from 'lucide-react'
+import { ChevronLeft, Loader2, Building2, DollarSign, Truck } from 'lucide-react'
 import type { QuickApplyForm } from '@/lib/types'
 
 const companyInfoSchema = z.object({
@@ -95,119 +97,142 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           We focus on your customers' creditworthiness, not yours.
         </p>
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="companyName">Company Name</Label>
-        <Input
-          id="companyName"
-          placeholder="ABC Trucking LLC"
-          {...register('companyName')}
-          className={`h-12 ${errors.companyName ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
-        />
-        {errors.companyName && (
-          <p className="text-sm text-red-500">{errors.companyName.message}</p>
-        )}
-      </div>
-
-      <div className="space-y-2">
-        <Label>Company Type</Label>
-        <RadioGroup
-          defaultValue={watch('companyType')}
-          onValueChange={(value) => setValue('companyType', value as any)}
-        >
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="owner-operator" id="owner-operator" />
-            <Label htmlFor="owner-operator" className="font-normal cursor-pointer">
-              Owner Operator
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="fleet" id="fleet" />
-            <Label htmlFor="fleet" className="font-normal cursor-pointer">
-              Fleet (2+ trucks)
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="freight-broker" id="freight-broker" />
-            <Label htmlFor="freight-broker" className="font-normal cursor-pointer">
-              Freight Broker
-            </Label>
-          </div>
-        </RadioGroup>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="monthlyInvoiceVolume">Monthly Invoice Volume</Label>
-        <Select
-          defaultValue={watch('monthlyInvoiceVolume')}
-          onValueChange={(value) => setValue('monthlyInvoiceVolume', value as any)}
-        >
-          <SelectTrigger id="monthlyInvoiceVolume" className="h-12 border-gray-300 focus:border-blue-500">
-            <SelectValue placeholder="Select volume" />
-          </SelectTrigger>
-          <SelectContent className="bg-white border border-gray-200">
-            <SelectItem value="$0-10k">$0 - $10,000</SelectItem>
-            <SelectItem value="$10-50k">$10,000 - $50,000</SelectItem>
-            <SelectItem value="$50-100k">$50,000 - $100,000</SelectItem>
-            <SelectItem value="$100k+">$100,000+</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <FormGroup title="Company Details" variant="default">
         <div className="space-y-2">
-          <Label htmlFor="yearsInBusiness">Years in Business</Label>
-          <Input
-            id="yearsInBusiness"
-            type="number"
-            min="0"
-            placeholder="5"
-            {...register('yearsInBusiness')}
-            className={`h-12 ${errors.yearsInBusiness ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'}`}
+          <Label htmlFor="companyName" className="text-sm font-medium text-gray-700">
+            Company Name *
+          </Label>
+          <EnhancedInput
+            id="companyName"
+            placeholder="ABC Trucking LLC"
+            {...register('companyName')}
+            icon={Building2}
+            iconBgClassName="bg-gray-100"
+            iconClassName="text-gray-600"
+            error={!!errors.companyName}
           />
-          {errors.yearsInBusiness && (
-            <p className="text-sm text-red-500">{errors.yearsInBusiness.message}</p>
+          {errors.companyName && (
+            <p className="text-sm text-red-600 flex items-center gap-1">
+              <span className="text-xs">⚠️</span>
+              {errors.companyName.message}
+            </p>
           )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="dotNumber">DOT Number (Optional)</Label>
-          <Input
-            id="dotNumber"
-            placeholder="1234567"
-            {...register('dotNumber')}
-            className="h-12 border-gray-300 focus:border-blue-500"
-          />
-          <p className="text-xs text-gray-600 mt-1">
-            Providing your DOT number helps us verify your business faster and may qualify you for better rates. 
-            You can find this on your cab or FMCSA registration.
+          <Label className="text-sm font-medium text-gray-700">Company Type</Label>
+          <RadioGroup
+            defaultValue={watch('companyType')}
+            onValueChange={(value) => setValue('companyType', value as any)}
+          >
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="owner-operator" id="owner-operator" />
+              <Label htmlFor="owner-operator" className="font-normal cursor-pointer">
+                Owner Operator
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="fleet" id="fleet" />
+              <Label htmlFor="fleet" className="font-normal cursor-pointer">
+                Fleet (2+ trucks)
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="freight-broker" id="freight-broker" />
+              <Label htmlFor="freight-broker" className="font-normal cursor-pointer">
+                Freight Broker
+              </Label>
+            </div>
+          </RadioGroup>
+        </div>
+      </FormGroup>
+
+      <FormGroup title="Financial Information" variant="primary">
+        <div className="space-y-2">
+          <Label htmlFor="monthlyInvoiceVolume" className="text-sm font-medium text-gray-700">
+            Monthly Invoice Volume
+          </Label>
+          <Select
+            defaultValue={watch('monthlyInvoiceVolume')}
+            onValueChange={(value) => setValue('monthlyInvoiceVolume', value as any)}
+          >
+            <SelectTrigger id="monthlyInvoiceVolume" className="h-12 border-gray-300 focus:border-blue-500 hover:border-gray-400 transition-all duration-200">
+              <SelectValue placeholder="Select volume" />
+            </SelectTrigger>
+            <SelectContent className="bg-white border border-gray-200">
+              <SelectItem value="$0-10k">$0 - $10,000</SelectItem>
+              <SelectItem value="$10-50k">$10,000 - $50,000</SelectItem>
+              <SelectItem value="$50-100k">$50,000 - $100,000</SelectItem>
+              <SelectItem value="$100k+">$100,000+</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="yearsInBusiness" className="text-sm font-medium text-gray-700">
+              Years in Business
+            </Label>
+            <EnhancedInput
+              id="yearsInBusiness"
+              type="number"
+              min="0"
+              placeholder="5"
+              {...register('yearsInBusiness')}
+              error={!!errors.yearsInBusiness}
+            />
+            {errors.yearsInBusiness && (
+              <p className="text-sm text-red-600 flex items-center gap-1">
+                <span className="text-xs">⚠️</span>
+                {errors.yearsInBusiness.message}
+              </p>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="dotNumber" className="text-sm font-medium text-gray-700">
+              DOT Number (Optional)
+            </Label>
+            <EnhancedInput
+              id="dotNumber"
+              placeholder="1234567"
+              {...register('dotNumber')}
+              icon={Truck}
+              iconBgClassName="bg-blue-100"
+              iconClassName="text-blue-600"
+            />
+            <p className="text-xs text-gray-600 mt-1">
+              Providing your DOT number helps us verify your business faster and may qualify you for better rates. 
+              You can find this on your cab or FMCSA registration.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label className="text-sm font-medium text-gray-700">Are you currently using factoring?</Label>
+          <RadioGroup
+            defaultValue={watch('currentFactoring')}
+            onValueChange={(value) => setValue('currentFactoring', value as any)}
+          >
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="yes" id="factoring-yes" />
+              <Label htmlFor="factoring-yes" className="font-normal cursor-pointer">
+                Yes - I want to switch to better terms
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="no" id="factoring-no" />
+              <Label htmlFor="factoring-no" className="font-normal cursor-pointer">
+                No - This is my first time factoring
+              </Label>
+            </div>
+          </RadioGroup>
+          <p className="text-sm text-gray-700 mt-3 bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-lg border border-gray-200">
+            If you're currently factoring, we'll help you switch seamlessly with no interruption to your cash flow. 
+            Many clients save thousands per year by switching to our lower rates.
           </p>
         </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label>Are you currently using factoring?</Label>
-        <RadioGroup
-          defaultValue={watch('currentFactoring')}
-          onValueChange={(value) => setValue('currentFactoring', value as any)}
-        >
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="yes" id="factoring-yes" />
-            <Label htmlFor="factoring-yes" className="font-normal cursor-pointer">
-              Yes - I want to switch to better terms
-            </Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="no" id="factoring-no" />
-            <Label htmlFor="factoring-no" className="font-normal cursor-pointer">
-              No - This is my first time factoring
-            </Label>
-          </div>
-        </RadioGroup>
-        <p className="text-sm text-gray-700 mt-3 bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-lg border border-gray-200">
-          If you're currently factoring, we'll help you switch seamlessly with no interruption to your cash flow. 
-          Many clients save thousands per year by switching to our lower rates.
-        </p>
-      </div>
+      </FormGroup>
 
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
         <h4 className="font-semibold text-blue-900 mb-3 flex items-center">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Check, Clock, DollarSign, Upload, Loader2, RefreshCw, TrendingUp, Shield } from 'lucide-react'
+import { EnhancedInput } from '@/components/ui/enhanced-input'
 
 type DemoStep = 'calculator' | 'processing' | 'approved'
 
@@ -95,22 +96,20 @@ export default function LiveDemo() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Invoice Amount
                 </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <DollarSign className="h-5 w-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="number"
-                    value={invoiceAmount}
-                    onChange={(e) => setInvoiceAmount(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
-                    placeholder="5,000"
-                    min="100"
-                    max="100000"
-                    step="100"
-                    required
-                  />
-                </div>
+                <EnhancedInput
+                  type="number"
+                  value={invoiceAmount}
+                  onChange={(e) => setInvoiceAmount(e.target.value)}
+                  placeholder="5,000"
+                  min="100"
+                  max="100000"
+                  step="100"
+                  required
+                  icon={DollarSign}
+                  iconBgClassName="bg-green-100"
+                  iconClassName="text-green-700"
+                  className="text-lg font-semibold"
+                />
               </div>
 
               {amount > 0 && (
