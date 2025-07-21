@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { AnalyticsSimple } from './analytics-simple'
 import { trackPageView } from '@/lib/analytics'
 
-export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
+function AnalyticsTracking() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -17,9 +17,16 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
     trackPageView(pageName, url)
   }, [pathname, searchParams])
 
+  return null
+}
+
+export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   return (
     <>
       <AnalyticsSimple />
+      <Suspense fallback={null}>
+        <AnalyticsTracking />
+      </Suspense>
       {children}
     </>
   )
