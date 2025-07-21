@@ -724,7 +724,7 @@ export default function DesignSystemClient() {
                 <div className="space-y-2">
                   <Label htmlFor="error" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                     Error State
-                    <Badge variant="destructive">Error</Badge>
+                    <Badge variant="error">Error</Badge>
                   </Label>
                   <div className="relative">
                     <Input 
@@ -838,9 +838,9 @@ export default function DesignSystemClient() {
                 <h3 className="text-lg font-semibold mb-3">Default Badges</h3>
                 <div className="flex flex-wrap gap-2">
                   <Badge>Default</Badge>
-                  <Badge variant="secondary">Secondary</Badge>
-                  <Badge variant="outline">Outline</Badge>
-                  <Badge variant="destructive">Destructive</Badge>
+                  <Badge variant="default">Secondary</Badge>
+                  <Badge variant="default">Outline</Badge>
+                  <Badge variant="error">Destructive</Badge>
                 </div>
               </div>
 
@@ -1231,7 +1231,7 @@ export default function DesignSystemClient() {
                 <div className="mb-6">
                   <span className="text-5xl font-bold">1.5%</span>
                   <span className="text-gray-600 ml-2">per invoice</span>
-                  <Badge variant="secondary" className="mt-2">Volume pricing</Badge>
+                  <Badge variant="default" className="mt-2">Volume pricing</Badge>
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2">
