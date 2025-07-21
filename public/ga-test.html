@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GA Test - Plain HTML</title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V11G85PLVJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V11G85PLVJ');
+      
+      // Debug logging
+      console.log('[GA HTML Test] Page loaded, gtag initialized');
+      
+      window.addEventListener('load', function() {
+        console.log('[GA HTML Test] Window loaded');
+        console.log('[GA HTML Test] typeof gtag:', typeof gtag);
+        console.log('[GA HTML Test] dataLayer:', window.dataLayer);
+        console.log('[GA HTML Test] google_tag_manager:', typeof window.google_tag_manager);
+        
+        // Check if scripts loaded
+        const scripts = Array.from(document.scripts);
+        scripts.forEach(script => {
+          if (script.src.includes('googletagmanager')) {
+            console.log('[GA HTML Test] GA script found:', script.src, 'loaded:', !script.async || script.readyState === 'complete');
+          }
+        });
+      });
+    </script>
+</head>
+<body>
+    <div style="max-width: 800px; margin: 50px auto; padding: 20px; font-family: Arial, sans-serif;">
+        <h1>Google Analytics Test - Plain HTML</h1>
+        <p>This is a plain HTML page to test if Google Analytics loads correctly outside of Next.js.</p>
+        
+        <div style="margin: 20px 0; padding: 20px; background: #f0f0f0; border-radius: 5px;">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Open the browser console (F12)</li>
+                <li>Look for [GA HTML Test] messages</li>
+                <li>Check if there are any errors</li>
+                <li>Click the button below to send a test event</li>
+            </ol>
+        </div>
+        
+        <button id="testButton" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Send Test Event
+        </button>
+        
+        <div id="status" style="margin-top: 20px; padding: 10px; background: #e9ecef; border-radius: 5px;">
+            Status: Page loaded. Check console for details.
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('testButton').addEventListener('click', function() {
+            console.log('[GA HTML Test] Button clicked, sending event');
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'test_click', {
+                    event_category: 'test',
+                    event_label: 'html_page_test'
+                });
+                document.getElementById('status').innerHTML = 'Status: Test event sent! Check GA Real-time reports.';
+                console.log('[GA HTML Test] Event sent successfully');
+            } else {
+                document.getElementById('status').innerHTML = 'Status: Error - gtag function not found';
+                console.error('[GA HTML Test] gtag function not found');
+            }
+        });
+    </script>
+</body>
+</html>
