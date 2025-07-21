@@ -6,6 +6,7 @@ import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
 import { AnalyticsProvider } from './analytics-provider'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -68,6 +69,7 @@ export default function RootLayout({
             <FloatingSupportButton />
           </IntercomProvider>
         </AnalyticsProvider>
+        <Analytics />
       </body>
     </html>
   )
