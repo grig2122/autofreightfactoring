@@ -25,7 +25,7 @@ export default function DesignSystemClient() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">AutoFreightFactoring Design System</h1>
-            <Badge variant="secondary">Development Only</Badge>
+            <Badge variant="default">Development Only</Badge>
           </div>
         </div>
       </div>
