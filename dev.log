@@ -1,0 +1,207 @@
+
+> autofreightfactoring@1.0.0 dev
+> next dev
+
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://10.0.0.32:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1052ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1421ms (928 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/e8d513bb0f9d5cba.webpack.hot-update.json 404 in 1737ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling /apply ...
+ ⨯ ./app/apply/page-client.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4m/Users/grigorikokchyan/autofreightfactoring/app/apply/page-client.tsx[0m:117:1]
+ [2m114[0m |   ]
+ [2m115[0m | 
+ [2m116[0m |   return (
+ [2m117[0m |     <div className="min-h-screen bg-white">
+     : [35;1m     ^^^[0m
+ [2m118[0m |       {process.env.NODE_ENV === 'development' && (
+ [2m119[0m |         <div className="fixed top-4 right-4 z-50">
+ [2m120[0m |           <Button 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/apply/page-client.tsx
+./app/apply/page.tsx
+ ⨯ ./app/apply/page-client.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4m/Users/grigorikokchyan/autofreightfactoring/app/apply/page-client.tsx[0m:117:1]
+ [2m114[0m |   ]
+ [2m115[0m | 
+ [2m116[0m |   return (
+ [2m117[0m |     <div className="min-h-screen bg-white">
+     : [35;1m     ^^^[0m
+ [2m118[0m |       {process.env.NODE_ENV === 'development' && (
+ [2m119[0m |         <div className="fixed top-4 right-4 z-50">
+ [2m120[0m |           <Button 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/apply/page-client.tsx
+./app/apply/page.tsx
+ ⨯ ./app/apply/page-client.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+     ,-[[36;1;4m/Users/grigorikokchyan/autofreightfactoring/app/apply/page-client.tsx[0m:117:1]
+ [2m114[0m |   ]
+ [2m115[0m | 
+ [2m116[0m |   return (
+ [2m117[0m |     <div className="min-h-screen bg-white">
+     : [35;1m     ^^^[0m
+ [2m118[0m |       {process.env.NODE_ENV === 'development' && (
+ [2m119[0m |         <div className="fixed top-4 right-4 z-50">
+ [2m120[0m |           <Button 
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/apply/page-client.tsx
+./app/apply/page.tsx
+ GET /apply 500 in 280ms
+ GET /apply 500 in 7ms
+ ✓ Compiled /_error in 224ms (608 modules)
+ GET /apply 500 in 6ms
+ ✓ Compiled in 756ms (1633 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /_next/static/webpack/e8d513bb0f9d5cba.webpack.hot-update.json 404 in 965ms
+ GET /apply 200 in 118ms
+ GET /apply 200 in 50ms
+ ✓ Compiled in 231ms (786 modules)
+ GET /apply 200 in 20ms
+ ✓ Compiled in 412ms (1643 modules)
+ GET /apply 200 in 52ms
+ GET /apply 200 in 242ms
+ GET /apply 200 in 48ms
+ ○ Compiling / ...
+ ✓ Compiled / in 613ms (1770 modules)
+ GET / 200 in 974ms
+ GET /apply 200 in 94ms
+ GET /apply 200 in 55ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled in 484ms (1660 modules)
+ GET /apply 200 in 353ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled in 243ms (1660 modules)
+ GET /apply 200 in 329ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 531ms (1650 modules)
+ GET /apply?companyName=&email=&phone= 200 in 129ms
+ ✓ Compiled in 473ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 52ms
+ ✓ Compiled in 257ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 42ms
+ ✓ Compiled in 283ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 23ms
+ ✓ Compiled in 332ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 39ms
+ ✓ Compiled in 268ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 29ms
+ ✓ Compiled in 274ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 26ms
+ ✓ Compiled in 421ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 55ms
+ ✓ Compiled in 278ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 48ms
+ ✓ Compiled in 398ms (1660 modules)
+ GET /apply?companyName=&email=&phone= 200 in 27ms
+ ✓ Compiled in 461ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 45ms
+ ✓ Compiled in 255ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 45ms
+ ✓ Compiled in 427ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 48ms
+ ✓ Compiled in 431ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 45ms
+ ✓ Compiled in 248ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 38ms
+ ✓ Compiled in 295ms (1664 modules)
+ GET /apply?companyName=&email=&phone= 200 in 31ms
+ ✓ Compiled / in 336ms (939 modules)
+ GET / 200 in 714ms
+ GET /apply 200 in 110ms
+ ○ Compiling /api/apply ...
+ ✓ Compiled /api/apply in 745ms (1942 modules)
+Pre-approval calculation: {
+  data: {
+    companyName: 'ABC Trucking LLC',
+    contactName: 'John Doe',
+    mcNumber: '123456',
+    email: 'john.doe@example.com',
+    phone: '5551234567',
+    factoringStatus: 'none',
+    firstName: 'John',
+    lastName: 'Doe',
+    companyType: 'owner-operator',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '2+',
+    currentFactoring: 'no',
+    dotNumber: '123456'
+  },
+  score: 80
+}
+Lead saved with ID: ZsFMfmfYKlVvY45BsQt4
+Email sent successfully: { data: { id: 'a5de35e3-b242-499c-af08-1bbd4e4c58c1' }, error: null }
+Email notification sent successfully
+ POST /api/apply 200 in 1875ms
+ ○ Compiling /apply/thank-you ...
+ ✓ Compiled /apply/thank-you in 953ms (1954 modules)
+ GET /apply/thank-you 200 in 1020ms
+ GET / 200 in 28ms
+ ✓ Compiled in 479ms (1772 modules)
+ GET / 200 in 116ms
+ ✓ Compiled in 268ms (1772 modules)
+ GET / 200 in 41ms
+ ✓ Compiled in 410ms (1772 modules)
+ GET / 200 in 29ms
+ GET /apply 200 in 231ms
+ ✓ Compiled /api/apply in 160ms (1143 modules)
+Pre-approval calculation: {
+  data: {
+    companyName: 'ABC Trucking LLC',
+    contactName: 'John Doe',
+    mcNumber: '123456',
+    email: 'john.doe@example.com',
+    phone: '5551234567',
+    factoringStatus: 'none',
+    firstName: 'John',
+    lastName: 'Doe',
+    companyType: 'owner-operator',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '2+',
+    currentFactoring: 'no',
+    dotNumber: '123456'
+  },
+  score: 80
+}
+Lead saved with ID: LWumy8r0tEqUerNZkOkb
+Email sent successfully: { data: { id: '2e128db8-e4d6-4acb-a0fb-c974511baf88' }, error: null }
+Email notification sent successfully
+ POST /api/apply 200 in 1101ms
+ GET /apply/thank-you 200 in 34ms
+ GET /apply/thank-you 200 in 173ms
+ ✓ Compiled /_not-found in 332ms (1958 modules)
+ GET /dashboard 404 in 371ms
+ GET /dashboard 404 in 112ms
+ ✓ Compiled in 302ms (1972 modules)
+ GET /apply/thank-you 200 in 128ms
+ ✓ Compiled in 472ms (1772 modules)
+ GET /apply/thank-you 200 in 109ms
+ ✓ Compiled in 468ms (1772 modules)
+ GET /apply/thank-you 200 in 45ms
+ GET / 200 in 24ms
+ GET /apply 200 in 242ms

@@ -63,22 +63,22 @@ function ThankYouContent() {
                 <div className="flex items-start gap-3">
                   <Phone className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="font-medium">Expect our call within 30 minutes</p>
-                    <p className="text-sm text-gray-600">Our factoring specialist will contact you to discuss your needs</p>
+                    <p className="font-semibold text-gray-900">We'll call you within 30 minutes</p>
+                    <p className="text-sm text-gray-600">No BS, just straight talk about getting you paid faster</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <FileText className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="font-medium">Simple documentation</p>
-                    <p className="text-sm text-gray-600">We'll guide you through the quick setup process</p>
+                    <p className="font-semibold text-gray-900">Super simple setup</p>
+                    <p className="text-sm text-gray-600">Rate con + BOL = you're good to go</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="font-medium">Get funded today</p>
-                    <p className="text-sm text-gray-600">Once approved, receive funds the same day</p>
+                    <p className="font-semibold text-gray-900">Money hits TODAY</p>
+                    <p className="text-sm text-gray-600">Approved loads get paid same day - no waiting</p>
                   </div>
                 </div>
               </div>
@@ -86,24 +86,21 @@ function ThankYouContent() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Button 
-                onClick={() => router.push('/dashboard')}
-                className="flex-1"
-              >
-                Access Your Dashboard
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
-                variant="outline"
                 onClick={() => router.push('/')}
-                className="flex-1"
+                className="flex-1 h-14 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg"
               >
                 Return to Home
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </div>
-
-            <div className="text-center text-sm text-gray-600 pt-4 border-t">
-              <p>Need immediate assistance?</p>
-              <p className="font-semibold text-blue-600">Call us at 1-800-FACTOR-1</p>
+              <a href="tel:6198776746" className="flex-1">
+                <Button 
+                  variant="outline"
+                  className="w-full h-14 text-lg font-semibold border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call Now: (619) 877-6746
+                </Button>
+              </a>
             </div>
           </CardContent>
         </Card>
