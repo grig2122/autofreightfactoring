@@ -16,9 +16,7 @@ const formSchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
   email: z.string().email('Invalid email address'),
   phone: z.string().regex(/^\d{10}$/, 'Phone must be 10 digits'),
-  monthlyVolume: z.enum(['$0-10k', '$10-50k', '$50-100k', '$100k+'], {
-    errorMap: () => ({ message: 'Please select monthly volume' })
-  })
+  monthlyVolume: z.enum(['$0-10k', '$10-50k', '$50-100k', '$100k+'])
 })
 
 type FormData = z.infer<typeof formSchema>
