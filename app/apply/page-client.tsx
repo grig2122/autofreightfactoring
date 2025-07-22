@@ -18,8 +18,8 @@ const formSchema = z.object({
   mcNumber: z.string().regex(/^\d{6,7}$/, 'MC number must be 6-7 digits'),
   email: z.string().email('Invalid email address'),
   phone: z.string().regex(/^\d{10}$/, 'Phone must be 10 digits'),
-  factoringStatus: z.enum(['none', 'current', 'previous'], {
-    errorMap: () => ({ message: 'Please select factoring status' })
+  factoringStatus: z.enum(['none', 'current', 'previous']).refine((val) => val !== undefined, {
+    message: 'Please select factoring status'
   })
 })
 
