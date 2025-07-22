@@ -29,14 +29,20 @@ let analytics: any = null;
 
 if (isFirebaseConfigured) {
   app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-  auth = getAuth(app);
+  
+  // Only initialize client-side services in production
+  if (typeof window !== 'undefined') {
+    if (process.env.NODE_ENV === 'production') {
+      auth = getAuth(app);
+      analytics = getAnalytics(app);
+    }
+  } else {
+    // Server-side only needs Firestore
+    auth = getAuth(app);
+  }
+  
   db = getFirestore(app);
   storage = getStorage(app);
-  
-  // Initialize Analytics only on client side
-  if (typeof window !== 'undefined') {
-    analytics = getAnalytics(app);
-  }
 }
 
 export { app, auth, db, storage, analytics };

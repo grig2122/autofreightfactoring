@@ -19,6 +19,12 @@ service cloud.firestore {
       allow write: if request.auth != null && request.auth.uid == userId;
     }
     
+    // Leads collection - allow writes from the API (no auth required for form submissions)
+    match /leads/{document} {
+      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow write: if true; // Allow public form submissions
+    }
+    
     // Admin access
     match /{document=**} {
       allow read, write: if request.auth != null && 
