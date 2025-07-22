@@ -1,7 +1,14 @@
 import { Resend } from 'resend'
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with API key lazily
+let resend: Resend | null = null
+
+function getResendClient() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY)
+  }
+  return resend
+}
 
 interface ApplicationEmailData {
   firstName: string
@@ -60,7 +67,7 @@ export async function sendApplicationNotification(data: ApplicationEmailData) {
       <p><small>This application was submitted on ${new Date().toLocaleString()}</small></p>
     `
 
-    const result = await resend.emails.send({
+    const result = await getResendClient().emails.send({
       from: 'AutoFreightFactoring <onboarding@resend.dev>',
       to: 'grigori@autofreightfactoring.com',
       subject,
