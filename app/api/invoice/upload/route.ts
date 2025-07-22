@@ -191,7 +191,7 @@ function calculateQuote(invoiceData: InvoiceData) {
   
   // Updated factoring rates - 100% advance with fee only
   const advanceRate = 1.00 // 100% advance
-  const factoringFeeRate = 0.03 // 3% fee
+  const factoringFeeRate = 0.015 // 1.5% fee
   
   const factoringFee = amount * factoringFeeRate
   const advanceAmount = amount - factoringFee // Advance is invoice amount minus fee

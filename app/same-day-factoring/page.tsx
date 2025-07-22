@@ -66,7 +66,7 @@ export default function SameDayFactoringPage() {
                 <CardTitle>100% Advance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Full invoice value minus 3% flat fee</p>
+                <p className="text-gray-600">Full invoice value minus 1.5% flat fee</p>
               </CardContent>
             </Card>
           </div>
@@ -241,7 +241,7 @@ export default function SameDayFactoringPage() {
                 How much does same-day factoring cost?
               </h3>
               <p className="text-gray-600">
-                We charge a flat 3% factoring fee. On a $2,000 invoice, you receive $1,940 
+                We charge a flat 1.5% factoring fee. On a $2,000 invoice, you receive $1,970 
                 the same day. No hidden fees, no surprises.
               </p>
             </div>

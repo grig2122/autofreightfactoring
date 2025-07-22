@@ -137,7 +137,7 @@ export default function ContactPage() {
               <p className="mb-6">
                 Our commitment to transparency means you'll always know exactly what you're paying and why. 
                 Unlike many factoring companies that hide fees in the fine print, we believe in straightforward 
-                pricing. Our flat 3% rate includes everything - no application fees, no monthly minimums, 
+                pricing. Our flat 1.5% rate includes everything - no application fees, no monthly minimums, 
                 no ACH fees, and no termination penalties.
               </p>
               <p className="mb-6">

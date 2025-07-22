@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
   openGraph: {
     title: 'Invoice Factoring for Truckers',
-    description: 'Get paid today with no-contract invoice factoring. 100% advance minus 3% fee. No contracts, no hidden fees.',
+    description: 'Get paid today with no-contract invoice factoring. 100% advance minus 1.5% fee. No contracts, no hidden fees.',
     url: 'https://autofreightfactoring.com',
     siteName: 'AutoFreightFactoring',
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary',
     title: 'AutoFreightFactoring - Same-Day Invoice Factoring',
-    description: 'Get paid today with no-contract invoice factoring. 100% advance minus 3% fee.',
+    description: 'Get paid today with no-contract invoice factoring. 100% advance minus 1.5% fee.',
     images: ['https://autofreightfactoring.com/icon.png'],
   },
   metadataBase: new URL('https://autofreightfactoring.com'),

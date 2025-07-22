@@ -93,7 +93,7 @@ export default function FactoringRates() {
           <div className="border-l-4 border-blue-600 pl-6">
             <h3 className="text-xl font-semibold mb-2">Flat Rate Factoring</h3>
             <p className="text-gray-700 mb-2">
-              One simple rate for all invoices, regardless of payment terms. AutoFreightFactoring uses this model at 3%.
+              One simple rate for all invoices, regardless of payment terms. AutoFreightFactoring uses this model at 1.5%.
             </p>
             <p className="text-sm text-gray-600">
               <strong>Best for:</strong> Simplicity and predictable costs
@@ -290,10 +290,10 @@ export default function FactoringRates() {
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 text-white text-center mb-12">
         <h2 className="text-3xl font-bold mb-4">
-          Get a Simple 3% Factoring Rate
+          Get a Simple 1.5% Factoring Rate
         </h2>
         <p className="text-xl mb-8 opacity-90">
-          No hidden fees, no complicated tiers, no surprises. Just a flat 3% rate with same-day funding.
+          No hidden fees, no complicated tiers, no surprises. Just a flat 1.5% rate with same-day funding.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/apply">
@@ -326,14 +326,14 @@ export default function FactoringRates() {
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="font-semibold mb-2">Is the factoring rate the only cost?</h3>
             <p className="text-gray-700">
-              Not always. Many factors add hidden fees. At AutoFreightFactoring, our 3% rate includes everything—no hidden costs.
+              Not always. Many factors add hidden fees. At AutoFreightFactoring, our 1.5% rate includes everything—no hidden costs.
             </p>
           </div>
           
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="font-semibold mb-2">How is the factoring rate calculated?</h3>
             <p className="text-gray-700">
-              The rate is a percentage of your invoice value. For a $5,000 invoice at 3%, you pay $150 and receive $4,850.
+              The rate is a percentage of your invoice value. For a $5,000 invoice at 1.5%, you pay $75 and receive $4,925.
             </p>
           </div>
         </div>
@@ -345,10 +345,10 @@ export default function FactoringRates() {
           Understanding Your True Factoring Rate
         </h2>
         <p className="text-gray-700 mb-4">
-          The factoring rate is just one part of your total cost. Always consider hidden fees, contract terms, and service quality when comparing options. A transparent 3% rate often costs less than a "low" 2% rate with multiple fees.
+          The factoring rate is just one part of your total cost. Always consider hidden fees, contract terms, and service quality when comparing options. A transparent 1.5% rate often costs less than a "low" 1% rate with multiple fees.
         </p>
         <p className="text-gray-700">
-          At AutoFreightFactoring, we keep it simple: 3% flat rate, no hidden fees, same-day funding. Calculate your costs easily and focus on growing your trucking business.
+          At AutoFreightFactoring, we keep it simple: 1.5% flat rate, no hidden fees, same-day funding. Calculate your costs easily and focus on growing your trucking business.
         </p>
       </section>
 

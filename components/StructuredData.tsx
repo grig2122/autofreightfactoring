@@ -14,7 +14,7 @@ export function StructuredData() {
     "telephone": "(619) 877-6746",
     "email": "support@autofreightfactoring.com",
     "areaServed": "United States",
-    "priceRange": "3% factoring fee",
+    "priceRange": "1.5% factoring fee",
     "openingHours": "Mo-Fr 08:00-18:00",
     "sameAs": [],
     "knowsAbout": [
@@ -34,7 +34,7 @@ export function StructuredData() {
           "itemOffered": {
             "@type": "Service",
             "name": "Same-Day Invoice Factoring",
-            "description": "100% advance on your invoices minus 3% fee. Get paid the same day."
+            "description": "100% advance on your invoices minus 1.5% fee. Get paid the same day."
           }
         }
       ]

@@ -765,7 +765,7 @@ export default function HomeClient() {
                 <p className="text-gray-600 mb-6">Perfect for owner-operators just getting started</p>
                 
                 <div className="mb-8">
-                  <span className="text-5xl font-bold text-gray-900">3%</span>
+                  <span className="text-5xl font-bold text-gray-900">1.5%</span>
                   <span className="text-gray-600 ml-2">per invoice</span>
                 </div>
                 

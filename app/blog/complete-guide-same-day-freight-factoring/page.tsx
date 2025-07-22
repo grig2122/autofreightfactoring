@@ -372,7 +372,7 @@ export default function SameDayFreightFactoringGuide() {
               <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">4</span>
               <div>
                 <h3 className="font-semibold text-lg mb-1">Receive Your Advance</h3>
-                <p className="text-gray-600">Get 97-100% of invoice value (minus our 3% fee) deposited same day.</p>
+                <p className="text-gray-600">Get 98.5-100% of invoice value (minus our 1.5% fee) deposited same day.</p>
               </div>
             </li>
             
@@ -404,7 +404,7 @@ export default function SameDayFreightFactoringGuide() {
           <div className="border-l-4 border-green-600 pl-6">
             <h3 className="text-xl font-semibold mb-2">Transparent Pricing</h3>
             <p className="text-gray-600">
-              Look for clear, upfront pricing with no hidden fees. We charge a simple 3% flat rate with no surprises.
+              Look for clear, upfront pricing with no hidden fees. We charge a simple 1.5% flat rate with no surprises.
             </p>
           </div>
           
@@ -441,7 +441,7 @@ export default function SameDayFreightFactoringGuide() {
           <div className="bg-white border rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-2">What are the typical fees?</h3>
             <p className="text-gray-600">
-              Fees typically range from 1.5% to 5%. We charge a flat 3% with no hidden costs or additional fees.
+              Fees typically range from 1.5% to 5%. We charge a flat 1.5% with no hidden costs or additional fees.
             </p>
           </div>
           

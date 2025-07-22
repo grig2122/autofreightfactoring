@@ -133,42 +133,43 @@ export default function ApplyPageClient() {
       {/* Hero Section with Form */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-8 lg:py-12">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Headlines and Benefits */}
-            <div>
+          {/* Centered content with reduced width */}
+          <div className="max-w-3xl mx-auto">
+            {/* Headlines */}
+            <div className="text-center mb-8">
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                 Get Paid Same Day for Your Freight
               </h1>
-              <p className="text-lg lg:text-xl text-gray-700 mb-8">
+              <p className="text-lg lg:text-xl text-gray-700">
                 Stop waiting 30+ days. Get your money in 24 hours with our simple factoring service.
               </p>
-
-              {/* Quick Benefits */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-white border border-gray-200 hover:shadow-md transition-all duration-200">
-                    <div className="flex-shrink-0 text-blue-600">
-                      {benefit.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900">{benefit.title}</h3>
-                      <p className="text-sm text-gray-600">{benefit.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Phone CTA for Mobile */}
-              <div className="lg:hidden mb-8">
-                <a href="tel:6198776746" className="flex items-center justify-center space-x-2 bg-green-600 text-white p-4 rounded-lg font-bold text-lg">
-                  <Phone className="h-6 w-6" />
-                  <span>CALL NOW: (619) 877-6746</span>
-                </a>
-              </div>
             </div>
 
-            {/* Right Column - Form */}
-            <div className="bg-white border border-gray-200 rounded-xl shadow-xl p-6 lg:p-8">
+            {/* Benefits Grid - centered above form */}
+            <div className="grid grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-white border border-gray-200 hover:shadow-md transition-all duration-200">
+                  <div className="flex-shrink-0 text-blue-600">
+                    {benefit.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">{benefit.title}</h3>
+                    <p className="text-sm text-gray-600">{benefit.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Phone CTA for Mobile */}
+            <div className="lg:hidden mb-8">
+              <a href="tel:6198776746" className="flex items-center justify-center space-x-2 bg-green-600 text-white p-4 rounded-lg font-bold text-lg">
+                <Phone className="h-6 w-6" />
+                <span>CALL NOW: (619) 877-6746</span>
+              </a>
+            </div>
+
+            {/* Centered Form with reduced width */}
+            <div className="bg-white border border-gray-200 rounded-xl shadow-xl p-6 lg:p-8 max-w-md mx-auto">
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                   <Truck className="h-8 w-8 text-blue-600" />
@@ -386,7 +387,7 @@ export default function ApplyPageClient() {
               <div className="text-blue-100">Funded</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">3%</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">1.5%</div>
               <div className="text-blue-100">Flat Fee</div>
             </div>
           </div>
@@ -415,7 +416,7 @@ export default function ApplyPageClient() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="font-semibold text-xl mb-3 text-gray-900">Simple Terms</h3>
               <p className="text-gray-600 mb-4">
-                No complicated contracts or hidden fees. Our flat 3% rate is all you pay. 
+                No complicated contracts or hidden fees. Our flat 1.5% rate is all you pay. 
                 No monthly minimums, no long-term commitments.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -536,7 +537,7 @@ export default function ApplyPageClient() {
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <h3 className="font-semibold text-lg mb-2">Are there any hidden fees?</h3>
               <p className="text-gray-600">
-                None. Our 3% flat rate is all you pay. No application fees, monthly minimums, or termination fees. What you see is what you get.
+                None. Our 1.5% flat rate is all you pay. No application fees, monthly minimums, or termination fees. What you see is what you get.
               </p>
             </div>
           </div>

@@ -98,7 +98,7 @@ export default function AboutPage() {
               <p className="text-gray-600">Average Funding Time</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">3%</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">1.5%</div>
               <p className="text-gray-600">Simple Flat Fee</p>
             </div>
             <div>

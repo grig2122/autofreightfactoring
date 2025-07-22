@@ -687,7 +687,7 @@ export default function FreightFactoringGuidePage() {
               <ul className="mb-6 space-y-2">
                 <li>✓ Same-day funding available</li>
                 <li>✓ No hidden fees or long-term contracts</li>
-                <li>✓ Competitive rates starting at 3%</li>
+                <li>✓ Competitive rates starting at 1.5%</li>
                 <li>✓ Fuel advances and fuel card included</li>
               </ul>
               <div className="flex flex-col sm:flex-row gap-4">

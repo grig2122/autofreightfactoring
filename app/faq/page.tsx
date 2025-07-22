@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "How much does freight factoring cost?",
-    answer: "Freight factoring fees typically range from 1.5% to 5% of the invoice value, depending on various factors including invoice volume, customer creditworthiness, and payment terms. At AutoFreightFactoring, we keep it simple with a flat 3% fee and absolutely no hidden costs. For example, on a $2,000 invoice, you'd receive $1,940 immediately deposited into your account. Unlike many competitors, we don't charge application fees, monthly minimums, ACH transfer fees, or termination penalties. The 3% fee covers everything - invoice processing, credit checks on your customers, collections, and same-day funding. For high-volume clients (over $100,000/month), we offer discounted rates as low as 2.5%."
+    answer: "Freight factoring fees typically range from 1.5% to 5% of the invoice value, depending on various factors including invoice volume, customer creditworthiness, and payment terms. At AutoFreightFactoring, we keep it simple with a flat 1.5% fee and absolutely no hidden costs. For example, on a $2,000 invoice, you'd receive $1,970 immediately deposited into your account. Unlike many competitors, we don't charge application fees, monthly minimums, ACH transfer fees, or termination penalties. The 1.5% fee covers everything - invoice processing, credit checks on your customers, collections, and same-day funding. For high-volume clients (over $100,000/month), we offer discounted rates as low as 1.5%."
   },
   {
     question: "Do I need good credit to qualify for factoring?",
@@ -42,11 +42,11 @@ const faqs = [
   },
   {
     question: "Are there any hidden fees?",
-    answer: "No. We believe in transparent pricing. Our 3% factoring fee is all you pay. No application fees, no monthly minimums, no ACH fees, and no termination fees."
+    answer: "No. We believe in transparent pricing. Our 1.5% factoring fee is all you pay. No application fees, no monthly minimums, no ACH fees, and no termination fees."
   },
   {
     question: "How does the factoring process work?",
-    answer: "The freight factoring process is designed to be simple and fast. Here's exactly how it works: Step 1 - You haul and deliver your load as normal, getting a signed BOL or proof of delivery. Step 2 - Submit your invoice and BOL to us through our online portal, mobile app, or even by email (most drivers use our app for convenience). Step 3 - We verify the delivery with your customer, which typically takes 30-60 minutes. Step 4 - Once verified, we wire 97% of the invoice value directly to your bank account (3% factoring fee). Step 5 - We handle all the collections, following up with your customer for payment over the next 30-90 days. You're completely out of the collections process - no more calling customers, sending reminder emails, or waiting for checks. The entire process from submission to funding typically takes 2-4 hours."
+    answer: "The freight factoring process is designed to be simple and fast. Here's exactly how it works: Step 1 - You haul and deliver your load as normal, getting a signed BOL or proof of delivery. Step 2 - Submit your invoice and BOL to us through our online portal, mobile app, or even by email (most drivers use our app for convenience). Step 3 - We verify the delivery with your customer, which typically takes 30-60 minutes. Step 4 - Once verified, we wire 98.5% of the invoice value directly to your bank account (1.5% factoring fee). Step 5 - We handle all the collections, following up with your customer for payment over the next 30-90 days. You're completely out of the collections process - no more calling customers, sending reminder emails, or waiting for checks. The entire process from submission to funding typically takes 2-4 hours."
   },
   {
     question: "Can I factor loads from load boards?",
