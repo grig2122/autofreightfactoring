@@ -11,6 +11,11 @@ export function initAdmin() {
     let privateKey = process.env.FIREBASE_ADMIN_PRIVATE_KEY;
     const privateKeyBase64 = process.env.FIREBASE_ADMIN_PRIVATE_KEY_BASE64;
     
+    if (!projectId || !process.env.FIREBASE_ADMIN_CLIENT_EMAIL) {
+      console.warn('Firebase Admin SDK not configured - missing environment variables');
+      return false;
+    }
+    
     // Use base64 version if available (preferred for Vercel)
     if (privateKeyBase64) {
       privateKey = Buffer.from(privateKeyBase64, 'base64').toString('utf-8');
@@ -18,22 +23,49 @@ export function initAdmin() {
       privateKey = privateKey.replace(/\\n/g, '\n');
     }
     
-    initializeApp({
-      credential: cert({
-        projectId: projectId,
-        clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
-        privateKey: privateKey,
-      }),
-      storageBucket: `${projectId}.firebasestorage.app`
-    });
+    if (!privateKey) {
+      console.warn('Firebase Admin SDK not configured - missing private key');
+      return false;
+    }
     
-    initialized = true;
+    try {
+      initializeApp({
+        credential: cert({
+          projectId: projectId,
+          clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL,
+          privateKey: privateKey,
+        }),
+        storageBucket: `${projectId}.firebasestorage.app`
+      });
+      
+      initialized = true;
+      return true;
+    } catch (error) {
+      console.error('Firebase Admin initialization error:', error);
+      return false;
+    }
   }
+  return initialized;
 }
 
-// Initialize admin SDK before exporting services
-initAdmin();
+// Lazy initialization - don't initialize at module level
+export const adminAuth = initialized ? getAuth() : null;
+export const adminDb = initialized ? getFirestore() : null;
+export const adminStorage = initialized ? getStorage() : null;
 
-export const adminAuth = getAuth();
-export const adminDb = getFirestore();
-export const adminStorage = getStorage();
+// Helper function to get admin services with initialization
+export function getAdminServices() {
+  if (!initialized) {
+    initAdmin();
+  }
+  
+  if (!initialized) {
+    throw new Error('Firebase Admin SDK initialization failed');
+  }
+  
+  return {
+    auth: getAuth(),
+    db: getFirestore(),
+    storage: getStorage()
+  };
+}

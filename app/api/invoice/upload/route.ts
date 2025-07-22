@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getStorage } from 'firebase-admin/storage'
-import { getFirestore } from 'firebase-admin/firestore'
-import { initAdmin } from '@/lib/firebase-admin'
+import { getAdminServices } from '@/lib/firebase-admin'
 import { checkRateLimit, rateLimitResponse } from '@/lib/rate-limit'
 import { parseInvoiceWithDocumentAI } from '@/lib/document-ai'
 import crypto from 'crypto'
-
-initAdmin()
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 const ALLOWED_FILE_TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg']
@@ -78,8 +74,20 @@ export async function POST(req: NextRequest) {
     // Convert file to buffer
     const buffer = Buffer.from(await file.arrayBuffer())
 
+    // Initialize admin services
+    let adminServices;
+    try {
+      adminServices = getAdminServices();
+    } catch (error) {
+      console.error('Failed to initialize Firebase Admin:', error);
+      return NextResponse.json(
+        { error: 'Storage service unavailable' },
+        { status: 503 }
+      );
+    }
+
     // Upload to Firebase Storage
-    const storage = getStorage()
+    const { storage } = adminServices;
     const bucket = storage.bucket('auto-freight-factoring.firebasestorage.app')
     const fileRef = bucket.file(fileName)
 
@@ -109,7 +117,7 @@ export async function POST(req: NextRequest) {
     const quote = calculateQuote(invoiceData)
 
     // Store temporary session data in Firestore
-    const db = getFirestore()
+    const { db } = adminServices;
     await db.collection('temp_uploads').doc(sessionId).set({
       sessionId,
       fileName,

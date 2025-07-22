@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getStorage } from 'firebase-admin/storage'
-import { getFirestore } from 'firebase-admin/firestore'
-import { initAdmin } from '@/lib/firebase-admin'
-
-initAdmin()
+import { getAdminServices } from '@/lib/firebase-admin'
 
 export async function GET(req: NextRequest) {
   try {
@@ -13,8 +9,20 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const db = getFirestore()
-    const storage = getStorage()
+    // Initialize admin services
+    let adminServices;
+    try {
+      adminServices = getAdminServices();
+    } catch (error) {
+      console.error('Failed to initialize Firebase Admin:', error);
+      return NextResponse.json({ 
+        success: true, 
+        message: 'Firebase Admin not configured - skipping cleanup',
+        timestamp: new Date().toISOString()
+      });
+    }
+
+    const { db, storage } = adminServices;
     const bucket = storage.bucket()
     
     // Find expired temporary uploads

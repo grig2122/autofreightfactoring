@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { parseInvoiceWithDocumentAI } from '@/lib/document-ai'
-import { initAdmin } from '@/lib/firebase-admin'
-
-initAdmin()
 
 export async function POST(req: NextRequest) {
   try {

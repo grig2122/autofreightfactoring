@@ -1,4 +1,4 @@
-import { getFirestore } from 'firebase-admin/firestore'
+import { getAdminServices } from '@/lib/firebase-admin'
 import { NextResponse } from 'next/server'
 
 interface RateLimitConfig {
@@ -15,13 +15,13 @@ export async function checkRateLimit(
     skipSuccessfulRequests: false
   }
 ): Promise<{ allowed: boolean; remaining: number; reset: Date }> {
-  const db = getFirestore()
-  const now = Date.now()
-  const windowStart = now - config.windowMs
-  
-  const rateLimitRef = db.collection('rate_limits').doc(identifier)
-  
   try {
+    const { db } = getAdminServices();
+    const now = Date.now()
+    const windowStart = now - config.windowMs
+    
+    const rateLimitRef = db.collection('rate_limits').doc(identifier)
+    
     const result = await db.runTransaction(async (transaction) => {
       const doc = await transaction.get(rateLimitRef)
       
