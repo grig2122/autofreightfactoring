@@ -38,7 +38,8 @@ if (isFirebaseConfigured) {
     // Only initialize client-side services in production
     if (typeof window !== 'undefined') {
       if (process.env.NODE_ENV === 'production') {
-        auth = getAuth(app);
+        // Commenting out auth as it's not used and causing errors
+        // auth = getAuth(app);
         // Delay analytics initialization to avoid errors
         if (firebaseConfig.measurementId) {
           analytics = getAnalytics(app);
@@ -46,7 +47,8 @@ if (isFirebaseConfigured) {
       }
     } else {
       // Server-side only needs Firestore
-      auth = getAuth(app);
+      // Commenting out auth as it's not used
+      // auth = getAuth(app);
     }
     
     db = getFirestore(app);
