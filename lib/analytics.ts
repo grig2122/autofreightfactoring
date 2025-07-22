@@ -5,7 +5,11 @@ import { getConversionConfig } from '@/lib/google-ads-config';
 
 export const trackEvent = (eventName: string, parameters?: Record<string, any>) => {
   if (typeof window !== 'undefined' && analytics) {
-    logEvent(analytics, eventName, parameters);
+    try {
+      logEvent(analytics, eventName, parameters);
+    } catch (error) {
+      console.warn('Analytics tracking error:', error);
+    }
   }
 };
 
@@ -104,13 +108,21 @@ export const trackPurchase = (value: number, currency: string, items: any[]) => 
 
 export const setAnalyticsUserId = (userId: string) => {
   if (typeof window !== 'undefined' && analytics) {
-    setUserId(analytics, userId);
+    try {
+      setUserId(analytics, userId);
+    } catch (error) {
+      console.warn('Analytics setUserId error:', error);
+    }
   }
 };
 
 export const setAnalyticsUserProperties = (properties: Record<string, any>) => {
   if (typeof window !== 'undefined' && analytics) {
-    setUserProperties(analytics, properties);
+    try {
+      setUserProperties(analytics, properties);
+    } catch (error) {
+      console.warn('Analytics setUserProperties error:', error);
+    }
   }
 };
 

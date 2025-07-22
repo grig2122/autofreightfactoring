@@ -17,8 +17,12 @@ const firebaseConfig = {
 // Check if Firebase config is properly set
 const isFirebaseConfigured = firebaseConfig.apiKey && 
   firebaseConfig.apiKey !== 'your-api-key' &&
+  firebaseConfig.apiKey !== undefined &&
+  firebaseConfig.apiKey !== '' &&
   firebaseConfig.projectId && 
-  firebaseConfig.projectId !== 'your-project-id';
+  firebaseConfig.projectId !== 'your-project-id' &&
+  firebaseConfig.projectId !== undefined &&
+  firebaseConfig.projectId !== '';
 
 // Initialize Firebase only if properly configured
 let app: any = null;
@@ -28,21 +32,28 @@ let storage: any = null;
 let analytics: any = null;
 
 if (isFirebaseConfigured) {
-  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-  
-  // Only initialize client-side services in production
-  if (typeof window !== 'undefined') {
-    if (process.env.NODE_ENV === 'production') {
+  try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+    
+    // Only initialize client-side services in production
+    if (typeof window !== 'undefined') {
+      if (process.env.NODE_ENV === 'production') {
+        auth = getAuth(app);
+        // Delay analytics initialization to avoid errors
+        if (firebaseConfig.measurementId) {
+          analytics = getAnalytics(app);
+        }
+      }
+    } else {
+      // Server-side only needs Firestore
       auth = getAuth(app);
-      analytics = getAnalytics(app);
     }
-  } else {
-    // Server-side only needs Firestore
-    auth = getAuth(app);
+    
+    db = getFirestore(app);
+    storage = getStorage(app);
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
   }
-  
-  db = getFirestore(app);
-  storage = getStorage(app);
 }
 
 export { app, auth, db, storage, analytics };
