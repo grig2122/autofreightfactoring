@@ -15,9 +15,10 @@ export async function checkRateLimit(
     skipSuccessfulRequests: false
   }
 ): Promise<{ allowed: boolean; remaining: number; reset: Date }> {
+  const now = Date.now()
+  
   try {
     const { db } = getAdminServices();
-    const now = Date.now()
     const windowStart = now - config.windowMs
     
     const rateLimitRef = db.collection('rate_limits').doc(identifier)
