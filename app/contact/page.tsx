@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
+import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Auto Freight Factoring',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Navigation currentPage="contact" />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-6">

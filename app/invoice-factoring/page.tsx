@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, TrendingUp, Shield, Clock, DollarSign, FileTex
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ComplianceFooter } from '@/components/compliance-footer'
+import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Invoice Factoring for Trucking | Turn Invoices Into Cash Fast',
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
 export default function InvoiceFactoringPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Navigation currentPage="invoice-factoring" />
+      
       {/* Hero Section - Optimized for Keywords */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto max-w-6xl">

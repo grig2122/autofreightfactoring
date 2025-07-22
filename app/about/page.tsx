@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { Users, TrendingUp, Shield, Clock, Star, Award } from 'lucide-react'
+import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'About Us | Auto Freight Factoring',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <Navigation currentPage="about" />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-6">

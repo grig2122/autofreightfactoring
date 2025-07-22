@@ -11,6 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { trackEvent, trackFormSubmission } from '@/lib/analytics'
 import { useRouter } from 'next/navigation'
+import { Navigation } from '@/components/Navigation'
 
 const formSchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
@@ -110,6 +111,8 @@ export default function ApplyPageClient() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
+
       {process.env.NODE_ENV === 'development' && (
         <div className="fixed top-4 right-4 z-50">
           <Button 
