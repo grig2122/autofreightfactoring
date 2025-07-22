@@ -22,7 +22,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   if (!isOpen) return null
 
   const handleApplyClick = () => {
-    trackButtonClick('nav_apply_mobile')
+    trackButtonClick('nav_apply_mobile', 'mobile_navigation')
     onClose()
   }
 

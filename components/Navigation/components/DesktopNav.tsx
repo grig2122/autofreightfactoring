@@ -13,7 +13,7 @@ interface DesktopNavProps {
 
 export const DesktopNav: React.FC<DesktopNavProps> = ({ navLinks, onSmoothScroll }) => {
   const handleApplyClick = () => {
-    trackButtonClick('nav_apply')
+    trackButtonClick('nav_apply', 'navigation')
   }
 
   return (

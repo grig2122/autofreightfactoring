@@ -205,3 +205,124 @@ Email notification sent successfully
  GET /apply/thank-you 200 in 45ms
  GET / 200 in 24ms
  GET /apply 200 in 242ms
+ GET / 200 in 156ms
+ ✓ Compiled /about in 488ms (1770 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /about 200 in 662ms
+ GET / 200 in 162ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 593ms (1791 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /contact 200 in 792ms
+ GET / 200 in 133ms
+ ✓ Compiled /blog in 209ms (1809 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /blog 200 in 408ms
+ GET / 200 in 151ms
+ ✓ Compiled /faq in 182ms (1823 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /faq 200 in 187ms
+ GET / 200 in 147ms
+ ✓ Compiled /invoice-factoring in 201ms (1834 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /invoice-factoring 200 in 352ms
+ GET / 200 in 151ms
+ ✓ Compiled in 714ms (1785 modules)
+ GET / 200 in 90ms
+ ✓ Compiled in 254ms (838 modules)
+ GET / 200 in 9ms
+ ✓ Compiled in 486ms (1785 modules)
+ ✓ Compiled in 486ms (1785 modules)
+ ✓ Compiled in 477ms (1785 modules)
+ ✓ Compiled in 273ms (838 modules)
+ ✓ Compiled in 154ms (838 modules)
+ ✓ Compiled in 141ms (838 modules)
+ ✓ Compiled in 410ms (1785 modules)
+ ✓ Compiled in 326ms (1785 modules)
+ ✓ Compiled in 142ms (838 modules)
+ ✓ Compiled in 118ms (838 modules)
+ ✓ Compiled in 465ms (1785 modules)
+ ✓ Compiled in 224ms (1785 modules)
+ ✓ Compiled in 225ms (838 modules)
+ ✓ Compiled in 153ms (838 modules)
+ ✓ Compiled in 141ms (838 modules)
+ ✓ Compiled in 178ms (838 modules)
+ ✓ Compiled in 142ms (838 modules)
+ ✓ Compiled in 138ms (838 modules)
+ GET / 200 in 345ms
+ GET /apply 200 in 129ms
+ ✓ Compiled in 706ms (1785 modules)
+ GET /apply 200 in 70ms
+ GET /apply 200 in 227ms
+ GET / 200 in 163ms
+ GET /apply 200 in 64ms
+ ✓ Compiled /api/apply in 443ms (1143 modules)
+Pre-approval calculation: {
+  data: {
+    companyName: 'ABC Trucking LLC',
+    contactName: 'John Doe',
+    mcNumber: '123456',
+    email: 'john.doe@example.com',
+    phone: '5551234567',
+    factoringStatus: 'none',
+    firstName: 'John',
+    lastName: 'Doe',
+    companyType: 'owner-operator',
+    monthlyInvoiceVolume: '$50-100k',
+    yearsInBusiness: '2+',
+    currentFactoring: 'no',
+    dotNumber: '123456'
+  },
+  score: 80
+}
+Lead saved with ID: Hy8VSDIeTy7QSGHsOtDB
+Email sent successfully: { data: { id: '1ecdd28e-fc7c-4c48-a6cb-8833a2e1ec0b' }, error: null }
+Email notification sent successfully
+ POST /api/apply 200 in 1584ms
+ GET /apply/thank-you 200 in 40ms
+ GET / 200 in 12ms
+ GET /apply 200 in 200ms
+ ✓ Compiled in 509ms (1785 modules)
+ GET /apply 200 in 111ms
+ GET /apply 200 in 246ms
+ GET / 200 in 173ms
+ GET /apply 200 in 67ms
+ GET / 200 in 132ms
+ GET /apply 200 in 71ms
+ GET / 200 in 143ms
+ ✓ Compiled /invoice-factoring in 365ms (974 modules)
+ GET /invoice-factoring 200 in 626ms
+ GET / 200 in 172ms
+ GET /invoice-factoring 200 in 69ms
+ GET /invoice-factoring 200 in 71ms
+ ✓ Compiled /about in 202ms (980 modules)
+ GET /about 200 in 328ms
+ ✓ Compiled in 225ms (838 modules)
+ ✓ Compiled in 362ms (1812 modules)
+ ✓ Compiled in 785ms (1817 modules)
+ GET / 200 in 350ms
+ GET /invoice-factoring 200 in 100ms
+ ✓ Compiled /about in 218ms (983 modules)
+ GET /about 200 in 393ms
+ ✓ Compiled /_not-found in 384ms (1813 modules)
+ GET /careers 404 in 479ms
+ GET /about 200 in 47ms
+ ✓ Compiled in 255ms (840 modules)
+ ✓ Compiled in 151ms (840 modules)
+ ✓ Compiled in 138ms (840 modules)
+ ✓ Compiled in 141ms (840 modules)
+ ✓ Compiled in 131ms (840 modules)
+ ✓ Compiled in 162ms (840 modules)
+ ✓ Compiled in 141ms (840 modules)
+ ✓ Compiled in 132ms (840 modules)
+ ⨯ ./components/Navigation.tsx
+Error: Failed to read source code from /Users/grigorikokchyan/autofreightfactoring/components/Navigation.tsx
+
+Caused by:
+    No such file or directory (os error 2)
+
+Import trace for requested module:
+./components/Navigation.tsx
+./app/invoice-factoring/page.tsx
+ GET /invoice-factoring 500 in 20ms
+[?25h
