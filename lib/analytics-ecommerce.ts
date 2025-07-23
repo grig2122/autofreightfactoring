@@ -1,5 +1,5 @@
 // Enhanced ecommerce tracking for conversion funnel analysis
-import { trackEcommerceEvent } from './analytics-events'
+import { trackEvent as trackEcommerceEvent } from './analytics-events'
 
 // Application funnel steps
 export const ApplicationFunnelSteps = {

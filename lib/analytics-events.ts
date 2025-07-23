@@ -1,6 +1,9 @@
 // Analytics event tracking for user behavior analysis
 
-import { trackEvent } from '@/components/GoogleAnalytics'
+import { trackEvent as gaTrackEvent } from '@/components/GoogleAnalytics'
+
+// Re-export trackEvent for convenience
+export const trackEvent = gaTrackEvent
 
 // Event categories
 export const EventCategory = {
@@ -52,7 +55,7 @@ export const EventName = {
 
 // Track scroll depth
 export function trackScrollDepth(percentage: number) {
-  trackEvent(EventName.SCROLL, {
+  gaTrackEvent(EventName.SCROLL, {
     percent_scrolled: percentage,
     page_location: window.location.href,
     page_title: document.title
@@ -61,7 +64,7 @@ export function trackScrollDepth(percentage: number) {
 
 // Track time on page
 export function trackTimeOnPage(seconds: number) {
-  trackEvent(EventName.TIME_ON_PAGE, {
+  gaTrackEvent(EventName.TIME_ON_PAGE, {
     engagement_time_msec: seconds * 1000,
     page_location: window.location.href,
     page_title: document.title
@@ -70,7 +73,7 @@ export function trackTimeOnPage(seconds: number) {
 
 // Track CTA clicks
 export function trackCTAClick(buttonText: string, location: string, destination?: string) {
-  trackEvent(EventName.CLICK_CTA, {
+  gaTrackEvent(EventName.CLICK_CTA, {
     button_text: buttonText,
     click_location: location,
     destination_url: destination,
@@ -80,7 +83,7 @@ export function trackCTAClick(buttonText: string, location: string, destination?
 
 // Track form interactions
 export function trackFormStart(formName: string, formId?: string) {
-  trackEvent(EventName.FORM_START, {
+  gaTrackEvent(EventName.FORM_START, {
     form_name: formName,
     form_id: formId,
     page_location: window.location.href
@@ -88,7 +91,7 @@ export function trackFormStart(formName: string, formId?: string) {
 }
 
 export function trackFormSubmit(formName: string, formId?: string, success: boolean = true) {
-  trackEvent(EventName.FORM_SUBMIT, {
+  gaTrackEvent(EventName.FORM_SUBMIT, {
     form_name: formName,
     form_id: formId,
     success: success,
@@ -97,7 +100,7 @@ export function trackFormSubmit(formName: string, formId?: string, success: bool
 }
 
 export function trackFormError(formName: string, errorType: string, fieldName?: string) {
-  trackEvent(EventName.FORM_ERROR, {
+  gaTrackEvent(EventName.FORM_ERROR, {
     form_name: formName,
     error_type: errorType,
     field_name: fieldName,
@@ -106,7 +109,7 @@ export function trackFormError(formName: string, errorType: string, fieldName?: 
 }
 
 export function trackFormAbandon(formName: string, lastField?: string, completionPercentage?: number) {
-  trackEvent(EventName.FORM_ABANDON, {
+  gaTrackEvent(EventName.FORM_ABANDON, {
     form_name: formName,
     last_field: lastField,
     completion_percentage: completionPercentage,
@@ -116,14 +119,14 @@ export function trackFormAbandon(formName: string, lastField?: string, completio
 
 // Track conversion funnel
 export function trackSignUpStart(method?: string) {
-  trackEvent(EventName.SIGN_UP_START, {
+  gaTrackEvent(EventName.SIGN_UP_START, {
     method: method,
     page_location: window.location.href
   })
 }
 
 export function trackSignUpComplete(method?: string, userId?: string) {
-  trackEvent(EventName.SIGN_UP_COMPLETE, {
+  gaTrackEvent(EventName.SIGN_UP_COMPLETE, {
     method: method,
     user_id: userId,
     page_location: window.location.href
@@ -131,7 +134,7 @@ export function trackSignUpComplete(method?: string, userId?: string) {
 }
 
 export function trackApplicationStep(step: number, stepName: string, totalSteps: number) {
-  trackEvent(EventName.APPLICATION_STEP, {
+  gaTrackEvent(EventName.APPLICATION_STEP, {
     step_number: step,
     step_name: stepName,
     total_steps: totalSteps,
@@ -141,7 +144,7 @@ export function trackApplicationStep(step: number, stepName: string, totalSteps:
 }
 
 export function trackApplicationComplete(applicationId?: string, timeToComplete?: number) {
-  trackEvent(EventName.APPLICATION_COMPLETE, {
+  gaTrackEvent(EventName.APPLICATION_COMPLETE, {
     application_id: applicationId,
     time_to_complete_sec: timeToComplete,
     page_location: window.location.href
@@ -150,7 +153,7 @@ export function trackApplicationComplete(applicationId?: string, timeToComplete?
 
 // Track errors
 export function trackError(errorType: string, errorMessage: string, errorStack?: string) {
-  trackEvent(EventName.API_ERROR, {
+  gaTrackEvent(EventName.API_ERROR, {
     error_type: errorType,
     error_message: errorMessage,
     error_stack: errorStack,
@@ -171,7 +174,7 @@ export function trackEcommerceEvent(eventName: string, parameters: {
   }>;
   [key: string]: any;
 }) {
-  trackEvent(eventName, {
+  gaTrackEvent(eventName, {
     ...parameters,
     page_location: window.location.href
   })
