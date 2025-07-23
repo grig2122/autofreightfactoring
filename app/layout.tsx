@@ -5,7 +5,7 @@ import { IntercomProvider } from '@/components/IntercomProvider'
 import { IntercomWidget } from '@/components/IntercomWidget'
 import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
-import { AnalyticsProvider } from './analytics-provider'
+import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })

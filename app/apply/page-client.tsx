@@ -9,7 +9,14 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { trackEvent, trackFormSubmission } from '@/lib/analytics'
+import { 
+  trackFormStart, 
+  trackFormSubmit,
+  trackApplicationStart,
+  trackApplicationComplete 
+} from '@/lib/analytics-events'
+import { trackApplyClick } from '@/lib/analytics-ecommerce'
+import { useFormTracking } from '@/hooks/use-analytics-tracking'
 import { useRouter } from 'next/navigation'
 import { Navigation } from '@/components/Navigation'
 
@@ -29,6 +36,8 @@ type FormData = z.infer<typeof formSchema>
 export default function ApplyPageClient() {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStartTime, setFormStartTime] = useState<number>(0)
+  const { handleFieldInteraction } = useFormTracking('freight_factoring_application')
   
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -45,10 +54,14 @@ export default function ApplyPageClient() {
   const handleSubmit = async (data: FormData) => {
     setIsSubmitting(true)
     
+    // Track application completion with timing
+    const timeToComplete = formStartTime ? Math.round((Date.now() - formStartTime) / 1000) : undefined
+    
     try {
-      trackEvent('form_start', {
-        form_name: 'apply_trucker',
-        source: 'landing_page'
+      // Track application start (if not already tracked)
+      trackApplicationStart({
+        companyType: 'owner-operator',
+        factoringStatus: data.factoringStatus
       })
 
       const response = await fetch('/api/apply', {
@@ -69,14 +82,24 @@ export default function ApplyPageClient() {
       })
 
       if (response.ok) {
-        trackFormSubmission('apply_trucker', true)
+        // Track successful form submission
+        trackFormSubmit('freight_factoring_application', undefined, true)
+        
+        // Track application completion with enhanced ecommerce
+        trackApplicationComplete({
+          companyName: data.companyName,
+          factoringStatus: data.factoringStatus,
+          mcNumber: data.mcNumber,
+          timeToComplete: timeToComplete
+        })
+        
         router.push('/apply/thank-you')
       } else {
         throw new Error('Submission failed')
       }
     } catch (error) {
       console.error('Error:', error)
-      trackFormSubmission('apply_trucker', false)
+      trackFormSubmit('freight_factoring_application', undefined, false)
     } finally {
       setIsSubmitting(false)
     }
@@ -198,6 +221,13 @@ export default function ApplyPageClient() {
                               placeholder="Company Name"
                               className="h-14 pl-12 text-base border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg"
                               {...field}
+                              onFocus={(e) => {
+                                if (!formStartTime) {
+                                  setFormStartTime(Date.now())
+                                  trackFormStart('freight_factoring_application')
+                                }
+                                handleFieldInteraction('companyName')
+                              }}
                             />
                           </div>
                         </FormControl>
