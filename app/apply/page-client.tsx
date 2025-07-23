@@ -11,11 +11,13 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@/component
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { 
   trackFormStart, 
-  trackFormSubmit,
+  trackFormSubmit
+} from '@/lib/analytics-events'
+import { 
+  trackApplyClick,
   trackApplicationStart,
   trackApplicationComplete 
-} from '@/lib/analytics-events'
-import { trackApplyClick } from '@/lib/analytics-ecommerce'
+} from '@/lib/analytics-ecommerce'
 import { useFormTracking } from '@/hooks/use-analytics-tracking'
 import { useRouter } from 'next/navigation'
 import { Navigation } from '@/components/Navigation'
