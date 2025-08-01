@@ -7,6 +7,7 @@ import { FloatingSupportButton } from '@/components/SupportButton'
 import { StructuredData } from '@/components/StructuredData'
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { Analytics } from '@vercel/analytics/react'
+import { GoogleTagManager, GoogleTagManagerNoscript } from '@/components/GoogleTagManager'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -60,8 +61,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        <GoogleTagManager gtmId="GTM-PQGZWBW6" />
       </head>
       <body className={inter.className}>
+        <GoogleTagManagerNoscript gtmId="GTM-PQGZWBW6" />
         <AnalyticsProvider>
           <IntercomProvider>
             {children}
