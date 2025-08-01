@@ -1,5 +1,3 @@
-import Script from 'next/script'
-
 interface GoogleTagManagerProps {
   gtmId: string
 }
@@ -7,10 +5,7 @@ interface GoogleTagManagerProps {
 export function GoogleTagManager({ gtmId }: GoogleTagManagerProps) {
   return (
     <>
-      {/* Google Tag Manager Script */}
-      <Script
-        id="gtm-script"
-        strategy="beforeInteractive"
+      <script
         dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
