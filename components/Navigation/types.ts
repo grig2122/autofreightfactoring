@@ -1,4 +1,4 @@
-export type PageType = 'home' | 'invoice-factoring' | 'about' | 'contact' | 'blog' | 'faq'
+export type PageType = 'home' | 'invoice-factoring' | 'about' | 'contact' | 'blog' | 'faq' | 'owner-operators' | 'transparent-pricing'
 
 export interface NavLink {
   href: string
