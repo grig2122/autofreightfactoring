@@ -5,38 +5,38 @@
 export const GOOGLE_ADS_CONFIG = {
   // Main conversion events
   conversions: {
-    // Primary application form submission
+    // Primary application form submission - "Submit lead form (autofreightfactoring.com/)"
     applicationSubmit: {
-      label: 'ABC123DEF456', // TODO: Replace with actual conversion label
-      defaultValue: 50000,
+      label: 'vIlMCLLGj_MaEKrU9tlA', // Submit lead form (autofreightfactoring.com/)
+      defaultValue: 1,
       description: 'Main application form submission'
     },
     
-    // Contact form submission
+    // Contact form submission - "Submit lead form"
     contactFormSubmit: {
-      label: 'GHI789JKL012', // TODO: Replace with actual conversion label
-      defaultValue: 0,
+      label: 'szTaCP_H9fIaEKrU9tlA', // Submit lead form
+      defaultValue: 1,
       description: 'Contact form submission'
     },
     
     // Phone number clicks
     phoneClick: {
-      label: 'MNO345PQR678', // TODO: Replace with actual conversion label
-      defaultValue: 0,
+      label: 'szTaCP_H9fIaEKrU9tlA', // Using Submit lead form for phone clicks
+      defaultValue: 1,
       description: 'Phone number click'
     },
     
     // Landing page form submissions
     landingPageLead: {
-      label: 'STU901VWX234', // TODO: Replace with actual conversion label
-      defaultValue: 25000,
+      label: 'vIlMCLLGj_MaEKrU9tlA', // Submit lead form (autofreightfactoring.com/)
+      defaultValue: 1,
       description: 'Landing page form submission'
     },
     
     // Fuel card application
     fuelCardApplication: {
-      label: 'YZA567BCD890', // TODO: Replace with actual conversion label
-      defaultValue: 10000,
+      label: 'vIlMCLLGj_MaEKrU9tlA', // Submit lead form (autofreightfactoring.com/)
+      defaultValue: 1,
       description: 'Fuel card application'
     }
   },
