@@ -3,11 +3,14 @@
 import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon, Fuel, UserCheck } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-import FundingCalculator from '../components/FundingCalculator'
-import { InvoiceUpload } from '../components/InvoiceUpload'
+import { useState, lazy, Suspense } from 'react'
 import { trackButtonClick, trackEvent } from '@/lib/analytics'
 import { Navigation } from '@/components/Navigation'
+
+// Lazy load heavy components
+const FundingCalculator = lazy(() => import('../components/FundingCalculator'))
+const InvoiceUpload = lazy(() => import('../components/InvoiceUpload').then(mod => ({ default: mod.InvoiceUpload })))
+const Testimonials = lazy(() => import('../components/testimonials').then(mod => ({ default: mod.Testimonials })))
 
 export default function HomeClient() {
 
@@ -98,7 +101,14 @@ export default function HomeClient() {
               </div>
             </div>
             <div className="relative lg:pl-8 pt-4">
-              <FundingCalculator />
+              <Suspense fallback={
+                <div className="bg-white rounded-2xl shadow-lg p-8 animate-pulse">
+                  <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+                  <div className="h-64 bg-gray-100 rounded"></div>
+                </div>
+              }>
+                <FundingCalculator />
+              </Suspense>
               
               {/* Background decoration */}
               <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full blur-2xl opacity-30" />
@@ -123,7 +133,16 @@ export default function HomeClient() {
             </p>
           </div>
           
-          <InvoiceUpload />
+          <Suspense fallback={
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-lg p-8 animate-pulse">
+                <div className="h-8 bg-gray-200 rounded w-1/2 mx-auto mb-6"></div>
+                <div className="h-96 bg-gray-100 rounded"></div>
+              </div>
+            </div>
+          }>
+            <InvoiceUpload />
+          </Suspense>
         </div>
       </section>
 
@@ -1092,6 +1111,34 @@ export default function HomeClient() {
               <ChevronRight className="h-5 w-5 ml-2" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Trusted by Thousands of Truckers
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what real owner-operators and fleet managers say about our freight factoring service
+            </p>
+          </div>
+          
+          <Suspense fallback={
+            <div className="grid md:grid-cols-3 gap-6">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="bg-white rounded-lg p-6 animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                  <div className="h-20 bg-gray-100 rounded mb-4"></div>
+                  <div className="h-12 bg-gray-200 rounded-full w-12"></div>
+                </div>
+              ))}
+            </div>
+          }>
+            <Testimonials showTrustBadges={true} />
+          </Suspense>
         </div>
       </section>
 

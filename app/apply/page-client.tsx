@@ -21,13 +21,18 @@ import {
 import { useFormTracking } from '@/hooks/use-analytics-tracking'
 import { useRouter } from 'next/navigation'
 import { Navigation } from '@/components/Navigation'
+import { FormTrustIndicators, CompactTrustBadge } from '@/components/trust-indicators'
 
 const formSchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
   contactName: z.string().min(2, 'Contact name is required'),
-  mcNumber: z.string().regex(/^\d{6,7}$/, 'MC number must be 6-7 digits'),
+  mcNumber: z.string()
+    .transform(val => val.replace(/\D/g, '')) // Remove non-digits
+    .refine(val => val.length >= 6 && val.length <= 8, 'MC/DOT number must be 6-8 digits'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().regex(/^\d{10}$/, 'Phone must be 10 digits'),
+  phone: z.string()
+    .transform(val => val.replace(/\D/g, '')) // Remove non-digits
+    .refine(val => val.length === 10, 'Phone number must be 10 digits'),
   factoringStatus: z.enum(['none', 'current', 'previous']).refine((val) => val !== undefined, {
     message: 'Please select factoring status'
   })
@@ -108,7 +113,19 @@ export default function ApplyPageClient() {
   }
 
   const formatPhoneNumber = (value: string) => {
-    return value.replace(/\D/g, '')
+    // Remove all non-digits
+    const digits = value.replace(/\D/g, '')
+    
+    // Format as (XXX) XXX-XXXX
+    if (digits.length <= 3) {
+      return digits
+    } else if (digits.length <= 6) {
+      return `(${digits.slice(0, 3)}) ${digits.slice(3)}`
+    } else if (digits.length <= 10) {
+      return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
+    }
+    // Don't allow more than 10 digits
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`
   }
 
   const benefits = [
@@ -207,6 +224,9 @@ export default function ApplyPageClient() {
                 <p className="text-base text-gray-600">
                   Get approved in minutes
                 </p>
+                <div className="mt-3">
+                  <CompactTrustBadge />
+                </div>
               </div>
 
               <Form {...form}>
@@ -267,7 +287,7 @@ export default function ApplyPageClient() {
                           <div className="relative">
                             <Hash className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-blue-600" />
                             <Input
-                              placeholder="MC Number"
+                              placeholder="MC or DOT Number (e.g., 123456)"
                               className="h-14 pl-12 text-base border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg"
                               {...field}
                             />
@@ -309,7 +329,7 @@ export default function ApplyPageClient() {
                             <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-blue-600" />
                             <Input
                               type="tel"
-                              placeholder="Phone Number"
+                              placeholder="Phone Number (e.g., (555) 123-4567)"
                               className="h-14 pl-12 text-base border border-gray-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg"
                               {...field}
                               onChange={(e) => field.onChange(formatPhoneNumber(e.target.value))}
@@ -364,6 +384,8 @@ export default function ApplyPageClient() {
                     )}
                   </Button>
 
+                  <FormTrustIndicators />
+                  
                   <div className="mt-4 space-y-1 text-center">
                     <p className="text-sm text-gray-600">
                       ✓ No long-term contracts
