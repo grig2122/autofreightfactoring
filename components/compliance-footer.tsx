@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function ComplianceFooter() {
   return (
-    <div className="bg-gray-100 border-t border-gray-200 py-6 px-4">
+    <div className="bg-gray-100 border-t border-gray-200 py-6 px-4 pb-20 md:pb-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-2">
           <p className="text-xs text-gray-600">
@@ -16,13 +16,13 @@ export function ComplianceFooter() {
           <div className="text-xs text-gray-500 pt-2">
             Auto Freight Factoring LLC | 1234 Commerce Way, San Diego, CA 92101 | NMLS #123456
           </div>
-          <div className="text-xs text-gray-500">
-            <Link href="/privacy-policy" className="hover:text-blue-600 underline">Privacy Policy</Link>
-            {' | '}
-            <Link href="/terms-of-service" className="hover:text-blue-600 underline">Terms of Service</Link>
-            {' | '}
-            <Link href="/rates-and-fees" className="hover:text-blue-600 underline">Rates & Fees</Link>
-            {' | '}
+          <div className="text-xs text-gray-500 flex flex-wrap justify-center gap-x-2 gap-y-1">
+            <Link href="/privacy" className="hover:text-blue-600 underline">Privacy Policy</Link>
+            <span className="hidden md:inline">|</span>
+            <Link href="/terms" className="hover:text-blue-600 underline">Terms of Service</Link>
+            <span className="hidden md:inline">|</span>
+            <Link href="/invoice-factoring#pricing" className="hover:text-blue-600 underline">Rates & Fees</Link>
+            <span className="hidden md:inline">|</span>
             <span>© {new Date().getFullYear()} All Rights Reserved</span>
           </div>
         </div>

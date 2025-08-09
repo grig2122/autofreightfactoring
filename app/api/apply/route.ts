@@ -3,6 +3,7 @@ import { db } from '@/lib/firebase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import type { Lead, PreApprovalResult } from '@/lib/types'
 import { sendApplicationNotification } from '@/lib/email'
+import { getConversionConfig } from '@/lib/google-ads-config'
 
 // Pre-approval scoring logic
 function calculatePreApprovalScore(data: any): number {
@@ -122,6 +123,24 @@ export async function POST(request: NextRequest) {
     } catch (error) {
       console.error('Error sending email notification:', error)
       // Continue even if email fails - don't block user experience
+    }
+
+    // Track Google Ads conversion server-side using Measurement Protocol
+    try {
+      const conversionConfig = getConversionConfig('applicationSubmit')
+      const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-17368459818'
+      
+      // Log conversion tracking attempt for debugging
+      console.log('Tracking Google Ads conversion:', {
+        conversionLabel: conversionConfig.label,
+        value: conversionConfig.defaultValue,
+        companyName: data.companyName
+      })
+      
+      // Note: Server-side conversion tracking requires additional setup with Google Ads API
+      // For now, we'll ensure the client-side tracking works properly
+    } catch (error) {
+      console.error('Error tracking conversion:', error)
     }
 
     // Always return the same thank you message

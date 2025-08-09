@@ -22,6 +22,7 @@ import { useFormTracking } from '@/hooks/use-analytics-tracking'
 import { useRouter } from 'next/navigation'
 import { Navigation } from '@/components/Navigation'
 import { FormTrustIndicators, CompactTrustBadge } from '@/components/trust-indicators'
+import './mobile-styles.css'
 
 const formSchema = z.object({
   companyName: z.string().min(2, 'Company name is required'),
@@ -128,6 +129,20 @@ export default function ApplyPageClient() {
     return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`
   }
 
+  const scrollToForm = () => {
+    const formElement = document.getElementById('application-form')
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      // Focus first input after scrolling
+      setTimeout(() => {
+        const firstInput = formElement.querySelector('input')
+        if (firstInput) {
+          (firstInput as HTMLInputElement).focus()
+        }
+      }, 500)
+    }
+  }
+
   const benefits = [
     {
       icon: <DollarSign className="h-8 w-8" />,
@@ -191,7 +206,11 @@ export default function ApplyPageClient() {
               {/* Quick Benefits */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-white border border-gray-200 hover:shadow-md transition-all duration-200">
+                  <button
+                    key={index}
+                    onClick={scrollToForm}
+                    className="flex items-start space-x-3 p-3 rounded-lg bg-white border border-gray-200 hover:shadow-md hover:border-blue-400 transition-all duration-200 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
                     <div className="flex-shrink-0 text-blue-600">
                       {benefit.icon}
                     </div>
@@ -199,7 +218,7 @@ export default function ApplyPageClient() {
                       <h3 className="font-semibold text-gray-900">{benefit.title}</h3>
                       <p className="text-sm text-gray-600">{benefit.description}</p>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
 
@@ -213,7 +232,7 @@ export default function ApplyPageClient() {
             </div>
 
             {/* Right Column - Form */}
-            <div className="bg-white border border-gray-200 rounded-xl shadow-xl p-6 lg:p-8">
+            <div id="application-form" className="bg-white border border-gray-200 rounded-xl shadow-xl p-6 lg:p-8 scroll-mt-4">
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
                   <Truck className="h-8 w-8 text-blue-600" />
@@ -368,7 +387,7 @@ export default function ApplyPageClient() {
 
                   <Button 
                     type="submit" 
-                    className="w-full h-14 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200"
+                    className="w-full h-14 md:h-14 min-h-[56px] text-lg font-semibold bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white rounded-lg transition-all duration-200 touch-manipulation"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
