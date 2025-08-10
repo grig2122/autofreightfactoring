@@ -48,7 +48,7 @@ export function InstantApproval({ companyName, estimatedRate }: InstantApprovalP
                     <Truck className="h-8 w-8 text-blue-600" />
                     <div>
                       <p className="text-sm text-gray-600">Funding Speed</p>
-                      <p className="text-2xl font-bold text-gray-900">Same Day</p>
+                      <p className="text-2xl font-bold text-gray-900">1-2 Days</p>
                     </div>
                   </div>
                   <p className="text-sm text-gray-500">After verification</p>
@@ -83,7 +83,7 @@ export function InstantApproval({ companyName, estimatedRate }: InstantApprovalP
                   <span className="flex-shrink-0 h-8 w-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold">3</span>
                   <div>
                     <p className="font-semibold">Submit Your First Invoice</p>
-                    <p className="text-sm text-gray-600">Get paid the same day!</p>
+                    <p className="text-sm text-gray-600">Get paid fast!</p>
                   </div>
                 </li>
               </ol>

@@ -143,7 +143,7 @@ Add these elements to each landing page:
 <!-- Add to footer of each landing page -->
 <div class="compliance-footer">
   <p class="text-sm text-gray-600">
-    * Rates from 1.5% to 3.5%. Approval based on customer creditworthiness. 
+    * Flat rate of 3%. Approval based on customer creditworthiness. 
     Same-day funding available for approved applications submitted before 2PM EST.
   </p>
   <p class="text-sm text-gray-600">

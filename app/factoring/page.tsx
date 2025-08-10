@@ -75,7 +75,7 @@ export default function FactoringPage() {
                 <CardTitle>Transparent Rates</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Simple 1.5-3% flat fees, no hidden costs</p>
+                <p className="text-gray-600">Competitive rates, no hidden costs</p>
               </CardContent>
             </Card>
           </div>
@@ -151,7 +151,7 @@ export default function FactoringPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Get Funded</h3>
-                  <p className="text-gray-600">Receive 97-98.5% of invoice value within 24 hours</p>
+                  <p className="text-gray-600">Receive 97% of invoice value within 24 hours</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -172,8 +172,8 @@ export default function FactoringPage() {
                   <span className="font-semibold">$5,000</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Factoring Fee (2%):</span>
-                  <span className="font-semibold">-$100</span>
+                  <span className="text-gray-600">Factoring Fee:</span>
+                  <span className="font-semibold">Competitive rate</span>
                 </div>
                 <div className="border-t pt-4 flex justify-between">
                   <span className="text-gray-600">You Receive:</span>
@@ -204,7 +204,7 @@ export default function FactoringPage() {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-sm">Lowest rates (1.5-2.5%)</span>
+                    <span className="text-sm">Best rates available</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -230,7 +230,7 @@ export default function FactoringPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-sm">Higher rates (2.5-3.5%)</span>
+                    <span className="text-sm">Competitive rates</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -289,9 +289,9 @@ export default function FactoringPage() {
                 <div className="text-sm text-gray-600">
                   <p className="font-semibold mb-2">Typical advance amounts:</p>
                   <ul className="space-y-1">
-                    <li>• $1,000 invoice = $970-$985 advance</li>
-                    <li>• $5,000 invoice = $4,850-$4,925 advance</li>
-                    <li>• $10,000 invoice = $9,700-$9,850 advance</li>
+                    <li>• $1,000 invoice = competitive advance rates</li>
+                    <li>• $5,000 invoice = competitive advance rates</li>
+                    <li>• $10,000 invoice = competitive advance rates</li>
                   </ul>
                 </div>
               </div>
@@ -371,7 +371,7 @@ export default function FactoringPage() {
             </Link>
             <a href="tel:6198776746">
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
-                Call (619) 877-6746
+                Call Call Us
               </Button>
             </a>
           </div>
@@ -396,7 +396,7 @@ export default function FactoringPage() {
                 <div className="text-gray-600">Average Funding</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-blue-600">98%</div>
+                <div className="text-3xl font-bold text-blue-600">High</div>
                 <div className="text-gray-600">Approval Rate</div>
               </div>
               <div>

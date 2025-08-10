@@ -8,7 +8,7 @@ import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Invoice Factoring for Trucking | Turn Invoices Into Cash Fast',
-  description: 'Invoice factoring company for truckers. Get paid same day for your freight invoices. Fast invoice funding with no credit checks. Apply in minutes.',
+  description: 'Invoice factoring company for truckers. Get paid in 1-2 business days for your freight invoices. Fast invoice funding with no credit checks. Apply in minutes.',
   keywords: 'invoice factoring for trucking, invoice factoring company, factoring invoices for truckers, invoice factoring, trucking invoice finance, fast invoice funding',
   alternates: {
     canonical: 'https://autofreightfactoring.com/invoice-factoring',
@@ -32,7 +32,7 @@ export default function InvoiceFactoringPage() {
               Invoice Factoring for Trucking
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-              Turn invoices into cash same day. Leading invoice factoring company for truckers 
+              Turn invoices into cash in 1-2 business days. Leading invoice factoring company for truckers 
               with fast approval and transparent rates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -44,28 +44,28 @@ export default function InvoiceFactoringPage() {
               <a href="tel:6198776746">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-600">
                   <Phone className="mr-2 h-5 w-5" />
-                  (619) 877-6746
+                  Call Us
                 </Button>
               </a>
             </div>
             <p className="mt-6 text-sm opacity-75">
-              No contracts • No hidden fees • Get paid same day
+              No contracts • No hidden fees • Get paid in 1-2 business days
             </p>
           </div>
 
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
             <div className="text-center">
-              <div className="text-3xl font-bold">24hr</div>
+              <div className="text-3xl font-bold">1-2 days</div>
               <div className="text-sm opacity-75">Fast Invoice Funding</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">98%</div>
+              <div className="text-3xl font-bold">High</div>
               <div className="text-sm opacity-75">Approval Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">1.5%</div>
-              <div className="text-sm opacity-75">Starting Rate</div>
+              <div className="text-3xl font-bold">Low</div>
+              <div className="text-sm opacity-75">Rates</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold">5min</div>
@@ -85,7 +85,7 @@ export default function InvoiceFactoringPage() {
             <p className="mb-6 text-xl">
               <strong>Invoice factoring for trucking</strong> is a financial solution that allows truckers 
               and freight carriers to sell their unpaid invoices to an <strong>invoice factoring company</strong> for 
-              immediate cash. Instead of waiting 30-90 days for payment, you get funded within 24 hours.
+              immediate cash. Instead of waiting 30-90 days for payment, you get funded within 1-2 business days.
             </p>
             <div className="bg-blue-50 p-6 rounded-xl mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">How Invoice Factoring Works:</h3>
@@ -100,7 +100,7 @@ export default function InvoiceFactoringPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold text-blue-600 mr-3">3.</span>
-                  <span>Receive 97-98.5% of invoice value same day</span>
+                  <span>Receive 97% of invoice value within 1-2 business days</span>
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold text-blue-600 mr-3">4.</span>
@@ -131,13 +131,13 @@ export default function InvoiceFactoringPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Get paid in 24 hours or less. Our streamlined invoice factoring process 
+                  Get paid in 1-2 business days. Our streamlined invoice factoring process 
                   ensures you never wait for payment again.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Same-day ACH available
+                    Next business day ACH available
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -145,7 +145,7 @@ export default function InvoiceFactoringPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    24/7 online portal
+                    Business hours online portal
                   </li>
                 </ul>
               </CardContent>
@@ -158,13 +158,13 @@ export default function InvoiceFactoringPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Transparent invoice factoring rates starting at 1.5%. No hidden fees, 
+                  Transparent invoice factoring with competitive rates. No hidden fees, 
                   no surprises - just honest trucking invoice finance.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    Rates from 1.5-3%
+                    Competitive rates
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -199,7 +199,7 @@ export default function InvoiceFactoringPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                    98% approval rate
+                    Most qualified carriers approved
                   </li>
                 </ul>
               </CardContent>
@@ -226,19 +226,19 @@ export default function InvoiceFactoringPage() {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center py-2 border-b">
                       <span>$2,500 invoice</span>
-                      <span className="font-bold text-green-600">= $2,425 cash today</span>
+                      <span className="font-bold text-green-600">= Up to $2,500 cash today</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
                       <span>$5,000 invoice</span>
-                      <span className="font-bold text-green-600">= $4,850 cash today</span>
+                      <span className="font-bold text-green-600">= Up to $5,000 cash fast</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b">
                       <span>$10,000 invoice</span>
-                      <span className="font-bold text-green-600">= $9,700 cash today</span>
+                      <span className="font-bold text-green-600">= Up to $10,000 cash today</span>
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 mt-4">
-                    * Based on 3% factoring rate. Your rate may be lower.
+                    * Based on competitive factoring rates. Contact us for your personalized quote.
                   </p>
                 </div>
                 <div className="text-center">
@@ -279,7 +279,7 @@ export default function InvoiceFactoringPage() {
                   <ul className="text-sm space-y-1 mt-2">
                     <li>• Established trucking companies</li>
                     <li>• Working with reliable shippers</li>
-                    <li>• Lowest factoring rates (1.5-2%)</li>
+                    <li>• Best factoring rates available</li>
                   </ul>
                 </div>
               </CardContent>
@@ -300,7 +300,7 @@ export default function InvoiceFactoringPage() {
                   <ul className="text-sm space-y-1 mt-2">
                     <li>• New trucking businesses</li>
                     <li>• Working with new customers</li>
-                    <li>• Peace of mind (2.5-3% rates)</li>
+                    <li>• Peace of mind (competitive rates)</li>
                   </ul>
                 </div>
               </CardContent>
@@ -335,8 +335,8 @@ export default function InvoiceFactoringPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Our fast invoice funding process typically takes 24 hours or less. Submit your 
-                  invoice before 2 PM EST and receive funds the same day via ACH transfer.
+                  Our fast invoice funding process typically takes 1-2 business days. Submit your 
+                  invoice during business hours and receive funds the next business day via ACH transfer.
                 </p>
               </CardContent>
             </Card>
@@ -347,8 +347,8 @@ export default function InvoiceFactoringPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We specialize exclusively in trucking invoice finance with the lowest rates (1.5-3%), 
-                  fastest funding, no contracts, and a 98% approval rate. Our team includes former 
+                  We specialize exclusively in trucking invoice finance with transparent competitive rates, 
+                  fastest funding, no contracts, and high approval rates. Our team includes former 
                   truckers who understand your business.
                 </p>
               </CardContent>
@@ -374,11 +374,11 @@ export default function InvoiceFactoringPage() {
       <section className="py-16 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Get Paid Same Day with Invoice Factoring
+            Get Paid Fast with Invoice Factoring
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of truckers using our invoice factoring company for fast funding. 
-            Turn invoices into cash in 24 hours or less.
+            Join hundreds of truckers using our invoice factoring company for fast funding. 
+            Turn invoices into cash in 1-2 business days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link href="/apply">
@@ -390,7 +390,7 @@ export default function InvoiceFactoringPage() {
             <a href="tel:6198776746">
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
                 <Phone className="mr-2 h-5 w-5" />
-                Call (619) 877-6746
+                Call Call Us
               </Button>
             </a>
           </div>
@@ -407,19 +407,19 @@ export default function InvoiceFactoringPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600">5,000+</div>
+              <div className="text-3xl font-bold text-blue-600">Many</div>
               <div className="text-gray-600">Invoices Factored</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">$50M+</div>
+              <div className="text-3xl font-bold text-blue-600">Reliable</div>
               <div className="text-gray-600">Funded This Year</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">24hr</div>
+              <div className="text-3xl font-bold text-blue-600">1-2 days</div>
               <div className="text-gray-600">Average Funding Time</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">4.9★</div>
+              <div className="text-3xl font-bold text-blue-600">Trusted</div>
               <div className="text-gray-600">Customer Rating</div>
             </div>
           </div>

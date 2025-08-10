@@ -8,8 +8,8 @@ import { Navigation } from '@/components/Navigation'
 import FundingCalculator from '@/components/FundingCalculator'
 
 export const metadata: Metadata = {
-  title: 'Transparent Factoring Pricing | No Hidden Fees | Flat Rate Factoring',
-  description: 'Simple, transparent freight factoring with no hidden fees. Flat 1.5% rate, no contracts, no minimums. See exactly what you pay - no surprises.',
+  title: 'Transparent Factoring Pricing | No Hidden Fees | Competitive Rate Factoring',
+  description: 'Simple, transparent freight factoring with no hidden fees. Competitive rates, no contracts, no minimums. See exactly what you pay - no surprises.',
   keywords: 'transparent factoring pricing, no hidden fees factoring, flat rate factoring, freight factoring rates, trucking factoring costs',
   alternates: {
     canonical: 'https://autofreightfactoring.com/transparent-pricing',
@@ -30,7 +30,7 @@ export default function TransparentPricingPage() {
               100% Transparent Pricing - No Surprises
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Flat Rate Factoring: Just 1.5%
+              Competitive Rate Factoring
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               No hidden fees. No fine print. No surprises. Just simple, honest freight factoring 
@@ -45,7 +45,7 @@ export default function TransparentPricingPage() {
               <a href="tel:6198776746">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-600">
                   <Phone className="mr-2 h-5 w-5" />
-                  (619) 877-6746
+                  Call Us
                 </Button>
               </a>
             </div>
@@ -55,8 +55,8 @@ export default function TransparentPricingPage() {
           <div className="grid md:grid-cols-3 gap-6 mt-16">
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
               <DollarSign className="w-12 h-12 mx-auto mb-3 text-green-300" />
-              <h3 className="text-xl font-semibold mb-2">1.5% Flat Rate</h3>
-              <p className="text-green-100">Same rate for everyone, every invoice</p>
+              <h3 className="text-xl font-semibold mb-2">Competitive Rates</h3>
+              <p className="text-green-100">Industry-leading rates for all carriers</p>
             </div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center">
               <Shield className="w-12 h-12 mx-auto mb-3 text-green-300" />
@@ -97,7 +97,7 @@ export default function TransparentPricingPage() {
                 <CardDescription>Simple, transparent pricing</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="text-4xl font-bold text-green-600">1.5% Flat Rate</div>
+                <div className="text-4xl font-bold text-green-600">Competitive Rates</div>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
@@ -129,7 +129,7 @@ export default function TransparentPricingPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-green-600 flex-shrink-0" />
-                    <span>Same-day funding available</span>
+                    <span>1-2 business day funding</span>
                   </li>
                 </ul>
               </CardContent>
@@ -142,11 +142,11 @@ export default function TransparentPricingPage() {
                 <CardDescription>Hidden fees add up quickly</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="text-4xl font-bold text-gray-600">2-5% + Fees</div>
+                <div className="text-4xl font-bold text-gray-600">Higher Rates + Fees</div>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2">
                     <X className="h-5 w-5 text-red-600 flex-shrink-0" />
-                    <span className="text-gray-600">90-95% advance rate only</span>
+                    <span className="text-gray-600">Lower advance rates only</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <X className="h-5 w-5 text-red-600 flex-shrink-0" />
@@ -154,7 +154,7 @@ export default function TransparentPricingPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <X className="h-5 w-5 text-red-600 flex-shrink-0" />
-                    <span className="text-gray-600">$5,000+ monthly minimums</span>
+                    <span className="text-gray-600">High monthly minimums</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <X className="h-5 w-5 text-red-600 flex-shrink-0" />
@@ -207,9 +207,9 @@ export default function TransparentPricingPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-green-600 mb-2">1.5%</div>
+                <div className="text-2xl font-bold text-green-600 mb-2">Low</div>
                 <p className="text-gray-600">
-                  Simple flat rate on every invoice. $1,000 invoice = $15 fee. 
+                  Competitive rates on every invoice. Volume-based pricing available. 
                   That's it. No sliding scales or complicated tiers.
                 </p>
               </CardContent>
@@ -305,7 +305,7 @@ export default function TransparentPricingPage() {
             <CardContent className="p-8">
               <blockquote className="text-xl italic text-gray-700 mb-4">
                 "After years of hidden fees with other factoring companies, finding AutoFreightFactoring 
-                was a breath of fresh air. The 1.5% rate is exactly what I pay - no surprises, 
+                was a breath of fresh air. The competitive rates are exactly what I pay - no surprises, 
                 no fine print. It's helped me budget better and grow my fleet."
               </blockquote>
               <div className="flex items-center gap-4">
@@ -330,7 +330,7 @@ export default function TransparentPricingPage() {
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Join thousands of truckers who've switched to simple, flat-rate factoring. 
-            Apply in minutes, get approved today.
+            Apply in minutes, most qualified carriers approved quickly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply">
@@ -341,7 +341,7 @@ export default function TransparentPricingPage() {
             <a href="tel:6198776746">
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-green-600">
                 <Phone className="mr-2 h-5 w-5" />
-                Call (619) 877-6746
+                Call Us
               </Button>
             </a>
           </div>

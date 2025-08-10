@@ -50,7 +50,7 @@ function ThankYouContent() {
                 <h3 className="font-semibold text-green-800 mb-2">Pre-Approval Details:</h3>
                 <ul className="space-y-1 text-green-700">
                   <li>• Funding Amount: Up to ${amount || '50,000'}</li>
-                  <li>• Same-day funding available</li>
+                  <li>• Fast funding available</li>
                   <li>• No hidden fees</li>
                   <li>• Dedicated account manager</li>
                 </ul>
@@ -77,8 +77,8 @@ function ThankYouContent() {
                 <div className="flex items-start gap-3">
                   <Clock className="h-5 w-5 text-blue-600 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-gray-900">Money hits TODAY</p>
-                    <p className="text-sm text-gray-600">Approved loads get paid same day - no waiting</p>
+                    <p className="font-semibold text-gray-900">Money hits FAST</p>
+                    <p className="text-sm text-gray-600">Approved loads get paid within 1-2 business days</p>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ function ThankYouContent() {
                   className="w-full h-14 text-lg font-semibold border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-lg"
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Call Now: (619) 877-6746
+                  Call Us Now
                 </Button>
               </a>
             </div>

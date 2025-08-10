@@ -5,7 +5,7 @@ import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Auto Freight Factoring',
-  description: 'Get in touch with Auto Freight Factoring. Call us at (619) 877-6746 or email support@autofreightfactoring.com. We\'re here to help 24/7.',
+  description: 'Get in touch with Auto Freight Factoring. Call us or email support@autofreightfactoring.com. Business hours: Monday-Friday 9 AM - 6 PM EST.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/contact',
   },
@@ -58,9 +58,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Phone Support</h3>
-                    <p className="text-gray-600 mb-2">Available 24/7 for your convenience</p>
+                    <p className="text-gray-600 mb-2">Available Monday-Friday 9 AM - 6 PM EST</p>
                     <a href="tel:+16198776746" className="text-blue-600 font-semibold hover:underline">
-                      (619) 877-6746
+                      Call Us
                     </a>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Email Support</h3>
-                    <p className="text-gray-600 mb-2">We respond within 1 business hour</p>
+                    <p className="text-gray-600 mb-2">We respond within 4 business hours</p>
                     <a href="mailto:support@autofreightfactoring.com" className="text-blue-600 font-semibold hover:underline">
                       support@autofreightfactoring.com
                     </a>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     <p className="text-gray-600">
                       Monday - Friday: 8:00 AM - 6:00 PM PST<br />
                       Saturday - Sunday: 9:00 AM - 5:00 PM PST<br />
-                      <span className="text-green-600 font-semibold">24/7 Phone Support Available</span>
+                      <span className="text-green-600 font-semibold">Business Hours Phone Support Available</span>
                     </p>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold mb-4">Send Us a Message</h2>
               <p className="text-gray-600 mb-6">
-                Fill out the form below and we'll get back to you within 1 business hour. 
+                Fill out the form below and we'll get back to you within 4 business hours. 
                 For immediate assistance, please call us at (619) 877-6746. All fields marked 
                 with an asterisk (*) are required.
               </p>
@@ -133,13 +133,13 @@ export default function ContactPage() {
             <div className="prose prose-lg max-w-none text-gray-600 mb-12">
               <p className="mb-6">
                 When you contact AutoFreightFactoring, you're not just reaching out to another factoring company. 
-                You're connecting with a team that truly understands the trucking industry. We've helped thousands 
+                You're connecting with a team that truly understands the trucking industry. We've helped hundreds 
                 of owner-operators and fleet managers overcome cash flow challenges and grow their businesses.
               </p>
               <p className="mb-6">
                 Our commitment to transparency means you'll always know exactly what you're paying and why. 
                 Unlike many factoring companies that hide fees in the fine print, we believe in straightforward 
-                pricing. Our flat 1.5% rate includes everything - no application fees, no monthly minimums, 
+                pricing. Our flat 3% rate includes everything - no application fees, no monthly minimums, 
                 no ACH fees, and no termination penalties.
               </p>
               <p className="mb-6">
@@ -172,7 +172,7 @@ export default function ContactPage() {
                   Our fleet services include:
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Rates as low as 2.5% for high-volume clients</li>
+                  <li>• Volume discounts available for high-volume clients</li>
                   <li>• Dedicated account manager for personalized service</li>
                   <li>• Bulk invoice processing capabilities</li>
                   <li>• Custom reporting and analytics tools</li>
@@ -197,14 +197,14 @@ export default function ContactPage() {
               <h3 className="font-semibold text-lg mb-2">What are your business hours?</h3>
               <p className="text-gray-600">
                 Our office hours are Monday-Friday 8 AM - 6 PM PST, and weekends 9 AM - 5 PM PST. 
-                However, our phone support is available 24/7 for urgent matters.
+                Phone support is available during business hours.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="font-semibold text-lg mb-2">How quickly do you respond to inquiries?</h3>
               <p className="text-gray-600">
-                We aim to respond to all email inquiries within 1 business hour during office hours. 
-                Phone calls are answered immediately 24/7.
+                We aim to respond to all email inquiries within 4 business hours during office hours. 
+                Phone calls are answered during business hours Monday-Friday 9 AM - 6 PM EST.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -232,11 +232,11 @@ export default function ContactPage() {
           <h2 className="text-4xl font-bold mb-6">Ready to Improve Your Cash Flow?</h2>
           <p className="text-xl mb-4 max-w-3xl mx-auto">
             Don't let slow-paying customers hold your business back. With AutoFreightFactoring, 
-            you can get paid in 24 hours instead of waiting 30-90 days. Our simple application 
-            process takes just 2 minutes, and most truckers get approved instantly.
+            you can get paid in 1-2 business days instead of waiting 30-90 days. Our simple application 
+            process takes just 2 minutes, and most qualified carriers get approved.
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto text-blue-100">
-            Join thousands of truckers who use factoring to maintain steady cash flow, 
+            Join hundreds of truckers who use factoring to maintain steady cash flow, 
             take on more loads, and grow their business without worrying about payment delays.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -244,7 +244,7 @@ export default function ContactPage() {
               href="/apply" 
               className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Apply Now - Get Instant Approval
+              Apply Now - Fast Approval
             </a>
             <a 
               href="tel:6198776746" 

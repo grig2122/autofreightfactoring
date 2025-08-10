@@ -1,7 +1,7 @@
 import { PageType } from './types'
 
 export const PHONE_NUMBER = '6198776746'
-export const FORMATTED_PHONE = '(619) 877-6746'
+export const FORMATTED_PHONE = 'Call Us'
 
 export const NAV_ITEMS = {
   features: { label: 'Features', hash: 'features' },

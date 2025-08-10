@@ -6,7 +6,7 @@ export function StructuredData() {
     "alternateName": "Auto Freight Factoring",
     "url": "https://autofreightfactoring.com",
     "logo": "https://autofreightfactoring.com/icon.png",
-    "description": "Same-day invoice factoring for truckers. Get paid today with no-contract factoring for owner-operators and small fleets.",
+    "description": "Fast invoice factoring for truckers. Get paid in 1-2 business days with no-contract factoring for owner-operators and small fleets.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US"
@@ -14,14 +14,14 @@ export function StructuredData() {
     "telephone": "(619) 877-6746",
     "email": "support@autofreightfactoring.com",
     "areaServed": "United States",
-    "priceRange": "1.5% factoring fee",
+    "priceRange": "Competitive factoring rates",
     "openingHours": "Mo-Fr 08:00-18:00",
     "sameAs": [],
     "knowsAbout": [
       "Invoice Factoring",
       "Freight Factoring",
       "Transportation Factoring",
-      "Same-Day Funding",
+      "Fast Funding",
       "Trucking Industry",
       "Cash Flow Management"
     ],
@@ -33,8 +33,8 @@ export function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Same-Day Invoice Factoring",
-            "description": "100% advance on your invoices minus 1.5% fee. Get paid the same day."
+            "name": "Fast Invoice Factoring",
+            "description": "Competitive advance rates on your invoices. Get paid in 1-2 business days."
           }
         }
       ]

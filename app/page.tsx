@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import HomeClient from './page-client'
 
 export const metadata: Metadata = {
-  title: 'Freight Factoring for Truckers | Same-Day Funding | AutoFreightFactoring',
-  description: 'Get same-day funding with freight factoring designed for truckers. No credit check, 100% advance rates, transparent pricing. Turn invoices into cash in 24 hours.',
-  keywords: 'freight factoring, trucking factoring, invoice factoring, same day funding, trucking cash flow, freight bill factoring',
+  title: 'Freight Factoring for Truckers | Fast Funding | AutoFreightFactoring',
+  description: 'Get fast funding with freight factoring designed for truckers. No credit check, 100% advance rates, transparent pricing. Turn invoices into cash in 1-2 business days.',
+  keywords: 'freight factoring, trucking factoring, invoice factoring, fast funding, trucking cash flow, freight bill factoring',
   openGraph: {
-    title: 'Freight Factoring for Truckers | Same-Day Funding',
-    description: 'Get same-day funding with freight factoring designed for truckers. No credit check, 100% advance rates, transparent pricing.',
+    title: 'Freight Factoring for Truckers | Fast Funding',
+    description: 'Get fast funding with freight factoring designed for truckers. No credit check, 100% advance rates, transparent pricing.',
     url: 'https://autofreightfactoring.com',
     siteName: 'AutoFreightFactoring',
     type: 'website',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Freight Factoring for Truckers | Same-Day Funding',
-    description: 'Get same-day funding with freight factoring designed for truckers. No credit check, 100% advance rates.',
+    title: 'Freight Factoring for Truckers | Fast Funding',
+    description: 'Get fast funding with freight factoring designed for truckers. No credit check, 100% advance rates.',
     images: ['https://autofreightfactoring.com/og-image.jpg'],
   },
   alternates: {

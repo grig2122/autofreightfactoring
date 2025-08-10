@@ -35,20 +35,29 @@ if (isFirebaseConfigured) {
   try {
     app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
     
-    // Only initialize client-side services in production
+    // Initialize client-side services
     if (typeof window !== 'undefined') {
-      if (process.env.NODE_ENV === 'production') {
-        // Commenting out auth as it's not used and causing errors
-        // auth = getAuth(app);
-        // Delay analytics initialization to avoid errors
-        if (firebaseConfig.measurementId) {
+      // Initialize analytics in both dev and production for better debugging
+      if (firebaseConfig.measurementId) {
+        try {
           analytics = getAnalytics(app);
+          // Enable debug mode in development
+          if (process.env.NODE_ENV !== 'production') {
+            (window as any).gtag?.('config', firebaseConfig.measurementId, {
+              'debug_mode': true
+            });
+          }
+        } catch (error) {
+          console.warn('Analytics initialization error:', error);
         }
       }
-    } else {
-      // Server-side only needs Firestore
-      // Commenting out auth as it's not used
-      // auth = getAuth(app);
+      
+      // Initialize auth only if needed
+      try {
+        auth = getAuth(app);
+      } catch (error) {
+        console.warn('Auth initialization skipped:', error);
+      }
     }
     
     db = getFirestore(app);

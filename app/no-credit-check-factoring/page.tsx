@@ -34,7 +34,7 @@ export default function NoCreditCheckFactoringPage() {
               </Link>
               <a href="tel:6198776746">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                  Call (619) 877-6746
+                  Call Call Us
                 </Button>
               </a>
             </div>
@@ -300,7 +300,7 @@ export default function NoCreditCheckFactoringPage() {
             </Link>
           </div>
           <p className="mt-8 text-lg opacity-90">
-            Or call us at <a href="tel:6198776746" className="underline font-semibold">(619) 877-6746</a>
+            Or call us at <a href="tel:6198776746" className="underline font-semibold">Call Us</a>
           </p>
         </div>
       </section>

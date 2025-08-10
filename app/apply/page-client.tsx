@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -22,6 +22,8 @@ import { useFormTracking } from '@/hooks/use-analytics-tracking'
 import { useRouter } from 'next/navigation'
 import { Navigation } from '@/components/Navigation'
 import { FormTrustIndicators, CompactTrustBadge } from '@/components/trust-indicators'
+import { trackEnhancedFormSubmission, trackApplicationError } from '@/lib/enhanced-analytics'
+import { trackFormAbandoner, trackPurchaseIntent, trackCartAbandonment } from '@/lib/remarketing'
 import './mobile-styles.css'
 
 const formSchema = z.object({
@@ -45,6 +47,7 @@ export default function ApplyPageClient() {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formStartTime, setFormStartTime] = useState<number>(0)
+  const [currentFieldsFilled, setCurrentFieldsFilled] = useState(0)
   const { handleFieldInteraction } = useFormTracking('freight_factoring_application')
   
   const form = useForm<FormData>({
@@ -58,6 +61,47 @@ export default function ApplyPageClient() {
       factoringStatus: 'none'
     }
   })
+
+  // Track form progress
+  useEffect(() => {
+    const values = form.getValues()
+    let filledCount = 0
+    if (values.companyName) filledCount++
+    if (values.contactName) filledCount++
+    if (values.mcNumber) filledCount++
+    if (values.email) filledCount++
+    if (values.phone) filledCount++
+    if (values.factoringStatus && values.factoringStatus !== 'none') filledCount++
+    setCurrentFieldsFilled(filledCount)
+    
+    // Track purchase intent if user fills more than 2 fields
+    if (filledCount >= 2) {
+      trackPurchaseIntent({
+        clickedApply: true,
+        scrolledToForm: true,
+        formInteraction: filledCount
+      })
+    }
+    
+    // Track cart abandonment for partial form fills
+    if (filledCount > 0 && filledCount < 6) {
+      trackCartAbandonment({
+        formData: values,
+        step: `field_${filledCount}`,
+        value: filledCount / 6
+      })
+    }
+  }, [form.watch()])
+  
+  // Track form abandonment on unmount
+  useEffect(() => {
+    return () => {
+      const filledCount = currentFieldsFilled
+      if (filledCount > 0 && filledCount < 6) {
+        trackFormAbandoner('freight_factoring_application', filledCount, 6)
+      }
+    }
+  }, [currentFieldsFilled])
 
   const handleSubmit = async (data: FormData) => {
     setIsSubmitting(true)
@@ -93,6 +137,9 @@ export default function ApplyPageClient() {
         // Track successful form submission
         trackFormSubmit('freight_factoring_application', undefined, true)
         
+        // Track enhanced form submission
+        trackEnhancedFormSubmission('freight_factoring_application', data, true)
+        
         // Track application completion with enhanced ecommerce
         trackApplicationComplete({
           companyName: data.companyName,
@@ -103,11 +150,19 @@ export default function ApplyPageClient() {
         
         router.push('/apply/thank-you')
       } else {
-        throw new Error('Submission failed')
+        const errorText = await response.text()
+        throw new Error(`Submission failed: ${errorText}`)
       }
     } catch (error) {
       console.error('Error:', error)
+      
+      // Track the error with enhanced analytics
+      trackApplicationError(error as Error, 'form_submission')
       trackFormSubmit('freight_factoring_application', undefined, false)
+      trackEnhancedFormSubmission('freight_factoring_application', data, false, (error as Error).message)
+      
+      // Show user-friendly error message
+      alert('There was an error submitting your application. Please try again or call us')
     } finally {
       setIsSubmitting(false)
     }
@@ -146,8 +201,8 @@ export default function ApplyPageClient() {
   const benefits = [
     {
       icon: <DollarSign className="h-8 w-8" />,
-      title: "Same Day Pay",
-      description: "Get paid in 24 hours"
+      title: "Fast Pay",
+      description: "Get paid in 1-2 business days"
     },
     {
       icon: <Fuel className="h-8 w-8" />,
@@ -197,10 +252,10 @@ export default function ApplyPageClient() {
             {/* Left Column - Headlines and Benefits */}
             <div>
               <h1 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Get Paid Same Day for Your Freight
+                Get Paid Fast for Your Freight
               </h1>
               <p className="text-lg lg:text-xl text-gray-700 mb-8">
-                Stop waiting 30+ days. Get your money in 24 hours with our simple factoring service.
+                Stop waiting 30+ days. Get your money in 1-2 business days with our simple factoring service.
               </p>
 
               {/* Quick Benefits */}
@@ -226,7 +281,7 @@ export default function ApplyPageClient() {
               <div className="lg:hidden mb-8">
                 <a href="tel:6198776746" className="flex items-center justify-center space-x-2 bg-green-600 text-white p-4 rounded-lg font-bold text-lg">
                   <Phone className="h-6 w-6" />
-                  <span>CALL NOW: (619) 877-6746</span>
+                  <span>CALL US NOW</span>
                 </a>
               </div>
             </div>
@@ -413,7 +468,7 @@ export default function ApplyPageClient() {
                       ✓ No credit check required
                     </p>
                     <p className="text-sm text-gray-600">
-                      ✓ Same-day funding available
+                      ✓ 1-2 business day funding
                     </p>
                   </div>
                 </form>
@@ -425,20 +480,20 @@ export default function ApplyPageClient() {
           <div className="mt-8 text-center">
             <div className="flex flex-wrap justify-center gap-6 items-center">
               <div className="text-gray-600">
-                <p className="font-semibold">BBB Accredited</p>
-                <p className="text-sm">A+ Rating</p>
+                <p className="font-semibold">SSL Secured</p>
+                <p className="text-sm">Your data is safe</p>
               </div>
               <div className="text-gray-600">
-                <p className="font-semibold">$50M+ Funded</p>
-                <p className="text-sm">Since 2020</p>
+                <p className="font-semibold">Quick Approval</p>
+                <p className="text-sm">Most qualified carriers</p>
               </div>
               <div className="text-gray-600">
-                <p className="font-semibold">500+ Active Clients</p>
-                <p className="text-sm">Nationwide</p>
+                <p className="font-semibold">No Hidden Fees</p>
+                <p className="text-sm">Transparent pricing</p>
               </div>
               <div className="text-gray-600">
-                <p className="font-semibold">4.8/5 Stars</p>
-                <p className="text-sm">Google Reviews</p>
+                <p className="font-semibold">Fast Funding</p>
+                <p className="text-sm">1-2 business days</p>
               </div>
             </div>
           </div>
@@ -450,20 +505,20 @@ export default function ApplyPageClient() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">500+</div>
-              <div className="text-blue-100">Truckers Paid</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Growing</div>
+              <div className="text-blue-100">Client Base</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">24hr</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">1-2 days</div>
               <div className="text-blue-100">Money in Bank</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">$50M+</div>
-              <div className="text-blue-100">Funded</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Reliable</div>
+              <div className="text-blue-100">Funding Partner</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">3%</div>
-              <div className="text-blue-100">Flat Fee</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Competitive</div>
+              <div className="text-blue-100">Rates</div>
             </div>
           </div>
         </div>
@@ -479,11 +534,11 @@ export default function ApplyPageClient() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="font-semibold text-xl mb-3 text-gray-900">Fast Funding</h3>
               <p className="text-gray-600 mb-4">
-                Unlike traditional factoring companies that take 3-5 days, we fund most invoices within 24 hours. 
+                Unlike traditional factoring companies that take 3-5 days, we fund most invoices within 1-2 business days. 
                 Get your money when you need it most.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>✓ Same-day ACH available</li>
+                <li>✓ Next business day ACH available</li>
                 <li>✓ Weekend processing</li>
                 <li>✓ No hidden delays</li>
               </ul>
@@ -491,8 +546,8 @@ export default function ApplyPageClient() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h3 className="font-semibold text-xl mb-3 text-gray-900">Simple Terms</h3>
               <p className="text-gray-600 mb-4">
-                No complicated contracts or hidden fees. Our flat 3% rate is all you pay. 
-                No monthly minimums, no long-term commitments.
+                No complicated contracts or hidden fees. Our competitive rates mean transparent pricing with 
+                no monthly minimums, no long-term commitments.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>✓ Cancel anytime</li>
@@ -506,7 +561,7 @@ export default function ApplyPageClient() {
                 Our team understands trucking because we've been there. Get real support from people who know the road.
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>✓ 24/7 phone support</li>
+                <li>✓ Business hours phone support</li>
                 <li>✓ Dedicated account manager</li>
                 <li>✓ Mobile app access</li>
               </ul>
@@ -530,7 +585,7 @@ export default function ApplyPageClient() {
                 <span className="ml-2 text-sm text-gray-600">Owner-Operator</span>
               </div>
               <p className="text-gray-700 mb-3">
-                "Finally, a factoring company that gets it. Money hits my account the same day I submit. 
+                "Finally, a factoring company that gets it. Money hits my account within 1-2 business days. 
                 No more waiting around for weeks to get paid."
               </p>
               <p className="font-semibold text-gray-900">- Mike R., Texas</p>
@@ -571,14 +626,14 @@ export default function ApplyPageClient() {
                 2
               </div>
               <h3 className="font-semibold text-lg mb-2">WE CHECK IT</h3>
-              <p className="text-gray-700 font-semibold">Takes a few hours max</p>
+              <p className="text-gray-700 font-semibold">Takes 1-2 business days</p>
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-black">
                 3
               </div>
               <h3 className="font-semibold text-lg mb-2">MONEY HITS</h3>
-              <p className="text-gray-700 font-semibold">Same day ACH transfer</p>
+              <p className="text-gray-700 font-semibold">Next business day ACH transfer</p>
             </div>
           </div>
         </div>
@@ -600,7 +655,7 @@ export default function ApplyPageClient() {
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <h3 className="font-semibold text-lg mb-2">How fast do I get paid?</h3>
               <p className="text-gray-600">
-                Most loads are funded within 24 hours. Submit before 2 PM ET for same-day ACH. Wire transfers available for urgent needs.
+                Most loads are funded within 1-2 business days. Submit during business hours for next business day ACH. Wire transfers available for urgent needs.
               </p>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -612,7 +667,7 @@ export default function ApplyPageClient() {
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <h3 className="font-semibold text-lg mb-2">Are there any hidden fees?</h3>
               <p className="text-gray-600">
-                None. Our 3% flat rate is all you pay. No application fees, monthly minimums, or termination fees. What you see is what you get.
+                None. Our competitive rates include everything. No application fees, monthly minimums, or termination fees. What you see is what you get.
               </p>
             </div>
           </div>
@@ -626,7 +681,7 @@ export default function ApplyPageClient() {
             Ready to Get Started?
           </h2>
           <p className="text-lg text-blue-100 mb-6">
-            Join 500+ truckers who get paid faster
+            Join hundreds of truckers who get paid faster
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -643,7 +698,7 @@ export default function ApplyPageClient() {
                 className="h-12 px-6 text-base font-semibold bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600"
               >
                 <Phone className="mr-2 h-6 w-6" />
-                CALL: (619) 877-6746
+                CALL US
               </Button>
             </a>
           </div>

@@ -7,7 +7,7 @@ import { ComplianceFooter } from '@/components/compliance-footer'
 
 export const metadata: Metadata = {
   title: 'Fuel Advances & Fuel Cards for Truckers | Save on Every Gallon',
-  description: 'Get instant fuel advances and save up to 50¢ per gallon with our fuel card program. No credit checks, same-day approval, nationwide acceptance.',
+  description: 'Get fuel advances and save up to 50¢ per gallon with our fuel card program. No credit checks, fast approval, nationwide acceptance.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/fuel-advances',
   },
@@ -24,7 +24,7 @@ export default function FuelAdvancesPage() {
               Fuel Advances & Discounts for Truckers
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Get instant fuel advances on your loads and save up to 50¢ per gallon with our fuel card. 
+              Get fuel advances on your loads and save money per gallon with our fuel card. 
               Keep your trucks moving without cash flow worries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -46,7 +46,7 @@ export default function FuelAdvancesPage() {
             <Card className="text-center">
               <CardHeader>
                 <Fuel className="w-12 h-12 text-green-600 mx-auto mb-2" />
-                <CardTitle>Up to 50¢/gal Savings</CardTitle>
+                <CardTitle>Great Per Gallon Savings</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Major discounts at 14,000+ locations nationwide</p>
@@ -55,7 +55,7 @@ export default function FuelAdvancesPage() {
             <Card className="text-center">
               <CardHeader>
                 <Zap className="w-12 h-12 text-blue-600 mx-auto mb-2" />
-                <CardTitle>Instant Advances</CardTitle>
+                <CardTitle>Fast Advances</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Get 40-50% advance on any load immediately</p>
@@ -148,7 +148,7 @@ export default function FuelAdvancesPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Instant Fuel Advances on Your Loads
+            Fast Fuel Advances on Your Loads
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1">
@@ -180,7 +180,7 @@ export default function FuelAdvancesPage() {
                       3
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">Get Funded Instantly</h4>
+                      <h4 className="font-semibold mb-1">Get Funded Quickly</h4>
                       <p className="text-gray-600 text-sm">Receive 40-50% of load value on your fuel card</p>
                     </div>
                   </div>
@@ -201,12 +201,12 @@ export default function FuelAdvancesPage() {
               <p className="text-gray-600 mb-6">
                 Our fuel advance program ensures you always have money for fuel, even before 
                 you pick up the load. Get up to 50% of your rate confirmation value loaded 
-                instantly onto your fuel card.
+                quickly onto your fuel card.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                  <span>Available 24/7 through mobile app</span>
+                  <span>Available during business hours through our app</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -371,8 +371,8 @@ export default function FuelAdvancesPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Fuel advances are available instantly once your rate confirmation is verified. 
-                  Most advances are loaded to your card within 30 minutes during business hours.
+                  Fuel advances are available once your rate confirmation is verified during business hours. 
+                  Most advances are loaded to your card within 1-2 business days.
                 </p>
               </CardContent>
             </Card>
@@ -420,7 +420,7 @@ export default function FuelAdvancesPage() {
             Start Saving on Fuel Today
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of truckers saving money on every gallon. Get your fuel card 
+            Join hundreds of truckers saving money on every gallon. Get your fuel card 
             approved today with no credit check required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -431,12 +431,12 @@ export default function FuelAdvancesPage() {
             </Link>
             <a href="tel:6198776746">
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent text-white border-white hover:bg-white hover:text-green-600">
-                Call (619) 877-6746
+                Call Call Us
               </Button>
             </a>
           </div>
           <p className="mt-6 text-sm opacity-75">
-            Instant approval • No annual fees • Start saving immediately
+            Fast approval • No annual fees • Start saving quickly
           </p>
         </div>
       </section>

@@ -229,7 +229,7 @@ export default function BlogPage() {
                 </Link>
               </div>
               <p className="text-sm text-blue-100 mt-6">
-                Questions? Call (619) 877-6746 for immediate assistance from our factoring specialists.
+                Questions? Call us for immediate assistance from our factoring specialists.
               </p>
             </div>
           </div>

@@ -93,7 +93,7 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           Established businesses with higher invoice volumes typically qualify for better rates.
         </p>
         <p className="text-sm text-green-800">
-          <strong className="text-green-900">Good news:</strong> We approve 98% of applications, including new businesses and those with credit challenges. 
+          <strong className="text-green-900">Good news:</strong> We approve most applications, including new businesses and those with credit challenges. 
           We focus on your customers' creditworthiness, not yours.
         </p>
       </div>
@@ -250,7 +250,7 @@ export function CompanyInfoStep({ data, onUpdate, onBack, onSubmit, isSubmitting
           </li>
           <li className="flex items-start">
             <span className="text-green-600 mr-2 mt-0.5">✓</span>
-            <span>You can start submitting invoices for same-day payment right away</span>
+            <span>You can start submitting invoices for fast payment right away</span>
           </li>
           <li className="flex items-start">
             <span className="text-green-600 mr-2 mt-0.5">✓</span>

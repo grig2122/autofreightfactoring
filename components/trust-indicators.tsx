@@ -25,7 +25,7 @@ export function CompactTrustBadge() {
   return (
     <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-xs font-medium">
       <CheckCircle className="h-3.5 w-3.5" />
-      <span>Trusted by 5,000+ truckers</span>
+      <span>Trusted by hundreds of truckers</span>
     </div>
   )
 }

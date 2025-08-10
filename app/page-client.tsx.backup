@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon, Fuel, UserCheck, CreditCard, FileText } from 'lucide-react'
+import { ChevronRight, Clock, DollarSign, Shield, Phone, Mail, MapPin, Star, Check, X, TrendingUp, Upload, Zap, Users, HeadphonesIcon, Building2, TruckIcon, Fuel, UserCheck } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, lazy, Suspense } from 'react'
@@ -41,15 +41,15 @@ export default function HomeClient() {
               
               <p className="text-xl text-blue-100 mt-6 leading-relaxed max-w-xl">
                 Get 100% advances with freight bill factoring designed specifically for truckers and owner-operators. 
-                While traditional shippers take 30-90 days to pay, we fund your invoices within 1-2 business days so you can 
+                While traditional shippers take 30-90 days to pay, we fund your invoices within 24 hours so you can 
                 cover fuel, maintenance, payroll, and other operating expenses without waiting. No hidden fees, 
-                transparent pricing, and next business day funding available for qualified carriers.
+                transparent pricing, and same-day funding available for qualified carriers.
               </p>
               
               <p className="text-lg text-blue-50 mt-4 max-w-xl">
                 Whether you're an owner-operator just starting out or managing a growing fleet, our freight factoring 
                 service provides the steady cash flow you need to take on more loads and grow your business. 
-                Join hundreds of truckers who trust AutoFreightFactoring for reliable, affordable invoice factoring.
+                Join over 5,000 truckers who trust AutoFreightFactoring for reliable, affordable invoice factoring.
               </p>
 
               {/* Key Benefits List */}
@@ -58,7 +58,7 @@ export default function HomeClient() {
                   <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
                     <Check className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-white">Next business day funding available</span>
+                  <span className="text-white">Same-day funding available</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="h-6 w-6 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
@@ -96,7 +96,7 @@ export default function HomeClient() {
                   className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2"
                 >
                   <Phone className="h-5 w-5" />
-                  <span>Talk to Us</span>
+                  <span>(619) 877-6746</span>
                 </a>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function HomeClient() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Zap className="h-4 w-4 mr-2" />
-              Quick Quote - No Login Required
+              Instant Quote - No Login Required
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Upload Your Invoice, <span className="text-blue-600">Get Cash Today</span>
@@ -155,7 +155,7 @@ export default function HomeClient() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star className="h-4 w-4 mr-2" />
-              Why Truckers Choose Us
+              Trusted by 1,000+ Owner-Operators
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Why Truckers Choose <span className="text-blue-600">AutoFreightFactoring</span>
@@ -173,7 +173,7 @@ export default function HomeClient() {
             </p>
             <div className="mt-6 flex justify-center gap-4">
               <Link href="/same-day-factoring" className="text-blue-600 hover:text-blue-700 font-medium">
-                Fast Funding →
+                Same-Day Funding →
               </Link>
               <Link href="/no-credit-check-factoring" className="text-green-600 hover:text-green-700 font-medium">
                 No Credit Check →
@@ -194,9 +194,9 @@ export default function HomeClient() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Lightning-Fast Funding</h3>
                 
                 <p className="text-gray-600 mb-6">
-                  Stop waiting 30-90 days for broker payments. Our streamlined freight factoring system approves invoices 
-                  in hours and transfers funds within 1-2 business days. Submit your invoice during business hours and have cash in 
-                  your account the next business day. Perfect for covering immediate expenses like fuel, repairs, or payroll.
+                  Stop waiting 30-90 days for broker payments. Our automated freight factoring system approves invoices 
+                  in minutes and transfers funds the same day. Submit your invoice before 2 PM EST and have cash in 
+                  your account by 5 PM - guaranteed. Perfect for covering immediate expenses like fuel, repairs, or payroll.
                 </p>
                 
                 <div className="space-y-3">
@@ -204,19 +204,19 @@ export default function HomeClient() {
                     <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
                       <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Average approval: 2 hours</span>
+                    <span className="text-sm font-medium text-gray-700">Average approval: 5 minutes</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
                       <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Next business day ACH available</span>
+                    <span className="text-sm font-medium text-gray-700">Same-day ACH available</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-5 w-5 rounded-full bg-blue-100 flex items-center justify-center">
                       <Check className="h-3 w-3 text-blue-600" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Business hours support portal</span>
+                    <span className="text-sm font-medium text-gray-700">24/7 submission portal</span>
                   </div>
                 </div>
                 
@@ -275,7 +275,7 @@ export default function HomeClient() {
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <div className="inline-flex items-center bg-green-50 text-green-700 px-3 py-1 rounded-full text-sm">
                     <TrendingUp className="h-4 w-4 mr-1" />
-                    Most qualified carriers approved
+                    98% approval rate
                   </div>
                 </div>
               </div>
@@ -293,8 +293,8 @@ export default function HomeClient() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Transparent Pricing</h3>
                 
                 <p className="text-gray-600 mb-6">
-                  No surprises, hidden fees, or fine print gotchas. Our simple competitive rate structure means you always know 
-                  exactly what you'll pay - with industry-leading rates based on volume. Unlike competitors who nickel-and-dime 
+                  No surprises, hidden fees, or fine print gotchas. Our simple flat-rate structure means you always know 
+                  exactly what you'll pay - just 1.5% to 3% depending on volume. Unlike competitors who nickel-and-dime 
                   with application fees, monthly minimums, ACH fees, and termination penalties, we believe in transparent, 
                   honest pricing. What you see is what you get.
                 </p>
@@ -304,7 +304,7 @@ export default function HomeClient() {
                     <div className="h-5 w-5 rounded-full bg-purple-100 flex items-center justify-center">
                       <Check className="h-3 w-3 text-purple-600" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Competitive rates</span>
+                    <span className="text-sm font-medium text-gray-700">Rates from 1.5% - 3%</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="h-5 w-5 rounded-full bg-purple-100 flex items-center justify-center">
@@ -332,7 +332,7 @@ export default function HomeClient() {
           
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <p className="text-gray-600 mb-6">Join hundreds of truckers who've improved their cash flow</p>
+            <p className="text-gray-600 mb-6">Join thousands of truckers who've improved their cash flow</p>
             <a href="/apply" className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               See How Much You'll Save
               <ChevronRight className="h-5 w-5 ml-2" />
@@ -351,7 +351,7 @@ export default function HomeClient() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Clock className="h-4 w-4 mr-2" />
-              Average Time: 1-2 Business Days from Invoice to Payment
+              Average Time: 4 Hours from Invoice to Payment
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               How <span className="text-blue-600">AutoFreightFactoring</span> Works
@@ -438,9 +438,9 @@ export default function HomeClient() {
                       <Shield className="h-8 w-8 text-green-600" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Fast Approval</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Instant Approval</h3>
                     <p className="text-gray-600 text-center mb-6">
-                      Our AI verifies your customer and most qualified carriers get approved quickly. No credit check on you.
+                      Our AI verifies your customer and approves funding instantly. No credit check on you.
                     </p>
                     
                     {/* Feature List */}
@@ -455,7 +455,7 @@ export default function HomeClient() {
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-700">
                         <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
-                        <span>Quick decision</span>
+                        <span>Instant decision</span>
                       </div>
                     </div>
                     
@@ -485,7 +485,7 @@ export default function HomeClient() {
                     
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 text-center">Get Paid Fast</h3>
                     <p className="text-gray-600 text-center mb-6">
-                      Funds hit your bank account via ACH. Next business day for approved carriers.
+                      Funds hit your bank account via ACH. Same-day available for approved carriers.
                     </p>
                     
                     {/* Feature List */}
@@ -500,14 +500,14 @@ export default function HomeClient() {
                       </div>
                       <div className="flex items-center gap-2 text-sm text-gray-700">
                         <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
-                        <span>Quick notification</span>
+                        <span>Instant notification</span>
                       </div>
                     </div>
                     
                     {/* Time Badge */}
                     <div className="mt-6 inline-flex items-center bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm">
                       <Clock className="h-3 w-3 mr-1" />
-                      1-2 business days
+                      2-4 hours
                     </div>
                   </div>
                 </div>
@@ -517,16 +517,16 @@ export default function HomeClient() {
             {/* Bottom Stats */}
             <div className="mt-16 grid grid-cols-3 gap-8 p-8 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">1-2 days</div>
+                <div className="text-3xl font-bold text-gray-900">4 hrs</div>
                 <p className="text-sm text-gray-600 mt-1">Average Time to Fund</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">High</div>
+                <div className="text-3xl font-bold text-gray-900">98%</div>
                 <p className="text-sm text-gray-600 mt-1">Approval Rate</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900">Mon-Fri</div>
-                <p className="text-sm text-gray-600 mt-1">Business Hours Support</p>
+                <div className="text-3xl font-bold text-gray-900">24/7</div>
+                <p className="text-sm text-gray-600 mt-1">Submit Anytime</p>
               </div>
             </div>
             
@@ -555,127 +555,269 @@ export default function HomeClient() {
               One Simple Rate for Everyone
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              <span className="text-blue-600">Competitive Rates</span> - No Surprises
+              Flat <span className="text-blue-600">3% Rate</span> - No Surprises
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Start with our competitive rates. High-volume carriers and long-term partners can qualify for our best rates. No hidden fees, no surprises - just transparent pricing that rewards your growth.
+              Every trucker gets the same fair rate. No tiers, no negotiations, no hidden fees. Just straightforward factoring at 3%.
             </p>
           </div>
           
-          {/* Single Pricing Card with Value Props */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl shadow-2xl overflow-hidden">
-              <div className="p-12 text-white text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
-                  <DollarSign className="h-10 w-10" />
+          <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            {/* Starter Plan */}
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Starter</h3>
+                  <TruckIcon className="h-8 w-8 text-gray-400" />
                 </div>
-                <div className="text-5xl font-bold mb-2">Best</div>
-                <div className="text-2xl mb-4">Rates</div>
-                <div className="text-sm uppercase tracking-wider opacity-80 mb-6">Lower rates available for high-volume carriers</div>
-                <div className="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-                  Start factoring with competitive rates. As your volume grows, your rate can decrease. Fleet owners and high-volume carriers 
-                  often qualify for our best industry-leading rates. Submit your invoice, get up to 100% advance in 1-2 business days.
+                
+                <p className="text-gray-600 mb-6">Perfect for owner-operators just getting started</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold text-gray-900">3%</span>
+                  <span className="text-gray-600 ml-2">flat rate</span>
                 </div>
-                <a href="/apply" className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-                  Start Getting Paid Today
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Same-day funding available</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">No minimum volume required</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Basic reporting dashboard</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Email & chat support</span>
+                  </li>
+                </ul>
+                
+                <a href="/apply" className="block w-full bg-gray-100 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors text-center">
+                  Get Started
                 </a>
+                
+                <p className="text-center text-sm text-gray-500 mt-4">No credit card required</p>
+              </div>
+            </div>
+            
+            {/* Professional Plan - Most Popular */}
+            <div className="group relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 lg:-mt-4">
+              {/* Popular Badge */}
+              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg flex items-center gap-1">
+                  <Zap className="h-3 w-3" />
+                  Most Popular
+                </div>
+              </div>
+              
+              <div className="p-8 text-white">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold">Professional</h3>
+                  <Users className="h-8 w-8 text-blue-300" />
+                </div>
+                
+                <p className="text-blue-100 mb-6">For growing fleets with regular invoicing needs</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold">3%</span>
+                  <span className="text-blue-100 ml-2">flat rate</span>
+                  <div className="mt-2">
+                    <span className="inline-flex items-center bg-blue-500 bg-opacity-50 px-3 py-1 rounded-full text-sm">
+                      Same rate for everyone
+                    </span>
+                  </div>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Everything in Starter</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Dedicated account manager</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Priority 24/7 phone support</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Advanced analytics & reporting</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className="text-white">Fuel card discounts</span>
+                  </li>
+                </ul>
+                
+                <a href="/apply" className="block w-full bg-white text-blue-600 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors text-center shadow-lg">
+                  Start Free Trial
+                </a>
+                
+                <p className="text-center text-sm text-blue-100 mt-4">30-day money-back guarantee</p>
+              </div>
+            </div>
+            
+            {/* Enterprise Plan */}
+            <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Enterprise</h3>
+                  <Building2 className="h-8 w-8 text-gray-400" />
+                </div>
+                
+                <p className="text-gray-600 mb-6">For large fleets with custom requirements</p>
+                
+                <div className="mb-8">
+                  <span className="text-5xl font-bold text-gray-900">3%</span>
+                  <span className="text-gray-600 ml-2">flat rate</span>
+                  <div className="mt-2">
+                    <span className="inline-flex items-center bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
+                      Volume pricing available
+                    </span>
+                  </div>
+                </div>
+                
+                <ul className="space-y-4 mb-8">
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Everything in Professional</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Custom API integrations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">White-label options</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Dedicated success team</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-5 w-5 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-3 w-3 text-green-600" />
+                    </div>
+                    <span className="text-gray-700">Custom payment terms</span>
+                  </li>
+                </ul>
+                
+                <button className="w-full bg-gray-900 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                  Contact Sales
+                </button>
+                
+                <p className="text-center text-sm text-gray-500 mt-4">Custom quote required</p>
               </div>
             </div>
           </div>
-
-          {/* What's Included Grid */}
-          <div className="max-w-6xl mx-auto mb-16">
-            <h3 className="text-2xl font-bold text-center mb-12">Everything Included in Your Rate</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-blue-600" />
-                </div>
-                <h4 className="font-semibold text-lg mb-2">Fast Funding</h4>
-                <p className="text-gray-600">Submit before 2 PM EST, get paid next business day. No waiting 30-90 days.</p>
+          
+          {/* Comparison Table */}
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-center mb-8">Compare Features</h3>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="grid grid-cols-4 bg-gray-50 py-4 px-6 font-semibold text-sm">
+                <div>Features</div>
+                <div className="text-center">Starter</div>
+                <div className="text-center">Professional</div>
+                <div className="text-center">Enterprise</div>
               </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-green-600" />
+              {[
+                { feature: 'Invoice Processing Time', starter: '5-10 min', pro: '5 min', enterprise: 'Priority' },
+                { feature: 'Advance Rate', starter: '97%', pro: '97%', enterprise: '97%' },
+                { feature: 'Monthly Volume Limit', starter: '$100K', pro: '$500K', enterprise: 'Unlimited' },
+                { feature: 'Support Response Time', starter: '24 hours', pro: '1 hour', enterprise: '15 min' },
+                { feature: 'Fuel Card Discounts', starter: false, pro: true, enterprise: true },
+                { feature: 'Custom Reporting', starter: false, pro: true, enterprise: true },
+                { feature: 'API Access', starter: false, pro: false, enterprise: true },
+              ].map((row, index) => (
+                <div key={index} className="grid grid-cols-4 py-4 px-6 border-t border-gray-100 text-sm">
+                  <div className="font-medium text-gray-700">{row.feature}</div>
+                  <div className="text-center">
+                    {typeof row.starter === 'boolean' ? (
+                      row.starter ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.starter}</span>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    {typeof row.pro === 'boolean' ? (
+                      row.pro ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.pro}</span>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    {typeof row.enterprise === 'boolean' ? (
+                      row.enterprise ? (
+                        <Check className="h-5 w-5 text-green-600 mx-auto" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-400 mx-auto" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{row.enterprise}</span>
+                    )}
+                  </div>
                 </div>
-                <h4 className="font-semibold text-lg mb-2">No Hidden Fees</h4>
-                <p className="text-gray-600">No application fees, no monthly minimums, no ACH fees, no termination fees.</p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="h-6 w-6 text-purple-600" />
-                </div>
-                <h4 className="font-semibold text-lg mb-2">Business Hours Support</h4>
-                <p className="text-gray-600">Real truckers who understand your business, available Monday-Friday 9 AM - 6 PM EST.</p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                  <CreditCard className="h-6 w-6 text-orange-600" />
-                </div>
-                <h4 className="font-semibold text-lg mb-2">Free Credit Checks</h4>
-                <p className="text-gray-600">Check broker credit scores before you haul. Know who you're working with.</p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                  <Fuel className="h-6 w-6 text-red-600" />
-                </div>
-                <h4 className="font-semibold text-lg mb-2">Fuel Advances</h4>
-                <p className="text-gray-600">Need fuel money? Get advances while on the road. Keep rolling.</p>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-indigo-600" />
-                </div>
-                <h4 className="font-semibold text-lg mb-2">No Contracts</h4>
-                <p className="text-gray-600">Factor when you need to, skip when you don't. No long-term commitments.</p>
-              </div>
+              ))}
             </div>
           </div>
-
-          {/* Volume Discount Notice */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 text-center">
-              <div className="flex items-center justify-center mb-4">
-                <TrendingUp className="h-8 w-8 text-green-600 mr-3" />
-                <h3 className="text-2xl font-bold text-gray-900">Volume Discounts Available</h3>
+          
+          {/* Trust Badges */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex flex-wrap justify-center gap-8 p-6 bg-gray-50 rounded-2xl">
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-blue-600" />
+                <span className="text-gray-700 font-medium">Bank-Level Security</span>
               </div>
-              <p className="text-lg text-gray-700 mb-4">
-                Factor more, pay less! High-volume carriers can qualify for <span className="font-bold text-green-600">our best rates</span>
-              </p>
-              <div className="grid md:grid-cols-3 gap-4 text-left max-w-2xl mx-auto">
-                <div className="bg-white rounded-lg p-4">
-                  <div className="text-sm text-gray-600">Monthly Volume</div>
-                  <div className="font-bold text-lg">$50k - $100k</div>
-                  <div className="text-green-600 font-semibold">Volume discount</div>
-                </div>
-                <div className="bg-white rounded-lg p-4">
-                  <div className="text-sm text-gray-600">Monthly Volume</div>
-                  <div className="font-bold text-lg">$100k - $250k</div>
-                  <div className="text-green-600 font-semibold">Better rates</div>
-                </div>
-                <div className="bg-white rounded-lg p-4">
-                  <div className="text-sm text-gray-600">Monthly Volume</div>
-                  <div className="font-bold text-lg">$250k+</div>
-                  <div className="text-green-600 font-semibold">Best rates</div>
-                </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-green-600" />
+                <span className="text-gray-700 font-medium">No Setup Time</span>
               </div>
-              <p className="text-sm text-gray-600 mt-4">
-                * Rates based on monthly factoring volume and payment history. Contact us for your personalized quote.
-              </p>
-            </div>
-          </div>
-
-          {/* Pricing Calculator */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-center mb-6">Calculate Your Cost</h3>
-              <FundingCalculator />
+              <div className="flex items-center gap-2">
+                <HeadphonesIcon className="h-5 w-5 text-purple-600" />
+                <span className="text-gray-700 font-medium">24/7 Support</span>
+              </div>
             </div>
           </div>
         </div>
@@ -700,7 +842,7 @@ export default function HomeClient() {
               Don't let fuel costs slow you down. Get immediate cash advances for fuel before you even deliver your load.
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our fuel advance program provides fast funding to keep your trucks rolling. Whether you need cash for diesel, 
+              Our fuel advance program provides instant funding to keep your trucks rolling. Whether you need cash for diesel, 
               DEF, or other operating expenses, we've got you covered with competitive rates and no hidden fees.
             </p>
           </div>
@@ -725,8 +867,8 @@ export default function HomeClient() {
                     <span className="text-green-600 font-bold">2</span>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Get Quick Approval</h4>
-                    <p className="text-gray-600">We verify your load and approve your advance quickly.</p>
+                    <h4 className="text-xl font-semibold text-gray-900 mb-2">Get Instant Approval</h4>
+                    <p className="text-gray-600">We verify your load and approve your advance in minutes, not hours.</p>
                   </div>
                 </div>
                 
@@ -736,7 +878,7 @@ export default function HomeClient() {
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-gray-900 mb-2">Receive Your Advance</h4>
-                    <p className="text-gray-600">Funds hit your fuel card or bank account quickly - before you even pick up the load.</p>
+                    <p className="text-gray-600">Funds hit your fuel card or bank account immediately - before you even pick up the load.</p>
                   </div>
                 </div>
               </div>
@@ -767,7 +909,7 @@ export default function HomeClient() {
                     <Check className="h-4 w-4 text-green-600" />
                   </div>
                   <div>
-                    <span className="font-semibold text-gray-900">Fast funding to fuel cards</span>
+                    <span className="font-semibold text-gray-900">Instant funding to fuel cards</span>
                     <p className="text-gray-600 text-sm mt-1">Direct deposit to EFS, Comdata, or your preferred fuel card</p>
                   </div>
                 </li>
@@ -785,7 +927,7 @@ export default function HomeClient() {
                     <Check className="h-4 w-4 text-green-600" />
                   </div>
                   <div>
-                    <span className="font-semibold text-gray-900">Business hours availability</span>
+                    <span className="font-semibold text-gray-900">24/7 availability</span>
                     <p className="text-gray-600 text-sm mt-1">Get advances anytime, even weekends and holidays</p>
                   </div>
                 </li>
@@ -821,7 +963,7 @@ export default function HomeClient() {
               We understand the unique challenges of running your own truck. That's why we created factoring specifically for owner-operators.
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              No minimum volume requirements, no long-term contracts, and quick approval. Whether you're just starting out or have been 
+              No minimum volume requirements, no long-term contracts, and approval in minutes. Whether you're just starting out or have been 
               on the road for years, our factoring service is designed to help independent truckers succeed.
             </p>
           </div>
@@ -862,7 +1004,7 @@ export default function HomeClient() {
               
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Easy Approval</h3>
               <p className="text-gray-600 mb-6">
-                Get approved quickly, not in days. No personal credit check, no financial statements, just proof you're hauling loads.
+                Get approved in minutes, not days. No personal credit check, no financial statements, just proof you're hauling loads.
               </p>
               
               <ul className="space-y-3">
@@ -872,7 +1014,7 @@ export default function HomeClient() {
                 </li>
                 <li className="flex items-center gap-2 text-gray-700">
                   <Check className="h-5 w-5 text-green-600" />
-                  <span>Quick decision</span>
+                  <span>Instant decision</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-700">
                   <Check className="h-5 w-5 text-green-600" />
@@ -895,7 +1037,7 @@ export default function HomeClient() {
               <ul className="space-y-3">
                 <li className="flex items-center gap-2 text-gray-700">
                   <Check className="h-5 w-5 text-green-600" />
-                  <span>Business hours phone support</span>
+                  <span>24/7 phone support</span>
                 </li>
                 <li className="flex items-center gap-2 text-gray-700">
                   <Check className="h-5 w-5 text-green-600" />
@@ -963,7 +1105,7 @@ export default function HomeClient() {
           
           {/* CTA */}
           <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">Join hundreds of successful owner-operators</p>
+            <p className="text-gray-600 mb-6">Join thousands of successful owner-operators</p>
             <a href="/apply" className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
               Get Started Today
               <ChevronRight className="h-5 w-5 ml-2" />
@@ -977,7 +1119,7 @@ export default function HomeClient() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Built for the Trucking Industry
+              Trusted by Thousands of Truckers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               See what real owner-operators and fleet managers say about our freight factoring service
@@ -1018,21 +1160,21 @@ export default function HomeClient() {
             Ready to Get Paid <span className="text-yellow-400">Faster?</span>
           </h2>
           <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join hundreds of truckers who've transformed their cash flow. Get approved quickly, paid fast. No credit check, no hassle.
+            Join thousands of truckers who've transformed their cash flow. Get approved in minutes, paid in hours. No credit check, no hassle.
           </p>
           
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12">
             <div>
-              <div className="text-3xl font-bold text-white">Reliable</div>
-              <p className="text-blue-200 text-sm mt-1">Funding Partner</p>
+              <div className="text-3xl font-bold text-white">$50M+</div>
+              <p className="text-blue-200 text-sm mt-1">Funded This Month</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white">1-2 days</div>
+              <div className="text-3xl font-bold text-white">4 hrs</div>
               <p className="text-blue-200 text-sm mt-1">Average to Payment</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-white">High</div>
+              <div className="text-3xl font-bold text-white">98%</div>
               <p className="text-blue-200 text-sm mt-1">Approval Rate</p>
             </div>
           </div>
@@ -1044,7 +1186,7 @@ export default function HomeClient() {
             </a>
             <a href="tel:+16198776746" className="group border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg font-semibold backdrop-blur-sm bg-white bg-opacity-10 flex items-center justify-center gap-2">
               <Phone className="h-5 w-5" />
-              <span>Call Us</span>
+              <span>Call (619) 877-6746</span>
             </a>
           </div>
           
@@ -1069,7 +1211,7 @@ export default function HomeClient() {
               <div className="flex items-center gap-4">
                 <div className="flex items-center bg-green-900 bg-opacity-50 text-green-400 px-3 py-1 rounded-full text-sm">
                   <div className="h-2 w-2 bg-green-400 rounded-full mr-2 animate-pulse" />
-                  Live Support Business Hours (Mon-Fri 9-6 EST)
+                  Live Support 24/7
                 </div>
               </div>
             </div>
@@ -1151,8 +1293,8 @@ export default function HomeClient() {
                     <Phone className="h-5 w-5 text-blue-400" />
                   </div>
                   <div>
-                    <p className="font-semibold">Call Us</p>
-                    <p className="text-sm">Business Hours Support Line</p>
+                    <p className="font-semibold">(619) 877-6746</p>
+                    <p className="text-sm">24/7 Support Line</p>
                   </div>
                 </a>
                 

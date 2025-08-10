@@ -214,7 +214,7 @@ export default function LiveDemo() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Transfer Time</p>
-                    <p className="text-xl font-bold text-blue-600">2-4 hours</p>
+                    <p className="text-xl font-bold text-blue-600">1-2 days</p>
                   </div>
                 </div>
               </div>

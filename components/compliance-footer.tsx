@@ -6,12 +6,12 @@ export function ComplianceFooter() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-2">
           <p className="text-xs text-gray-600">
-            * Factoring rates from 1.5% to 3.5%. Same-day funding available for approved applications submitted before 2PM EST. 
+            * Competitive factoring rates. Same-day funding available for approved applications submitted before 2PM EST. 
             Approval based on your customer's creditworthiness, not personal credit. Fuel card savings vary by location and volume.
           </p>
           <p className="text-xs text-gray-600">
             ** No long-term contracts required. Cancel anytime. Some services may require minimum volume. 
-            Fuel advances subject to 1-2% transaction fee. All rates and terms subject to change.
+            Fuel advances subject to competitive transaction fees. All rates and terms subject to change.
           </p>
           <div className="text-xs text-gray-500 pt-2">
             Auto Freight Factoring LLC | 1234 Commerce Way, San Diego, CA 92101 | NMLS #123456

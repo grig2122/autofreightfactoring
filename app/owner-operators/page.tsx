@@ -8,7 +8,7 @@ import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
   title: 'Freight Factoring for Owner-Operators | Start With Just One Truck',
-  description: 'Freight factoring designed for owner-operators. No minimum volume, same-day funding, fuel advances included. Perfect for single truck operations.',
+  description: 'Freight factoring designed for owner-operators. No minimum volume, 1-2 business day funding, fuel advances included. Perfect for single truck operations.',
   keywords: 'owner operator factoring, single truck factoring, small carrier factoring, owner operator freight factoring, factoring for truckers',
   alternates: {
     canonical: 'https://autofreightfactoring.com/owner-operators',
@@ -34,7 +34,7 @@ export default function OwnerOperatorsPage() {
               </h1>
               <p className="text-xl mb-6 opacity-90">
                 Running your own truck is hard enough without cash flow problems. 
-                Get paid same-day for your loads with factoring designed specifically 
+                Get paid in 1-2 business days for your loads with factoring designed specifically 
                 for single truck operations.
               </p>
               <ul className="space-y-3 mb-8">
@@ -64,7 +64,7 @@ export default function OwnerOperatorsPage() {
                 <a href="tel:6198776746">
                   <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-white hover:bg-white hover:text-blue-600 w-full sm:w-auto">
                     <Phone className="mr-2 h-5 w-5" />
-                    (619) 877-6746
+                    Call Us
                   </Button>
                 </a>
               </div>
@@ -75,12 +75,12 @@ export default function OwnerOperatorsPage() {
               <h3 className="text-2xl font-bold mb-6">Why Owner-Operators Choose Us</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <div className="text-3xl font-bold text-blue-300">1.5%</div>
-                  <div className="text-sm opacity-80">Flat rate factoring</div>
+                  <div className="text-3xl font-bold text-blue-300">Low</div>
+                  <div className="text-sm opacity-80">Rate factoring</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-300">24hrs</div>
-                  <div className="text-sm opacity-80">Same-day funding</div>
+                  <div className="text-3xl font-bold text-blue-300">1-2 days</div>
+                  <div className="text-sm opacity-80">Fast funding</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-blue-300">$0</div>
@@ -100,7 +100,7 @@ export default function OwnerOperatorsPage() {
                     </svg>
                   ))}
                 </div>
-                <div className="text-sm mt-1">4.9/5 from 500+ owner-operators</div>
+                <div className="text-sm mt-1">4.9/5 from hundreds of owner-operators</div>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function OwnerOperatorsPage() {
                   Brokers pay in 30-90 days, but your bills come every week.
                 </p>
                 <p className="text-green-600 font-semibold">
-                  ✓ We pay you within 24 hours of delivery
+                  ✓ We pay you within 1-2 business days
                 </p>
               </CardContent>
             </Card>
@@ -238,7 +238,7 @@ export default function OwnerOperatorsPage() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Quick Application</h3>
               <p className="text-gray-600">
-                5-minute application. No credit check. Approval in hours, not days.
+                5-minute application. No credit check. Most qualified carriers approved quickly.
               </p>
             </div>
             
@@ -266,9 +266,9 @@ export default function OwnerOperatorsPage() {
               <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
                 4
               </div>
-              <h3 className="font-semibold text-lg mb-2">Get Paid Today</h3>
+              <h3 className="font-semibold text-lg mb-2">Get Paid Fast</h3>
               <p className="text-gray-600">
-                Money hits your account same day. Keep rolling to your next load.
+                Money hits your account in 1-2 business days. Keep rolling to your next load.
               </p>
             </div>
           </div>
@@ -382,9 +382,9 @@ export default function OwnerOperatorsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <Zap className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="font-semibold text-lg mb-2">Same-Day Funding</h3>
+              <h3 className="font-semibold text-lg mb-2">Fast Funding</h3>
               <p className="text-gray-600">
-                Upload your BOL before 5 PM EST, get paid the same day. 
+                Upload your BOL during business hours, get paid the next business day. 
                 No waiting for broker payments.
               </p>
             </div>
@@ -393,8 +393,8 @@ export default function OwnerOperatorsPage() {
               <DollarSign className="h-10 w-10 text-blue-600 mb-4" />
               <h3 className="font-semibold text-lg mb-2">Fuel Advances</h3>
               <p className="text-gray-600">
-                Get up to 50% advance on your load for fuel. 
-                Plus save up to 50¢/gallon with our fuel card.
+                Get advance funding on your load for fuel. 
+                Plus save money per gallon with our fuel card programs.
               </p>
             </div>
 
@@ -418,10 +418,10 @@ export default function OwnerOperatorsPage() {
 
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <Clock className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="font-semibold text-lg mb-2">24/7 Upload</h3>
+              <h3 className="font-semibold text-lg mb-2">Online Upload</h3>
               <p className="text-gray-600">
-                Upload paperwork anytime from your phone. Our system 
-                works around your schedule.
+                Upload paperwork during business hours from your phone. Our system 
+                is available Monday-Friday.
               </p>
             </div>
 
@@ -441,7 +441,7 @@ export default function OwnerOperatorsPage() {
       <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join 5,000+ Owner-Operators Getting Paid Faster
+            Join Owner-Operators Getting Paid Faster
           </h2>
           <p className="text-xl mb-8 opacity-90">
             Stop waiting 30-90 days for your money. Get the cash flow you need 
@@ -457,7 +457,7 @@ export default function OwnerOperatorsPage() {
               <div className="text-sm opacity-80">Setup fees</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">24 hrs</div>
+              <div className="text-3xl font-bold">1-2 days</div>
               <div className="text-sm opacity-80">To get paid</div>
             </div>
           </div>

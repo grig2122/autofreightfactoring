@@ -6,14 +6,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { ComplianceFooter } from '@/components/compliance-footer'
 
 export const metadata: Metadata = {
-  title: 'Same Day Freight Factoring | Get Paid in Hours Not Weeks',
-  description: 'Same-day freight factoring with instant approval. Submit invoices by 2PM, get paid today. Fast funding for truckers with no contracts or hidden fees.',
+  title: 'Fast Freight Factoring | Get Paid in 1-2 Business Days, Not Weeks',
+  description: 'Fast freight factoring with quick approval. Submit invoices during business hours, get paid in 1-2 business days. Fast funding for truckers with no contracts or hidden fees.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/same-day-factoring',
   },
 }
 
-export default function SameDayFactoringPage() {
+export default function FastFactoringPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Hero Section */}
@@ -21,15 +21,15 @@ export default function SameDayFactoringPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Same Day Freight Factoring: Get Paid in Hours
+              Fast Freight Factoring: Get Paid in 1-2 Business Days
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Turn your freight invoices into cash the same day with our instant freight factoring service. Submit by 2PM for same-day funding - no contracts, no minimums, just fast payment for truckers.
+              Turn your freight invoices into cash within 1-2 business days with our fast freight factoring service. Submit during business hours for next business day funding - no contracts, no minimums, just fast payment for truckers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/apply">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-6">
-                  Get Paid Today <ArrowRight className="ml-2 h-5 w-5" />
+                  Get Paid Fast <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/faq">
@@ -45,19 +45,19 @@ export default function SameDayFactoringPage() {
             <Card className="text-center">
               <CardHeader>
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-2" />
-                <CardTitle>2-4 Hour Funding</CardTitle>
+                <CardTitle>1-2 Business Day Funding</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Submit before 2PM EST, get paid the same day</p>
+                <p className="text-gray-600">Submit during business hours, get paid the next day</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardHeader>
                 <Zap className="w-12 h-12 text-green-600 mx-auto mb-2" />
-                <CardTitle>Instant Approval</CardTitle>
+                <CardTitle>Quick Approval</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Get approved in minutes, not days</p>
+                <p className="text-gray-600">Get approved quickly, not in days</p>
               </CardContent>
             </Card>
             <Card className="text-center">
@@ -66,7 +66,7 @@ export default function SameDayFactoringPage() {
                 <CardTitle>100% Advance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Full invoice value minus 1.5% flat fee</p>
+                <p className="text-gray-600">Full invoice value minus competitive fee</p>
               </CardContent>
             </Card>
           </div>
@@ -77,7 +77,7 @@ export default function SameDayFactoringPage() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Same Day Funding in 4 Simple Steps
+            Fast Funding in 4 Simple Steps
           </h2>
           <div className="space-y-8">
             <div className="flex items-start">
@@ -104,7 +104,7 @@ export default function SameDayFactoringPage() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">Quick Verification</h3>
-                <p className="text-gray-600">We verify your documents in minutes</p>
+                <p className="text-gray-600">We verify your documents during business hours</p>
               </div>
             </div>
             <div className="flex items-start">
@@ -112,8 +112,8 @@ export default function SameDayFactoringPage() {
                 4
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">Get Paid Today</h3>
-                <p className="text-gray-600">Receive funds directly to your bank account</p>
+                <h3 className="text-xl font-semibold mb-2">Get Paid Fast</h3>
+                <p className="text-gray-600">Receive funds within 1-2 business days to your bank account</p>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function SameDayFactoringPage() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Same Day Factoring?
+            Why Choose Fast Factoring?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -132,7 +132,7 @@ export default function SameDayFactoringPage() {
               <h3 className="text-xl font-semibold mb-2">No Waiting for Payment</h3>
               <p className="text-gray-600">
                 Stop waiting 30-90 days for brokers and shippers to pay. Get your money 
-                the same day you deliver.
+                within 1-2 business days of delivery.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
@@ -167,11 +167,11 @@ export default function SameDayFactoringPage() {
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Who Qualifies for Same Day Factoring?
+            Who Qualifies for Fast Factoring?
           </h2>
           <div className="bg-blue-50 p-8 rounded-2xl">
             <p className="text-lg text-gray-700 mb-6">
-              Same day factoring is available to all trucking companies that meet these simple requirements:
+              Fast factoring is available to all trucking companies that meet these simple requirements:
             </p>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -188,7 +188,7 @@ export default function SameDayFactoringPage() {
               </li>
               <li className="flex items-start">
                 <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span>Invoices submitted before 2PM EST for same-day funding</span>
+                <span>Invoices submitted during business hours for next-day funding</span>
               </li>
             </ul>
           </div>
@@ -199,21 +199,21 @@ export default function SameDayFactoringPage() {
       <section className="py-16 px-4 bg-blue-600 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Start Getting Paid Same Day
+            Start Getting Paid Fast
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of truckers who never wait for payment. Apply in minutes, 
-            get approved instantly, and receive funds today.
+            Join hundreds of truckers who never wait for payment. Apply quickly, 
+            get approved fast, and receive funds within 1-2 business days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/apply">
               <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-                Apply Now - Get Paid Today
+                Apply Now - Get Paid Fast
               </Button>
             </Link>
             <a href="tel:6198776746">
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-transparent text-white border-white hover:bg-white hover:text-blue-600">
-                Call (619) 877-6746
+                Call Call Us
               </Button>
             </a>
           </div>
@@ -224,25 +224,25 @@ export default function SameDayFactoringPage() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Common Questions About Same Day Factoring
+            Common Questions About Fast Factoring
           </h2>
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-2">
-                What time do I need to submit invoices for same-day payment?
+                When do I need to submit invoices for next-day payment?
               </h3>
               <p className="text-gray-600">
-                Submit your invoices before 2PM EST to receive payment the same business day. 
-                Invoices submitted after 2PM will be funded the next business day.
+                Submit your invoices during business hours (9 AM - 5 PM EST) to receive payment the next business day. 
+                Invoices submitted after hours will be processed the following business day.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="font-semibold text-lg mb-2">
-                How much does same-day factoring cost?
+                How much does fast factoring cost?
               </h3>
               <p className="text-gray-600">
-                We charge a flat 1.5% factoring fee. On a $2,000 invoice, you receive $1,970 
-                the same day. No hidden fees, no surprises.
+                We charge competitive factoring rates. On a $2,000 invoice, you receive up to $2,000 
+                within 1-2 business days. No hidden fees, no surprises.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">

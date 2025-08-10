@@ -131,7 +131,7 @@ export default function TruckerApplyPageClient() {
                 STOP WAITING 30 DAYS FOR YOUR MONEY
               </h1>
               <p className="text-xl lg:text-2xl text-gray-700 font-bold mb-8">
-                Get paid TODAY. Only 3% fee. No BS.
+                Get paid TODAY. Competitive rates. No BS.
               </p>
 
               {/* Quick Benefits */}
@@ -153,7 +153,7 @@ export default function TruckerApplyPageClient() {
               <div className="lg:hidden mb-8">
                 <a href="tel:6198776746" className="flex items-center justify-center space-x-2 bg-green-600 text-white p-4 rounded-lg font-bold text-lg">
                   <Phone className="h-6 w-6" />
-                  <span>CALL NOW: (619) 877-6746</span>
+                  <span>CALL US NOW</span>
                 </a>
               </div>
             </div>
@@ -289,7 +289,7 @@ export default function TruckerApplyPageClient() {
                       ✓ NO credit check BS
                     </p>
                     <p className="text-base font-bold text-gray-700">
-                      ✓ Money hits YOUR account same day
+                      ✓ Money hits YOUR account fast
                     </p>
                   </div>
                 </form>
@@ -304,19 +304,19 @@ export default function TruckerApplyPageClient() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">500+</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Hundreds</div>
               <div className="text-blue-100">Truckers Paid</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">24hr</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">1-2 days</div>
               <div className="text-blue-100">Money in Bank</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">$50M+</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Reliable</div>
               <div className="text-blue-100">Funded</div>
             </div>
             <div className="text-center text-white">
-              <div className="text-3xl lg:text-4xl font-bold mb-1">3%</div>
+              <div className="text-3xl lg:text-4xl font-bold mb-1">Low</div>
               <div className="text-blue-100">Flat Fee</div>
             </div>
           </div>
@@ -349,7 +349,7 @@ export default function TruckerApplyPageClient() {
                 3
               </div>
               <h3 className="font-black text-xl mb-2">MONEY HITS</h3>
-              <p className="text-gray-700 font-semibold">Same day ACH transfer</p>
+              <p className="text-gray-700 font-semibold">1-2 business day transfer</p>
             </div>
           </div>
         </div>
@@ -362,7 +362,7 @@ export default function TruckerApplyPageClient() {
             TIRED OF WAITING FOR YOUR MONEY?
           </h2>
           <p className="text-xl lg:text-2xl text-white font-bold mb-8">
-            500+ truckers already getting paid same day
+            Join truckers getting paid faster
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -379,7 +379,7 @@ export default function TruckerApplyPageClient() {
                 className="h-16 px-8 text-xl font-black bg-transparent border-4 border-white text-white hover:bg-white hover:text-green-600"
               >
                 <Phone className="mr-2 h-6 w-6" />
-                CALL: (619) 877-6746
+                CALL US
               </Button>
             </a>
           </div>

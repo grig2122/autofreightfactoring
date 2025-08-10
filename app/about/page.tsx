@@ -41,7 +41,7 @@ export default function AboutPage() {
               <p className="mb-6">
                 We knew there had to be a better way. That's why we built Auto Freight Factoring 
                 from the ground up with transparency, speed, and fairness at its core. Our technology-driven 
-                approach allows us to offer same-day funding with no hidden fees and no long-term contracts.
+                approach allows us to offer 1-2 business day funding with no hidden fees and no long-term contracts.
               </p>
               <p>
                 Today, we're proud to serve hundreds of trucking companies across the United States, 
@@ -71,7 +71,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-semibold mb-3">Speed</h3>
               <p className="text-gray-600">
                 Time is money in trucking. We process applications quickly and fund approved 
-                invoices the same day.
+                invoices in 1-2 business days.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
@@ -96,15 +96,15 @@ export default function AboutPage() {
               <p className="text-gray-600">Advance Rate Available</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">24hr</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">1-2 days</div>
               <p className="text-gray-600">Average Funding Time</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">1.5%</div>
-              <p className="text-gray-600">Simple Flat Fee</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">Low</div>
+              <p className="text-gray-600">Competitive Rates</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">Hundreds</div>
               <p className="text-gray-600">Happy Clients</p>
             </div>
           </div>
@@ -147,22 +147,22 @@ export default function AboutPage() {
       {/* Awards & Certifications */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Awards & Certifications</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Commitment</h2>
           <div className="flex flex-wrap justify-center items-center gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center">
               <Award className="h-16 w-16 text-gold-500 mb-2" />
-              <p className="text-sm font-semibold">BBB Accredited</p>
-              <p className="text-xs text-gray-600">A+ Rating</p>
+              <p className="text-sm font-semibold">Professional Service</p>
+              <p className="text-xs text-gray-600">Industry Standards</p>
             </div>
             <div className="flex flex-col items-center">
               <Shield className="h-16 w-16 text-blue-600 mb-2" />
-              <p className="text-sm font-semibold">SOC 2 Certified</p>
-              <p className="text-xs text-gray-600">Type II Compliant</p>
+              <p className="text-sm font-semibold">Secure Platform</p>
+              <p className="text-xs text-gray-600">SSL Protected</p>
             </div>
             <div className="flex flex-col items-center">
               <Star className="h-16 w-16 text-yellow-500 mb-2" />
-              <p className="text-sm font-semibold">Top Rated</p>
-              <p className="text-xs text-gray-600">4.9/5 Stars</p>
+              <p className="text-sm font-semibold">Client Focused</p>
+              <p className="text-xs text-gray-600">Your Success Matters</p>
             </div>
           </div>
         </div>

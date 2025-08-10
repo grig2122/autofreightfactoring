@@ -189,7 +189,7 @@ export function ContactForm() {
         {submitStatus === 'success' && (
           <div className="bg-green-50 border-2 border-green-500 text-green-700 px-6 py-4 rounded-xl flex items-center gap-3">
             <CheckCircle className="h-5 w-5 text-green-600" />
-            <span className="font-medium">Thank you for your message! We'll get back to you within 24 hours.</span>
+            <span className="font-medium">Thank you for your message! We'll get back to you within 1-2 business days.</span>
           </div>
         )}
 

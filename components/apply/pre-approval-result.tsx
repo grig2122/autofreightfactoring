@@ -32,14 +32,14 @@ export function PreApprovalResult({ result }: PreApprovalResultProps) {
             <CardContent className="space-y-6">
               <div className="bg-blue-50 p-6 rounded-lg text-center">
                 <p className="text-sm text-blue-600 font-medium">Your Benefits</p>
-                <p className="text-2xl font-bold text-blue-700 mt-2">Same-Day Payment</p>
-                <p className="text-sm text-gray-600 mt-2">No hidden fees • Competitive rates • 24/7 support</p>
+                <p className="text-2xl font-bold text-blue-700 mt-2">Fast Payment</p>
+                <p className="text-sm text-gray-600 mt-2">No hidden fees • Competitive rates • Business hours support</p>
               </div>
 
               <div className="bg-green-50 p-6 rounded-lg">
                 <h3 className="font-semibold text-green-900 mb-2">What happens next?</h3>
                 <p className="text-green-800">
-                  Our factoring specialist will contact you within 24 hours to discuss your needs and help you get started with freight factoring.
+                  Our factoring specialist will contact you during business hours to discuss your needs and help you get started with freight factoring.
                 </p>
               </div>
 

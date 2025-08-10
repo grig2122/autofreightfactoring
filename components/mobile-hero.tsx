@@ -59,17 +59,17 @@ export function MobileHero() {
       {/* Mobile-Optimized Hero */}
       <section className="px-4 py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          Get Paid Same Day for Your Freight
+          Get Paid Fast for Your Freight
         </h1>
         <p className="text-lg text-gray-700 mb-6">
-          Stop waiting 30+ days. Get cash in 24 hours.
+          Stop waiting 30+ days. Get cash in 1-2 business days.
         </p>
 
         {/* Key Benefits Grid */}
         <div className="grid grid-cols-2 gap-3 mb-8">
           <div className="bg-white p-4 rounded-lg border border-gray-200">
             <DollarSign className="h-6 w-6 text-blue-600 mb-2" />
-            <div className="font-semibold text-sm">Same Day Pay</div>
+            <div className="font-semibold text-sm">Fast Pay</div>
           </div>
           <div className="bg-white p-4 rounded-lg border border-gray-200">
             <Clock className="h-6 w-6 text-blue-600 mb-2" />
@@ -81,7 +81,7 @@ export function MobileHero() {
           </div>
           <div className="bg-white p-4 rounded-lg border border-gray-200">
             <Phone className="h-6 w-6 text-blue-600 mb-2" />
-            <div className="font-semibold text-sm">24/7 Support</div>
+            <div className="font-semibold text-sm">Business Hours Support</div>
           </div>
         </div>
 
@@ -126,11 +126,11 @@ export function MobileHero() {
         <div className="space-y-3">
           <div className="bg-white p-4 rounded-lg">
             <div className="font-semibold mb-1">How fast do I get paid?</div>
-            <div className="text-sm text-gray-600">Same day for invoices submitted before 2 PM EST</div>
+            <div className="text-sm text-gray-600">Next business day for invoices submitted during business hours</div>
           </div>
           <div className="bg-white p-4 rounded-lg">
             <div className="font-semibold mb-1">What's the fee?</div>
-            <div className="text-sm text-gray-600">Just 1.5% flat rate - no hidden fees</div>
+            <div className="text-sm text-gray-600">Competitive rates - no hidden fees</div>
           </div>
           <div className="bg-white p-4 rounded-lg">
             <div className="font-semibold mb-1">Any contracts?</div>

@@ -9,7 +9,7 @@ const testimonials = [
     name: 'Jake Rodriguez',
     company: 'Rodriguez Trucking LLC',
     role: 'Owner-Operator',
-    content: 'After years of hidden fees with other factoring companies, finding AutoFreightFactoring was a breath of fresh air. The 1.5% rate is exactly what I pay - no surprises, no fine print.',
+    content: 'After years of hidden fees with other factoring companies, finding AutoFreightFactoring was a breath of fresh air. The competitive rates are exactly what I pay - no surprises, no fine print.',
     rating: 5,
     yearsWithAFF: '2 years',
     avatar: 'JR'
@@ -49,23 +49,23 @@ const testimonials = [
 const trustBadges = [
   {
     icon: Shield,
-    title: '5,000+',
-    subtitle: 'Active Truckers'
+    title: 'Secure',
+    subtitle: 'SSL Protected'
   },
   {
     icon: TrendingUp,
-    title: '$50M+',
-    subtitle: 'Funded Monthly'
+    title: 'Growing',
+    subtitle: 'Client Base'
   },
   {
     icon: Clock,
-    title: '24 Hour',
-    subtitle: 'Average Funding'
+    title: '1-2 Days',
+    subtitle: 'Fast Funding'
   },
   {
     icon: Star,
-    title: '4.9/5',
-    subtitle: 'Customer Rating'
+    title: 'Trusted',
+    subtitle: 'By Truckers'
   }
 ]
 

@@ -4,6 +4,7 @@ import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useAnalyticsTracking } from '@/hooks/use-analytics-tracking'
 import { trackEvent, setUserProperties } from '@/lib/analytics-events'
+import { detectBot, trackBotDetection } from '@/lib/bot-detection'
 
 function AnalyticsContent() {
   const pathname = usePathname()
@@ -11,6 +12,25 @@ function AnalyticsContent() {
   
   // Enable general tracking (scroll, time on page)
   useAnalyticsTracking()
+
+  // Detect and track bots on mount
+  useEffect(() => {
+    const botResult = detectBot()
+    if (botResult.isBot) {
+      trackBotDetection()
+      // Flag session as potential bot
+      setUserProperties({
+        is_bot: true,
+        bot_confidence: botResult.confidence,
+        bot_reasons: botResult.reasons.join(',')
+      })
+    } else {
+      setUserProperties({
+        is_bot: false,
+        user_type: 'genuine'
+      })
+    }
+  }, [])
 
   // Track UTM parameters and traffic sources
   useEffect(() => {

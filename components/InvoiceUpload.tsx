@@ -155,7 +155,7 @@ export function InvoiceUpload() {
             <CheckCircle2 className="h-6 w-6" />
             <span className="font-semibold">Invoice Analyzed Successfully!</span>
           </div>
-          <CardTitle>Your Instant Quote</CardTitle>
+          <CardTitle>Your Quick Quote</CardTitle>
           <CardDescription>
             Based on your invoice, here's what we can offer
           </CardDescription>
@@ -212,7 +212,7 @@ export function InvoiceUpload() {
           </div>
 
           <p className="text-xs text-gray-500 text-center">
-            No commitment required • No credit check • Get funded in 24 hours
+            No commitment required • No credit check • Get funded in 1-2 business days
           </p>
         </CardContent>
       </Card>
@@ -222,7 +222,7 @@ export function InvoiceUpload() {
   return (
     <Card className="max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Get an Instant Quote</CardTitle>
+        <CardTitle>Get a Quick Quote</CardTitle>
         <CardDescription>
           Upload your invoice and see how much cash you can get today
         </CardDescription>
@@ -303,7 +303,7 @@ export function InvoiceUpload() {
                 Analyzing Invoice...
               </>
             ) : (
-              'Get Instant Quote'
+              'Get Quick Quote'
             )}
           </Button>
         )}
@@ -319,7 +319,7 @@ export function InvoiceUpload() {
           </p>
           <p className="flex items-center gap-2">
             <CheckCircle2 className="h-4 w-4 text-green-600" />
-            Funds available in 24 hours
+            Funds available in 1-2 business days
           </p>
         </div>
       </CardContent>

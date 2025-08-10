@@ -4,14 +4,14 @@ import { Clock, TrendingUp, Shield, Truck, DollarSign, CheckCircle, ArrowRight, 
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'Complete Guide to Same Day Freight Factoring | Get Paid in Hours',
-  description: 'Learn how same day freight factoring works, benefits for truckers, and how to get started. Turn unpaid invoices into cash within hours with our comprehensive guide.',
+  title: 'Complete Guide to Fast Freight Factoring | Get Paid in 1-2 Business Days',
+  description: 'Learn how fast freight factoring works, benefits for truckers, and how to get started. Turn unpaid invoices into cash within 1-2 business days with our comprehensive guide.',
   alternates: {
     canonical: 'https://autofreightfactoring.com/blog/complete-guide-same-day-freight-factoring',
   },
   openGraph: {
-    title: 'Complete Guide to Same Day Freight Factoring',
-    description: 'Everything truckers need to know about same day freight factoring. Get paid in hours, not weeks.',
+    title: 'Complete Guide to Fast Freight Factoring',
+    description: 'Everything truckers need to know about fast freight factoring. Get paid in 1-2 business days, not weeks.',
     images: [
       {
         url: 'https://autofreightfactoring.com/icon.png',
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
   },
 }
 
-export default function SameDayFreightFactoringGuide() {
+export default function FastFreightFactoringGuide() {
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Same Day Freight Factoring: Get Paid in Hours Not Weeks
+          Fast Freight Factoring: Get Paid in 1-2 Business Days, Not Weeks
         </h1>
         <p className="text-xl text-gray-600 mb-8">
-          In the fast-paced world of trucking, cash flow is king. This comprehensive guide shows you how same day freight factoring can transform your business finances.
+          In the fast-paced world of trucking, cash flow is king. This comprehensive guide shows you how fast freight factoring can transform your business finances.
         </p>
         <div className="flex items-center justify-center gap-4 text-sm text-gray-500">
           <time dateTime="2024-01-18">January 18, 2024</time>
@@ -44,11 +44,11 @@ export default function SameDayFreightFactoringGuide() {
       <nav className="bg-gray-50 rounded-lg p-6 mb-12">
         <h2 className="text-lg font-semibold mb-4">Table of Contents</h2>
         <ol className="space-y-2 text-blue-600">
-          <li><a href="#what-is" className="hover:underline">What Is Same Day Freight Factoring?</a></li>
-          <li><a href="#how-it-works" className="hover:underline">How Does Same Day Invoice Factoring Work?</a></li>
+          <li><a href="#what-is" className="hover:underline">What Is Fast Freight Factoring?</a></li>
+          <li><a href="#how-it-works" className="hover:underline">How Does Fast Invoice Factoring Work?</a></li>
           <li><a href="#benefits" className="hover:underline">Key Benefits for Trucking Companies</a></li>
           <li><a href="#vs-traditional" className="hover:underline">Fast Invoice Factoring vs. Traditional Financing</a></li>
-          <li><a href="#who-can-use" className="hover:underline">Who Can Use Same Day Freight Factoring?</a></li>
+          <li><a href="#who-can-use" className="hover:underline">Who Can Use Fast Freight Factoring?</a></li>
           <li><a href="#process" className="hover:underline">Step-by-Step Process</a></li>
           <li><a href="#choosing" className="hover:underline">What to Look for in a Factoring Company</a></li>
           <li><a href="#faqs" className="hover:underline">Common Questions</a></li>
@@ -59,7 +59,7 @@ export default function SameDayFreightFactoringGuide() {
       {/* Introduction */}
       <section className="prose prose-lg max-w-none mb-12">
         <p className="lead text-xl text-gray-700">
-          Waiting weeks for invoice payments can strain your trucking business. Same day freight factoring offers a solution by turning unpaid invoices into cash within hours. This service helps trucking companies cover expenses quickly without taking on debt.
+          Waiting weeks for invoice payments can strain your trucking business. Fast freight factoring offers a solution by turning unpaid invoices into cash within 1-2 business days. This service helps trucking companies cover expenses quickly without taking on debt.
         </p>
         
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
@@ -73,11 +73,11 @@ export default function SameDayFreightFactoringGuide() {
       {/* What Is Same Day Freight Factoring */}
       <section id="what-is" className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          What Is Same Day Freight Factoring?
+          What Is Fast Freight Factoring?
         </h2>
         
         <p className="text-lg text-gray-700 mb-6">
-          Same day freight factoring is a financial service designed specifically for the trucking industry. It transforms unpaid freight invoices into immediate cash, providing trucking businesses with the liquidity they need to operate efficiently.
+          Fast freight factoring is a financial service designed specifically for the trucking industry. It transforms unpaid freight invoices into cash within 1-2 business days, providing trucking businesses with the liquidity they need to operate efficiently.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -93,17 +93,17 @@ export default function SameDayFreightFactoringGuide() {
             <Clock className="w-10 h-10 text-blue-600 mb-3" />
             <h3 className="text-xl font-semibold mb-2">Speed Matters</h3>
             <p className="text-gray-600">
-              Get advances of 90-100% of invoice value, typically within the same day. This quick access to funds can be a lifeline for managing tight cash flows.
+              Get advances of 90-100% of invoice value, typically within 1-2 business days. This quick access to funds can be a lifeline for managing tight cash flows.
             </p>
           </div>
         </div>
 
         <div className="bg-gray-50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold mb-4">Key Features of Same Day Freight Factoring:</h3>
+          <h3 className="text-xl font-semibold mb-4">Key Features of Fast Freight Factoring:</h3>
           <ul className="space-y-3">
             <li className="flex items-start">
               <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-              <span>Immediate cash flow relief within 2-4 hours</span>
+              <span>Fast cash flow relief within 1-2 business days</span>
             </li>
             <li className="flex items-start">
               <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
@@ -124,11 +124,11 @@ export default function SameDayFreightFactoringGuide() {
       {/* How It Works */}
       <section id="how-it-works" className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          How Does Same Day Invoice Factoring Work?
+          How Does Fast Invoice Factoring Work?
         </h2>
         
         <p className="text-lg text-gray-700 mb-6">
-          Same day invoice factoring is a straightforward process that begins when you submit your invoices to a factoring company like AutoFreightFactoring.
+          Fast invoice factoring is a straightforward process that begins when you submit your invoices to a factoring company like AutoFreightFactoring.
         </p>
 
         <div className="space-y-6 mb-8">
@@ -158,7 +158,7 @@ export default function SameDayFreightFactoringGuide() {
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">Receive Your Advance</h3>
-              <p className="text-gray-600">Get 90-100% of the invoice value deposited directly into your bank account within hours.</p>
+              <p className="text-gray-600">Get 90-100% of the invoice value deposited directly into your bank account within 1-2 business days.</p>
             </div>
           </div>
           
@@ -176,7 +176,7 @@ export default function SameDayFreightFactoringGuide() {
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
           <p className="font-semibold text-yellow-900 mb-2">Pro Tip:</p>
           <p className="text-yellow-800">
-            Submit invoices before 2 PM EST for same-day funding. This ensures your funds are processed and deposited the same business day.
+            Submit invoices during business hours for next business day funding. This ensures your funds are processed and deposited quickly.
           </p>
         </div>
       </section>
@@ -240,7 +240,7 @@ export default function SameDayFreightFactoringGuide() {
             <tbody>
               <tr>
                 <td className="border p-4 font-medium">Speed</td>
-                <td className="border p-4 text-green-600">2-4 hours</td>
+                <td className="border p-4 text-green-600">1-2 business days</td>
                 <td className="border p-4 text-red-600">2-8 weeks</td>
               </tr>
               <tr className="bg-gray-50">
@@ -278,11 +278,11 @@ export default function SameDayFreightFactoringGuide() {
       {/* Who Can Use */}
       <section id="who-can-use" className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Who Can Use Same Day Freight Factoring?
+          Who Can Use Fast Freight Factoring?
         </h2>
         
         <p className="text-lg text-gray-700 mb-6">
-          Same day freight factoring is accessible to many within the transportation industry:
+          Fast freight factoring is accessible to many within the transportation industry:
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -339,7 +339,7 @@ export default function SameDayFreightFactoringGuide() {
       {/* Process */}
       <section id="process" className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Step-by-Step: The Same Day Freight Factoring Process
+          Step-by-Step: The Fast Freight Factoring Process
         </h2>
         
         <div className="bg-gray-50 rounded-lg p-8 mb-8">
@@ -348,7 +348,7 @@ export default function SameDayFreightFactoringGuide() {
               <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">1</span>
               <div>
                 <h3 className="font-semibold text-lg mb-1">Select AutoFreightFactoring</h3>
-                <p className="text-gray-600">Choose a factoring company that understands trucking and offers true same-day funding.</p>
+                <p className="text-gray-600">Choose a factoring company that understands trucking and offers fast 1-2 business day funding.</p>
               </div>
             </li>
             
@@ -356,7 +356,7 @@ export default function SameDayFreightFactoringGuide() {
               <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">2</span>
               <div>
                 <h3 className="font-semibold text-lg mb-1">Submit Your Invoices</h3>
-                <p className="text-gray-600">Upload invoices and BOLs through our secure online portal before 2 PM EST.</p>
+                <p className="text-gray-600">Upload invoices and BOLs through our secure online portal during business hours.</p>
               </div>
             </li>
             
@@ -372,7 +372,7 @@ export default function SameDayFreightFactoringGuide() {
               <span className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 text-sm">4</span>
               <div>
                 <h3 className="font-semibold text-lg mb-1">Receive Your Advance</h3>
-                <p className="text-gray-600">Get 98.5-100% of invoice value (minus our 1.5% fee) deposited same day.</p>
+                <p className="text-gray-600">Get 97% of invoice value (minus our 3% fee) deposited within 1-2 business days.</p>
               </div>
             </li>
             
@@ -404,14 +404,14 @@ export default function SameDayFreightFactoringGuide() {
           <div className="border-l-4 border-green-600 pl-6">
             <h3 className="text-xl font-semibold mb-2">Transparent Pricing</h3>
             <p className="text-gray-600">
-              Look for clear, upfront pricing with no hidden fees. We charge a simple 1.5% flat rate with no surprises.
+              Look for clear, upfront pricing with no hidden fees. We charge a simple 3% flat rate with no surprises.
             </p>
           </div>
           
           <div className="border-l-4 border-purple-600 pl-6">
             <h3 className="text-xl font-semibold mb-2">Fast Funding</h3>
             <p className="text-gray-600">
-              Ensure they offer true same-day funding. Many claim "fast" but take days. We fund in 2-4 hours.
+              Ensure they offer fast funding. Many claim "fast" but take days. We fund in 1-2 business days.
             </p>
           </div>
           
@@ -427,21 +427,21 @@ export default function SameDayFreightFactoringGuide() {
       {/* FAQs */}
       <section id="faqs" className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Common Questions About Same Day Freight Factoring
+          Common Questions About Fast Freight Factoring
         </h2>
         
         <div className="space-y-6">
           <div className="bg-white border rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-2">How quickly can I get paid?</h3>
             <p className="text-gray-600">
-              Most companies offer funding within hours. At AutoFreightFactoring, submit before 2 PM EST for same-day payment.
+              Most companies offer funding within 1-2 business days. At AutoFreightFactoring, submit during business hours for next business day payment.
             </p>
           </div>
           
           <div className="bg-white border rounded-lg p-6">
             <h3 className="text-lg font-semibold mb-2">What are the typical fees?</h3>
             <p className="text-gray-600">
-              Fees typically range from 1.5% to 5%. We charge a flat 1.5% with no hidden costs or additional fees.
+              Fees typically range from 1.5% to 5%. We charge a flat 3% with no hidden costs or additional fees.
             </p>
           </div>
           
@@ -496,7 +496,7 @@ export default function SameDayFreightFactoringGuide() {
               <AlertCircle className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0" />
               <div>
                 <h3 className="font-semibold mb-1">Submit Early</h3>
-                <p className="text-gray-700">Upload invoices before 2 PM EST to ensure same-day funding.</p>
+                <p className="text-gray-700">Upload invoices during business hours to ensure next business day funding.</p>
               </div>
             </li>
             
@@ -514,11 +514,11 @@ export default function SameDayFreightFactoringGuide() {
       {/* Is It Right For You */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          Is Same Day Freight Factoring Right for Your Business?
+          Is Fast Freight Factoring Right for Your Business?
         </h2>
         
         <p className="text-lg text-gray-700 mb-6">
-          Consider these questions to determine if same day factoring fits your needs:
+          Consider these questions to determine if fast factoring fits your needs:
         </p>
         
         <div className="bg-yellow-50 rounded-lg p-8 mb-8">
@@ -542,7 +542,7 @@ export default function SameDayFreightFactoringGuide() {
           </ul>
           
           <p className="mt-6 font-semibold text-yellow-900">
-            If you answered yes to any of these, same day freight factoring could transform your cash flow.
+            If you answered yes to any of these, fast freight factoring could transform your cash flow.
           </p>
         </div>
       </section>
@@ -553,12 +553,12 @@ export default function SameDayFreightFactoringGuide() {
           Take Control of Your Cash Flow Today
         </h2>
         <p className="text-xl mb-8 opacity-90">
-          Same day freight factoring with AutoFreightFactoring empowers you with immediate access to funds. Focus on growth while we handle your cash flow.
+          Fast freight factoring with AutoFreightFactoring empowers you with quick access to funds. Focus on growth while we handle your cash flow.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/apply">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-              Apply for Same-Day Funding <ArrowRight className="ml-2 h-5 w-5" />
+              Apply for Fast Funding <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
           <Link href="/same-day-factoring">

@@ -15,10 +15,10 @@ export default function FundingCalculator() {
     setIsCalculating(true)
     const timer = setTimeout(() => {
       const amount = parseFloat(invoiceAmount) || 0
-      const factorRate = 0.015 // 1.5% factor fee
+      const factorRate = 0.03 // competitive factor fee
       
       const fee = amount * factorRate
-      const funding = amount - fee // 100% advance minus fee
+      const funding = amount - fee // advance minus competitive fee
       
       setFundingAmount(funding)
       setFactorFee(fee)
@@ -60,7 +60,7 @@ export default function FundingCalculator() {
         {/* Header */}
         <div className="text-center mb-6">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">Quick Funding Calculator</h3>
-          <p className="text-gray-600">See your potential cash advance</p>
+          <p className="text-gray-600">See your potential cash advance with competitive rates</p>
         </div>
 
         {/* Invoice Amount Input */}
@@ -106,7 +106,7 @@ export default function FundingCalculator() {
                 <div className="h-8 w-8 bg-gray-100 rounded-lg flex items-center justify-center">
                   <DollarSign className="h-4 w-4 text-gray-600" />
                 </div>
-                <span className="text-gray-700 font-medium">Factor fee (1.5%):</span>
+                <span className="text-gray-700 font-medium">Factor fee (3%):</span>
               </div>
               <span className="text-xl font-bold text-gray-900">
                 {formatCurrency(factorFee)}
@@ -124,7 +124,7 @@ export default function FundingCalculator() {
                 <span className="text-gray-700 font-medium">Time to fund:</span>
               </div>
               <span className="text-xl font-bold text-green-600">
-                2-4 hours
+                1-2 business days
               </span>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function FundingCalculator() {
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="flex items-center gap-2 text-gray-700">
               <div className="h-1.5 w-1.5 bg-blue-600 rounded-full" />
-              <span>Same-day funding</span>
+              <span>Fast funding</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700">
               <div className="h-1.5 w-1.5 bg-blue-600 rounded-full" />
@@ -170,7 +170,7 @@ export default function FundingCalculator() {
 
         {/* Trust Badge */}
         <p className="text-center text-sm text-gray-500 mt-4">
-          No personal guarantee • 5-minute approval
+          No personal guarantee • Quick approval
         </p>
       </div>
     </div>
